@@ -1,0 +1,64 @@
+/* NavBar Elements!! */
+
+.navbar {
+  height: 100px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.link-button {
+  text-decoration: none;
+  color: white;
+}
+
+.row-shoesList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nav-link {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-img-logo {
+  margin-right: 10px;
+  width: 45px;
+  height: 45px;
+}
+
+.nav-img {
+  width: 30px;
+  height: 30px;
+}
+
+.nav-img-flag {
+  width: 12px;
+  height: 12px;
+}
+
+.nav-img-text {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  margin-left: 2px;
+  font-size: 10px;
+  width: 30px;
+  height: 30px;
+}
+
+/* Carousel Elemenmts!! */
+/* 
+.carousel {
+  max-height: 600px; */
