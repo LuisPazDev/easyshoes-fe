@@ -32,11 +32,7 @@ export const Layout = () => {
                     <img src={profile} className='nav-img' />
                   </Link>
                 </Nav.Link>
-                <Nav.Link>
-                  <Link className='link' to='/cart'>
-                    <img src={cart} className='nav-img' />
-                  </Link>
-                </Nav.Link>
+
                 <Navbar.Toggle
                   aria-controls={`offcanvasNavbar-expand-${expand}`}
                 />
@@ -67,17 +63,7 @@ export const Layout = () => {
                       </Nav.Link>
                       <Nav.Link>
                         <Link className='link' to='/login'>
-                          Login
-                        </Link>
-                      </Nav.Link>
-                      <Nav.Link>
-                        <Link className='link' to='/register'>
-                          Register
-                        </Link>
-                      </Nav.Link>
-                      <Nav.Link>
-                        <Link className='link' to='/cart'>
-                          Cart
+                          My Account
                         </Link>
                       </Nav.Link>
                     </Nav>

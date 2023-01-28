@@ -111,7 +111,7 @@ export const ShoesCard = () => {
         </Modal.Body>
       </Modal>
 
-      <Row xl={5} lg={4} md={3} sm={2} xs={1}>
+      <Row xl={4} lg={4} md={3} sm={2} xs={1}>
         {isLoading ? (
           <Button className='ms-auto me-auto mt-5' variant='primary' disabled>
             <Spinner
@@ -153,7 +153,7 @@ export const ShoesCard = () => {
                       variant='primary'
                       onClick={() => shoesModalInfo(pairShoes)}
                     >
-                      Add to Cart
+                      Order Now
                     </Button>
                   </Card.Body>
                 </Card>
