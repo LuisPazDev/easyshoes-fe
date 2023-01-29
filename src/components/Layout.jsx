@@ -28,11 +28,15 @@ export const Layout = () => {
                   <p className='nav-img-text'>USD</p>
                 </Nav.Link>
                 <Nav.Link>
-                  <Link className='link' to='/login'>
+                  <Link className='link' to='/myaccount'>
                     <img src={profile} className='nav-img' />
                   </Link>
                 </Nav.Link>
-
+                <Nav.Link>
+                  <Link className='link' to='/mycart'>
+                    <img src={cart} className='nav-img' />
+                  </Link>
+                </Nav.Link>
                 <Navbar.Toggle
                   aria-controls={`offcanvasNavbar-expand-${expand}`}
                 />
@@ -62,7 +66,12 @@ export const Layout = () => {
                         </Link>
                       </Nav.Link>
                       <Nav.Link>
-                        <Link className='link' to='/login'>
+                        <Link className='link' to='/mycart'>
+                          Cart
+                        </Link>
+                      </Nav.Link>
+                      <Nav.Link>
+                        <Link className='link' to='/myaccount'>
                           My Account
                         </Link>
                       </Nav.Link>

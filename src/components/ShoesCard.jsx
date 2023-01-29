@@ -97,7 +97,7 @@ export const ShoesCard = () => {
         <Modal.Body className='text-center'>
           <p>Succesfully Added to Cart</p>
           <Button className='mt-3 mb-3'>
-            <Link className='link-button' to='/cart'>
+            <Link className='link-button' to='/mycart'>
               Go to Cart
             </Link>
           </Button>

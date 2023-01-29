@@ -1,4 +1,5 @@
 import { Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -29,6 +30,14 @@ export const LoginPage = () => {
           </Button>
         </Form>
       </Card>
+      <div className='text-center mt-3'>
+        <h6> Don't have an account? Register Now!</h6>
+        <Button className='mt-2'>
+          <Link className='link-button' to='/register'>
+            Register
+          </Link>
+        </Button>
+      </div>
     </Container>
   );
 };
