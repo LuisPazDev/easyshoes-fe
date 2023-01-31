@@ -1,4 +1,5 @@
 import { useState, createContext } from "react";
+import axios from "axios";
 import clientAxios from "../config/axios";
 export const UserContext = createContext();
 
@@ -20,9 +21,20 @@ export const UserProvider = ({ children }) => {
     });
   };
 
+  const onResetForm = () => {
+    setFormData({
+      username: "",
+      email: "",
+      password: "",
+    });
+  };
+
   const registerUser = async (dataForm) => {
     try {
-      const res = await clientAxios.post("/usuario/crear", dataForm);
+      const res = await axios.post(
+        "https://easyshoes.onrender.com/user/register",
+        dataForm
+      );
       localStorage.setItem("token", res.data.token);
       setAuthStatus(true);
     } catch (error) {
@@ -34,13 +46,14 @@ export const UserProvider = ({ children }) => {
     const token = localStorage.getItem("token");
 
     if (token) {
-      clientAxios.defaults.headers.common["x-auth-token"] = token;
+      axios.defaults.headers.common["x-auth-token"] = token;
     } else {
-      delete clientAxios.defaults.headers.common["x-auth-token"];
+      delete axios.defaults.headers.common["x-auth-token"];
     }
 
     try {
-      const res = token && (await clientAxios.get("/usuario/verificar"));
+      const res =
+        token && (await axios.get("https://easyshoes.onrender.com/user/get"));
       setUser(res.data);
       setAuthStatus(true);
     } catch (error) {
@@ -49,10 +62,17 @@ export const UserProvider = ({ children }) => {
   };
 
   const loginUser = async (dataForm) => {
+    console.log("1");
     try {
-      const res = await clientAxios.post("/usuario/login", dataForm);
+      console.log("2");
+      const res = await axios.post(
+        "https://easyshoes.onrender.com/login",
+        dataForm
+      );
+      console.log("3");
       localStorage.setItem("token", res.data.token);
       setAuthStatus(true);
+      console.log("4");
     } catch (error) {
       console.log(error);
     }
@@ -71,9 +91,11 @@ export const UserProvider = ({ children }) => {
     verifyingToken,
     logout,
     formData,
+    setFormData,
+    onResetForm,
     user,
     authStatus,
   };
-  console.log("CONTEXTO USUARIO", data);
+  console.log("userContext", data);
   return <UserContext.Provider value={data}>{children}</UserContext.Provider>;
 };

@@ -1,34 +1,48 @@
+import { useEffect, useContext } from "react";
+import { UserContext } from "../context/userContext";
+import { useNavigate } from "react-router-dom";
+import { FormInput } from "./FormInput";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
 
 export const LoginPage = () => {
+  const userCtx = useContext(UserContext);
+
+  const { loginUser, authStatus, verifyingToken, formData } = userCtx;
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    verifyingToken();
+
+    if (authStatus) {
+      navigate("/myaccount");
+    }
+  }, [authStatus]);
+
+  if (authStatus) return null;
+
+  const sendData = (e) => {
+    e.preventDefault();
+    loginUser(formData);
+  };
+
   return (
     <Container>
-      <Card className='m-auto mt-5' style={{ width: "25rem" }}>
+      <Card className='m-auto mt-5' style={{ width: "22rem" }}>
         <div className='m-auto mt-3'>
           <h2> Log In </h2>
         </div>
 
-        <Form className='ms-3 me-3 mt-4 mb-4'>
-          <Form.Group className='mb-3' controlId='formBasicEmail'>
-            <Form.Label>Email</Form.Label>
-            <Form.Control type='email' placeholder='Enter email' />
-          </Form.Group>
-
-          <Form.Group className='mb-3' controlId='formBasicPassword'>
-            <Form.Label>Password</Form.Label>
-            <Form.Control type='password' placeholder='Password' />
-            <Form.Text className='text-muted'>
-              We'll never share your email with anyone else.
-            </Form.Text>
-          </Form.Group>
-          <Button variant='primary' type='submit'>
-            Send
-          </Button>
-        </Form>
+        <form className='ms-auto me-auto' onSubmit={(e) => sendData(e)}>
+          <FormInput tipo='email' />
+          <FormInput tipo='password' />
+          <button type='submit' className='btn btn-primary mt-3'>
+            Log
+          </button>
+        </form>
       </Card>
       <div className='text-center mt-3'>
         <h6> Don't have an account? Register Now!</h6>
