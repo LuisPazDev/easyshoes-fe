@@ -1,4 +1,5 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/userContext";
 import { Container } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
@@ -7,7 +8,20 @@ import { FormInput } from "./FormInput";
 export const RegisterPage = () => {
   const userCtx = useContext(UserContext);
 
-  const { registerUser, formData, onResetForm } = userCtx;
+  const { registerUser, formData, onResetForm, verifyingToken, authStatus } =
+    userCtx;
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    verifyingToken();
+
+    if (authStatus) {
+      navigate("/myaccount");
+    }
+  }, [authStatus]);
+
+  if (authStatus) return null;
 
   const handleSubmit = (e) => {
     e.preventDefault();
