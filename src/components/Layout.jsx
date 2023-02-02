@@ -24,8 +24,9 @@ export const Layout = () => {
 
               <div className='nav-link'>
                 <Nav.Link>
-                  <img src={flag} className='nav-img-flag' />
-                  <p className='nav-img-text'>USD</p>
+                  <Link className='link' to='/menu'>
+                    Shoes
+                  </Link>
                 </Nav.Link>
                 <Nav.Link>
                   <Link className='link' to='/myaccount'>
@@ -37,47 +38,6 @@ export const Layout = () => {
                     <img src={cart} className='nav-img' />
                   </Link>
                 </Nav.Link>
-                <Navbar.Toggle
-                  aria-controls={`offcanvasNavbar-expand-${expand}`}
-                />
-
-                <Navbar.Offcanvas
-                  id={`offcanvasNavbar-expand-${expand}`}
-                  aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-                  placement='end'
-                >
-                  <Offcanvas.Header closeButton>
-                    <Offcanvas.Title
-                      id={`offcanvasNavbarLabel-expand-${expand}`}
-                    >
-                      Menu
-                    </Offcanvas.Title>
-                  </Offcanvas.Header>
-                  <Offcanvas.Body>
-                    <Nav className='justify-content-end flex-grow-1 pe-3'>
-                      <Nav.Link>
-                        <Link className='link' to='/'>
-                          Home
-                        </Link>
-                      </Nav.Link>
-                      <Nav.Link>
-                        <Link className='link' to='/menu'>
-                          Shoes
-                        </Link>
-                      </Nav.Link>
-                      <Nav.Link>
-                        <Link className='link' to='/mycart'>
-                          Cart
-                        </Link>
-                      </Nav.Link>
-                      <Nav.Link>
-                        <Link className='link' to='/myaccount'>
-                          My Account
-                        </Link>
-                      </Nav.Link>
-                    </Nav>
-                  </Offcanvas.Body>
-                </Navbar.Offcanvas>
               </div>
             </Container>
           </Navbar>

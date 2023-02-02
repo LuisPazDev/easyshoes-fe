@@ -1,6 +1,6 @@
 import { useState, createContext } from "react";
 import axios from "axios";
-import clientAxios from "../config/axios";
+
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
@@ -18,14 +18,6 @@ export const UserProvider = ({ children }) => {
     setFormData({
       ...formData,
       [event.target.name]: event.target.value,
-    });
-  };
-
-  const onResetForm = () => {
-    setFormData({
-      username: "",
-      email: "",
-      password: "",
     });
   };
 
@@ -57,23 +49,29 @@ export const UserProvider = ({ children }) => {
       setUser(res.data);
       setAuthStatus(true);
     } catch (error) {
-      console.log("Error Verificando token", error);
+      console.log("token error", error);
     }
   };
 
+  const onResetForm = () => {
+    setFormData({
+      username: "",
+      email: "",
+      password: "",
+    });
+  };
+
   const loginUser = async (dataForm) => {
-    console.log("1");
     try {
-      console.log("2");
       const res = await axios.post(
         "https://easyshoes.onrender.com/login",
         dataForm
       );
-      console.log("3");
       localStorage.setItem("token", res.data.token);
       setAuthStatus(true);
-      console.log("4");
+      onResetForm();
     } catch (error) {
+      alert("Incorrect email or password!! Please try again or register");
       console.log(error);
     }
   };
@@ -92,7 +90,6 @@ export const UserProvider = ({ children }) => {
     logout,
     formData,
     setFormData,
-    onResetForm,
     user,
     authStatus,
   };

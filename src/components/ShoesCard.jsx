@@ -29,8 +29,6 @@ export const ShoesCard = () => {
 
     const res = await pairShoes;
 
-    console.log(pairShoes);
-
     setShoesModal({
       brand: res.brand,
       model: res.model,
@@ -43,6 +41,11 @@ export const ShoesCard = () => {
   const modalMsg = () => {
     handleClose();
     setSmShow(true);
+    addToCart();
+  };
+
+  const addToCart = () => {
+    localStorage.setItem("shoes", JSON.stringify([shoesModal]));
   };
 
   const getShoesData = async () => {
@@ -59,9 +62,9 @@ export const ShoesCard = () => {
     <Container fluid>
       <Modal show={show} onHide={handleClose} animation={false}>
         <Card
-          border='dark'
+          border='light'
           className='ms-auto mt-4 me-auto mb-4'
-          style={{ width: "16rem" }}
+          style={{ width: "24rem" }}
         >
           <Card.Img variant='top' src={shoesModal.img} />
           <Card.Body>
@@ -80,7 +83,6 @@ export const ShoesCard = () => {
             <Button variant='danger' onClick={modalMsg}>
               Confirm
             </Button>
-            ;
           </Card.Body>
         </Card>
       </Modal>
@@ -100,13 +102,6 @@ export const ShoesCard = () => {
             <Link className='link-button' to='/mycart'>
               Go to Cart
             </Link>
-          </Button>
-          <Button
-            className='ms-2 mt-3 mb-3'
-            variant='danger'
-            onClick={() => setSmShow(false)}
-          >
-            Keep Shopping
           </Button>
         </Modal.Body>
       </Modal>

@@ -6,23 +6,19 @@ import photo3 from "../assets/photo3.png";
 
 export const HomeCarousel = () => {
   return (
-    <Container>
-      <Carousel>
-        <Carousel.Item>
-          <img className='d-block w-100' src={photo2} alt='First slide' />
-          <Carousel.Caption></Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img className='d-block w-100' src={photo3} alt='Second slide' />
+    <Carousel>
+      <Carousel.Item>
+        <img className='d-block w-100' src={photo2} alt='First slide' />
+        <Carousel.Caption></Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img className='d-block w-100' src={photo3} alt='Second slide' />
 
-          <Carousel.Caption></Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img className='d-block w-100' src={photo} alt='Third slide' />
-
-          <Carousel.Caption></Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
-    </Container>
+        <Carousel.Caption></Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img className='d-block w-100' src={photo} alt='Third slide' />
+      </Carousel.Item>
+    </Carousel>
   );
 };

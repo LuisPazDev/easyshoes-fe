@@ -12,10 +12,7 @@ export const MyAccount = () => {
     <Card className='ms-auto me-auto mt-5' style={{ width: "24rem" }}>
       <Card.Body>
         <Card.Title> My Account </Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
+        <Card.Text>This area is under construction</Card.Text>
         <Button onClick={logout} variant='primary'>
           Log Out
         </Button>
