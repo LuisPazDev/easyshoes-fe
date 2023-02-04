@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/easyshoes-fe/static/css/main.283e38b2.css",
-    "main.js": "/easyshoes-fe/static/js/main.15fc19e2.js",
+    "main.js": "/easyshoes-fe/static/js/main.fe1b9a53.js",
     "static/media/shoes.png": "/easyshoes-fe/static/media/shoes.f979f63a3f71703f5da9.png",
     "static/media/photo3.png": "/easyshoes-fe/static/media/photo3.cd2f9d69ae28749a0586.png",
     "static/media/photo.png": "/easyshoes-fe/static/media/photo.33b2c06648563cb9e2bd.png",
@@ -12,10 +12,10 @@
     "index.html": "/easyshoes-fe/index.html",
     "static/media/cart.svg": "/easyshoes-fe/static/media/cart.85b278fe0bafd1ae8f0359c5f50dbad7.svg",
     "main.283e38b2.css.map": "/easyshoes-fe/static/css/main.283e38b2.css.map",
-    "main.15fc19e2.js.map": "/easyshoes-fe/static/js/main.15fc19e2.js.map"
+    "main.fe1b9a53.js.map": "/easyshoes-fe/static/js/main.fe1b9a53.js.map"
   },
   "entrypoints": [
     "static/css/main.283e38b2.css",
-    "static/js/main.15fc19e2.js"
+    "static/js/main.fe1b9a53.js"
   ]
 }
