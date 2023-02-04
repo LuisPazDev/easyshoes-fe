@@ -14,7 +14,7 @@ export const ShoesCard = () => {
     `https:easyshoes.onrender.com/shoes/get`
   );
 
-  console.log(data);
+  console.log("data", data);
 
   const [shoesData, setShoesData] = useState([]);
 
@@ -54,11 +54,15 @@ export const ShoesCard = () => {
     const newData = await data;
 
     setShoesData(newData.data);
+
+    console.log("newData", newData);
   };
 
   useEffect(() => {
     getShoesData();
   }, [data]);
+
+  console.log("shoesData", shoesData);
 
   return (
     <Container fluid>
