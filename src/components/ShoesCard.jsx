@@ -9,11 +9,13 @@ import Spinner from "react-bootstrap/Spinner";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
-export const ShoesCard = () => {
-  const { data, isLoading, hasError } = useFetch(
-    `https:easyshoes.onrender.com/shoes/get`
-  );
+const { data, isLoading, hasError } = useFetch(
+  `https:easyshoes.onrender.com/shoes/get`
+);
 
+console.log(data);
+
+export const ShoesCard = () => {
   const [shoesData, setShoesData] = useState([]);
 
   const [shoesModal, setShoesModal] = useState({});
