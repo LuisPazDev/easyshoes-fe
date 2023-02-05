@@ -1,21 +1,20 @@
 {
   "files": {
     "main.css": "/easyshoes-fe/static/css/main.283e38b2.css",
-    "main.js": "/easyshoes-fe/static/js/main.41c9ec2b.js",
+    "main.js": "/easyshoes-fe/static/js/main.252068de.js",
     "static/media/shoes.png": "/easyshoes-fe/static/media/shoes.f979f63a3f71703f5da9.png",
     "static/media/photo3.png": "/easyshoes-fe/static/media/photo3.cd2f9d69ae28749a0586.png",
     "static/media/photo.png": "/easyshoes-fe/static/media/photo.33b2c06648563cb9e2bd.png",
     "static/media/photo2.png": "/easyshoes-fe/static/media/photo2.bc689a03ef8b8b150bdd.png",
     "static/media/logo.svg": "/easyshoes-fe/static/media/logo.0dbb4b68eb0c59905783f6ae4b850e4f.svg",
-    "static/media/flag.svg": "/easyshoes-fe/static/media/flag.5114479175e6ec9686bd65f08a3b4d49.svg",
     "static/media/user.svg": "/easyshoes-fe/static/media/user.31a5bd8424e2e9e401bee2794c6105e4.svg",
     "index.html": "/easyshoes-fe/index.html",
     "static/media/cart.svg": "/easyshoes-fe/static/media/cart.85b278fe0bafd1ae8f0359c5f50dbad7.svg",
     "main.283e38b2.css.map": "/easyshoes-fe/static/css/main.283e38b2.css.map",
-    "main.41c9ec2b.js.map": "/easyshoes-fe/static/js/main.41c9ec2b.js.map"
+    "main.252068de.js.map": "/easyshoes-fe/static/js/main.252068de.js.map"
   },
   "entrypoints": [
     "static/css/main.283e38b2.css",
-    "static/js/main.41c9ec2b.js"
+    "static/js/main.252068de.js"
   ]
 }
