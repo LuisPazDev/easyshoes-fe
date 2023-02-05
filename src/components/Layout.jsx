@@ -2,10 +2,8 @@ import { Link, Outlet } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Offcanvas from "react-bootstrap/Offcanvas";
 import profile from "../assets/user.svg";
 import cart from "../assets/cart.svg";
-import flag from "../assets/flag.svg";
 import logo from "../assets/logo.svg";
 
 import "../styles/App.css";
@@ -28,6 +26,13 @@ export const Layout = () => {
                     Shoes
                   </Link>
                 </Nav.Link>
+
+                <Nav.Link>
+                  <Link className='link' to='/axios'>
+                    Axios
+                  </Link>
+                </Nav.Link>
+
                 <Nav.Link>
                   <Link className='link' to='/myaccount'>
                     <img src={profile} className='nav-img' />

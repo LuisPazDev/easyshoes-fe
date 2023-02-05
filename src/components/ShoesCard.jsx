@@ -11,7 +11,7 @@ import Row from "react-bootstrap/Row";
 
 export const ShoesCard = () => {
   const { data, isLoading } = useFetch(
-    `https:easyshoes.onrender.com/shoes/get`
+    `https://easyshoes.onrender.com/shoes/get`
   );
 
   const [shoesData, setShoesData] = useState([]);
@@ -24,7 +24,6 @@ export const ShoesCard = () => {
 
   useEffect(() => {
     getShoesData();
-    console.log("SHOESDATA", shoesData);
   }, [data]);
 
   const [shoesModal, setShoesModal] = useState({});
@@ -58,6 +57,8 @@ export const ShoesCard = () => {
   const addToCart = () => {
     localStorage.setItem("shoes", JSON.stringify([shoesModal]));
   };
+
+  console.log("shoesData", shoesData);
 
   return (
     <Container fluid>
