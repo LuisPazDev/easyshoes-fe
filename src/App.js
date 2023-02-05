@@ -7,7 +7,6 @@ import { MyCart } from "./components/MyCart";
 import { PrivateRoute } from "./auth/PrivateRoute";
 import { LoginPage } from "./components/LoginPage";
 import { RegisterPage } from "./components/RegisterPage";
-import { Axios } from "./components/Axios";
 
 function App() {
   return (
@@ -21,7 +20,6 @@ function App() {
         <Route path='/login' element={<LoginPage />} />
         <Route path='/register' element={<RegisterPage />} />
         <Route path='/mycart' element={<MyCart />} />
-        <Route path='/axios' element={<Axios />} />
       </Route>
     </Routes>
   );

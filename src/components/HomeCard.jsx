@@ -8,7 +8,7 @@ import CardGroup from "react-bootstrap/CardGroup";
 
 export const HomeCard = () => {
   return (
-    <CardGroup className='mt-4'>
+    <CardGroup className='mt-3 mb-3'>
       <Card>
         <img className='img-home' src={shoes} />
       </Card>

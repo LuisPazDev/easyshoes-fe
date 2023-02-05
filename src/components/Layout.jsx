@@ -26,13 +26,6 @@ export const Layout = () => {
                     Shoes
                   </Link>
                 </Nav.Link>
-
-                <Nav.Link>
-                  <Link className='link' to='/axios'>
-                    Axios
-                  </Link>
-                </Nav.Link>
-
                 <Nav.Link>
                   <Link className='link' to='/myaccount'>
                     <img src={profile} className='nav-img' />
