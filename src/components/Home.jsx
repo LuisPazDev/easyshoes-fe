@@ -1,14 +1,16 @@
-import { Container } from "react-bootstrap";
-import { HomeCard } from "./HomeCard";
-import { HomeCarousel } from "./HomeCarousel";
+import { Container } from "react-bootstrap"
+import { HomeCard } from "./HomeCard"
+import { HomeFooter } from "./HomeFooter"
+import { HomeHeader } from "./HomeHeader"
 
 function Home() {
-  return (
-    <Container>
-      <HomeCarousel />
-      <HomeCard />
-    </Container>
-  );
+    return (
+        <Container fluid>
+            <HomeHeader />
+            <HomeCard />
+            <HomeFooter />
+        </Container>
+    )
 }
 
-export default Home;
+export default Home
