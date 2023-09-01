@@ -1,16 +1,14 @@
-import { Container } from "react-bootstrap"
-import { HomeCard } from "./HomeCard"
-import { HomeFooter } from "./HomeFooter"
-import { HomeHeader } from "./HomeHeader"
+import { HomeCard } from "./HomeCard";
+import { HomeFooter } from "./HomeFooter";
+import { HomeHeader } from "./HomeHeader";
 
 function Home() {
-    return (
-        <Container fluid>
-            <HomeHeader />
-            <HomeCard />
-            <HomeFooter />
-        </Container>
-    )
+  return (
+    <>
+      <HomeHeader />
+      <HomeCard />
+    </>
+  );
 }
 
-export default Home
+export default Home;

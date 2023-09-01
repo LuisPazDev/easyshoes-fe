@@ -1,87 +1,25 @@
-/* NavBar Elements!! */
-.navbar {
-    height: 100px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
-.navbar-brand {
-    display: flex;
-    align-items: center;
+body {
+  background-color: #212529;
+  color: white;
 }
 
-.link {
-    text-decoration: none;
-    color: black;
+.container {
+  width: 100%;
 }
 
-.link-button {
-    text-decoration: none;
-    color: white;
-}
-
-.row-shoesList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.nav-link {
-    width: 25%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.nav-img-logo {
-    margin-right: 10px;
-    width: 45px;
-    height: 45px;
-}
-
-.nav-img {
-    width: 30px;
-    height: 30px;
-}
-
-.nav-img-flag {
-    width: 12px;
-    height: 12px;
-}
-
-.nav-img-text {
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
-    margin-left: 2px;
-    font-size: 10px;
-    width: 30px;
-    height: 30px;
-}
-
-/*  Card Elements */
-.card {
-    border: none;
+.main-container {
+  max-width: 1480px;
+  margin: 0 auto;
 }
 
 a {
-    text-decoration: none;
-    color: white;
-}
-
-h1 {
-    font-size: 42px;
-    font-weight: 600;
-    color: #000;
-}
-
-p {
-    font-size: 18px;
-    font-weight: 400;
-    color: #000;
-}
-
-/*  Footer Elements */
-
-.img-socialMedia {
-    width: 50px;
-    height: 50px;
+  text-decoration: none;
+  color: white;
 }
