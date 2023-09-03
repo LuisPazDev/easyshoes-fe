@@ -1,23 +1,41 @@
-import { Col, Row, Container, Button, Image, Badge } from "react-bootstrap";
+import { useState, useEffect } from "react";
+import { useFetch } from "../hooks/useFetch";
+import {
+  Badge,
+  Container,
+  Col,
+  Row,
+  Button,
+  Carousel,
+  Card,
+  Image,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-import firstslide from "../assets/firstslide.png";
-import bgcontainer from "../assets/bgcontainer.png";
+import secondslide from "../assets/secondslide.png";
+import bgsportcard from "../assets/bgsportcard.png";
 
-import thirdslide from "../assets/thirdslide.png";
+export const HomeSportCard = () => {
+  const { data, isLoading } = useFetch(
+    `https://easyshoes.onrender.com/shoes/get`
+  );
 
-export const HomeHeader = () => {
+  const [shoesData, setShoesData] = useState([]);
+
+  const getShoesData = async () => {
+    const res = await data;
+
+    setShoesData(res.data);
+  };
+
+  useEffect(() => {
+    getShoesData();
+    console.log(shoesData);
+  }, [data]);
+
   return (
-    <Container
-      fluid
-      style={{
-        backgroundImage: `url(${bgcontainer})`,
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      <Row xs={1} md={1} lg={2}>
+    <Container fluid>
+      <Row>
         {/* Text Col */}
         <Col
           xs={12}
@@ -30,7 +48,7 @@ export const HomeHeader = () => {
               <Badge bg="danger">
                 <strong>
                   <i>
-                    <b>Welcome</b>
+                    <b>Sport Shoes</b>
                   </i>
                 </strong>
               </Badge>
@@ -62,13 +80,21 @@ export const HomeHeader = () => {
           </div>
         </Col>
         {/* Image Col */}
-        <Col
-          xs={12}
-          md={12}
-          lg={6}
-          className="d-flex justify-content-center align-items-center mt-4 mb-4"
-        >
-          <Image fluid src={firstslide} alt="firstslide" />
+        <Col xs={12} md={12} lg={6} className="mt-4 mb-4">
+          <Carousel>
+            {shoesData.map((pairShoes) => {
+              return (
+                <Carousel.Item key={pairShoes.id}>
+                  <Card
+                    className="mb-4 ms-auto me-auto text-center bg-transparent"
+                    style={{ width: "15rem" }}
+                  >
+                    <Card.Img variant="top" src={pairShoes.img} />
+                  </Card>
+                </Carousel.Item>
+              );
+            })}
+          </Carousel>
         </Col>
       </Row>
     </Container>
