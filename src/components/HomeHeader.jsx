@@ -1,10 +1,18 @@
-import { Col, Row, Container, Button, Image, Badge } from "react-bootstrap";
+import {
+  Col,
+  Row,
+  Container,
+  Button,
+  Image,
+  Badge,
+  Carousel,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-import firstslide from "../assets/firstslide.png";
 import bgcontainer from "../assets/bgcontainer.png";
-
-import thirdslide from "../assets/thirdslide.png";
+import firstslide from "../assets/secondslide.png";
+import secondslide from "../assets/thirdslide.png";
+import thirdslide from "../assets/firstslide.png";
 
 export const HomeHeader = () => {
   return (
@@ -25,32 +33,48 @@ export const HomeHeader = () => {
           lg={6}
           className="d-flex flex-column justify-content-center align-items-center mt-4 mb-4 p-3"
         >
-          <div className="text-start">
-            <h2 className="mb-3">
-              <Badge bg="danger">
-                <strong>
-                  <i>
-                    <b>Welcome</b>
-                  </i>
-                </strong>
-              </Badge>
-            </h2>
-
-            <h4 style={{ lineHeight: "1.6em" }}>
+          <div className="mb-3">
+            <Badge pill bg="danger">
+              <strong>
+                <i>Online Store</i>
+              </strong>
+            </Badge>
+          </div>
+          <div className="text-center">
+            <h1 className="mb-3">
               <strong>
                 <i>
-                  We are Online men <b className="text-danger">Shoes Store</b>
-                  <br />
-                  Where you can find the best{" "}
-                  <b className="text-danger"> brands </b>
-                  <br />
-                  <b className="text-danger"> prices</b> with the best Service
-                  and <br />
-                  <b className="text-danger">the Fastst Delivery </b>
-                  on the <b className="text-danger">market</b>
+                  <b className="text-white">EASY</b>
+                  <b className="text-danger">SHOES</b>
                 </i>
               </strong>
-            </h4>
+            </h1>
+
+            <h5 style={{ lineHeight: "1.6em" }}>
+              <strong>
+                <i>
+                  <b className="text-white">Men Shoes</b>
+                </i>
+              </strong>
+            </h5>
+
+            <h6
+              style={{
+                lineHeight: "1.6em",
+                textAlign: "justify",
+              }}
+              className="mt-5 ps-5 pe-5"
+            >
+              <i>
+                We are you <b className="text-danger">best option</b> to buy
+                shoes online. We have the{" "}
+                <b className="text-danger">best prices</b> and the{" "}
+                <b className="text-danger">best quality</b> . Check our wide
+                variety of <b className="text-danger">shoes</b> for all{" "}
+                <b className="text-danger">tastes and styles</b> and have a
+                happy shopping.
+              </i>
+            </h6>
 
             <Button className="mt-5" variant="outline-light" size="lg">
               <Link className="text-light" to="/menu">
@@ -61,14 +85,42 @@ export const HomeHeader = () => {
             </Button>
           </div>
         </Col>
-        {/* Image Col */}
+        {/* Carousel Col */}
         <Col
           xs={12}
           md={12}
           lg={6}
           className="d-flex justify-content-center align-items-center mt-4 mb-4"
         >
-          <Image fluid src={firstslide} alt="firstslide" />
+          <Carousel indicators={false} controls={false}>
+            <Carousel.Item>
+              <Image
+                className="d-block w-100"
+                style={{ maxHeight: "600px" }}
+                src={firstslide}
+                alt="First slide"
+                fluid
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <Image
+                className="d-block w-100"
+                src={secondslide}
+                style={{ maxHeight: "600px" }}
+                alt="First slide"
+                fluid
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <Image
+                className="d-block w-100"
+                src={thirdslide}
+                style={{ maxHeight: "600px" }}
+                alt="First slide"
+                fluid
+              />
+            </Carousel.Item>
+          </Carousel>
         </Col>
       </Row>
     </Container>

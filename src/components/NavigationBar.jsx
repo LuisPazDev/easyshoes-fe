@@ -18,10 +18,17 @@ export const NavigationBar = () => {
         <Navbar
           key={expand}
           expand={expand}
-          className="sticky-top bg-black p-3 border-bottom border-2 border-danger"
+          className="sticky-top bg-black ps-3 pe-3 border-bottom border-2 border-danger"
         >
           <Navbar.Brand href="#">
-            <img src={logo} alt="logo" />
+            <h6>
+              <strong>
+                <i>
+                  <b className="text-white">EASY</b>
+                  <b className="text-danger">SHOES</b>
+                </i>
+              </strong>
+            </h6>
           </Navbar.Brand>
           <Navbar.Toggle
             onClick={handleShow}

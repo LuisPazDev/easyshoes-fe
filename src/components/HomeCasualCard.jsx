@@ -8,7 +8,7 @@ import {
   Row,
   Button,
   Carousel,
-  Card,
+  Image,
 } from "react-bootstrap";
 
 import bgcasualcard from "../assets/bgcasualcard.png";
@@ -50,33 +50,29 @@ export const HomeCasualCard = () => {
           className="d-flex flex-column justify-content-center align-items-center mt-4 mb-4 p-3"
         >
           <div className="text-start">
-            <h2 className="mb-3">
-              <Badge bg="danger">
-                <strong>
-                  <i>
-                    <b>Casual Shoes</b>
-                  </i>
-                </strong>
-              </Badge>
-            </h2>
-
-            <h4 style={{ lineHeight: "1.6em" }}>
+            <Badge pill bg="danger">
               <strong>
-                <i>
-                  We are Online men <b className="text-danger">Shoes Store</b>
-                  <br />
-                  Where you can find the best{" "}
-                  <b className="text-danger"> brands </b>
-                  <br />
-                  <b className="text-danger"> prices</b> with the best Service
-                  and <br />
-                  <b className="text-danger">the Fastst Delivery </b>
-                  on the <b className="text-danger">market</b>
-                </i>
+                <i>Be Casual</i>
+              </strong>
+            </Badge>
+
+            <h4 className="mt-3 mb-3">
+              <strong>
+                <i>Casual Shoes</i>
               </strong>
             </h4>
 
-            <Button className="mt-5" variant="outline-light" size="lg">
+            <h6 style={{ lineHeight: "1.6em" }}>
+              <strong>
+                <i>
+                  Lorem ipsum dolor sit amet
+                  <br />
+                  consectetur adipisicing elit.
+                </i>
+              </strong>
+            </h6>
+
+            <Button className="mt-4" variant="outline-light" size="lg">
               <Link className="text-light" to="/menu">
                 <strong>
                   <i>Shop Now</i>
@@ -86,17 +82,20 @@ export const HomeCasualCard = () => {
           </div>
         </Col>
         {/* Image Col */}
-        <Col xs={12} md={12} lg={6} className="mt-4 mb-4">
+        <Col xs={12} md={12} lg={6} className="mt-4 mb-4 p-4">
           <Carousel>
             {shoesData.map((pairShoes) => {
               return (
                 <Carousel.Item key={pairShoes.id}>
-                  <Card
-                    className="mb-4 ms-auto me-auto text-center bg-transparent"
-                    style={{ width: "15rem" }}
-                  >
-                    <Card.Img variant="top" src={pairShoes.img} />
-                  </Card>
+                  <Image
+                    className="d-block w-100"
+                    style={{
+                      objectFit: "cover",
+                      maxHeight: "350px",
+                    }}
+                    src={pairShoes.img}
+                    alt={pairShoes.model}
+                  />
                 </Carousel.Item>
               );
             })}
