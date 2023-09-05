@@ -4,10 +4,10 @@ import logoluispazdev from "../assets/logoluispazdev.png";
 
 export const HomeFooter = () => {
   return (
-    <Container fluid className="bg-black text-white text-center p-3">
+    <Container fluid className="bg-black text-white text-center p-4">
       <Row>
         <Col>
-          <div className="mt-2">
+          <div className="mt-4">
             <h6>
               <strong>
                 <i> Developed By </i>

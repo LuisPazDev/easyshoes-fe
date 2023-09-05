@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
 
 import {
@@ -10,7 +11,6 @@ import {
   Carousel,
   Image,
 } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 import bgfashioncard from "../assets/bgfashioncard.png";
 
@@ -71,13 +71,15 @@ export const HomeFashionCard = () => {
               </i>
             </p>
 
-            <Button className="mt-4" variant="outline-light" size="lg">
-              <Link className="text-light" to="/menu">
-                <strong>
-                  <i>Shop Now</i>
-                </strong>
-              </Link>
-            </Button>
+            <div className="mt-5 text-center">
+              <Button variant="outline-light" size="lg">
+                <Link className="text-light" to="/menu">
+                  <strong>
+                    <i>Shop Now</i>
+                  </strong>
+                </Link>
+              </Button>
+            </div>
           </div>
         </Col>
         {/* Image Col */}

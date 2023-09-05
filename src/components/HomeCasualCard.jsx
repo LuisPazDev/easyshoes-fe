@@ -70,13 +70,15 @@ export const HomeCasualCard = () => {
               </i>
             </p>
 
-            <Button className="mt-4" variant="outline-light" size="lg">
-              <Link className="text-light" to="/menu">
-                <strong>
-                  <i>Shop Now</i>
-                </strong>
-              </Link>
-            </Button>
+            <div className="mt-5 text-center">
+              <Button variant="outline-light" size="lg">
+                <Link className="text-light" to="/menu">
+                  <strong>
+                    <i>Shop Now</i>
+                  </strong>
+                </Link>
+              </Button>
+            </div>
           </div>
         </Col>
         {/* Image Col */}

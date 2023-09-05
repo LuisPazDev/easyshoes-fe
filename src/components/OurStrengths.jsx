@@ -7,9 +7,20 @@ import membericon from "../assets/member.svg";
 import secureicon from "../assets/payment.svg";
 import bestpriceicon from "../assets/price.svg";
 
+import bgstrength from "../assets/bgstrength.png";
+
 export const OurStrengths = () => {
   return (
-    <Container fluid className="p-5">
+    <Container
+      fluid
+      style={{
+        backgroundImage: `url(${bgstrength})`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+      className="p-5"
+    >
       <Row>
         <Col
           xs={12}

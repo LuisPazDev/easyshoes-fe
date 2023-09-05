@@ -65,9 +65,9 @@ export const HomeHeader = () => {
               className="mt-5 ps-5 pe-5"
             >
               <i>
-                We are you best option to buy shoes online,
+                We are you best option to buy online,
                 <br />
-                We have the best prices and the best quality.
+                We have the best prices and brands.
               </i>
             </h6>
 
