@@ -56,21 +56,19 @@ export const HomeCasualCard = () => {
               </strong>
             </Badge>
 
-            <h4 className="mt-3 mb-3">
+            <h2 className="mt-3 mb-4">
               <strong>
                 <i>Casual Shoes</i>
               </strong>
-            </h4>
+            </h2>
 
-            <h6 style={{ lineHeight: "1.6em" }}>
-              <strong>
-                <i>
-                  Lorem ipsum dolor sit amet
-                  <br />
-                  consectetur adipisicing elit.
-                </i>
-              </strong>
-            </h6>
+            <p style={{ lineHeight: "1.6em" }}>
+              <i>
+                Lorem ipsum dolor sit amet
+                <br />
+                consectetur adipisicing elit.
+              </i>
+            </p>
 
             <Button className="mt-4" variant="outline-light" size="lg">
               <Link className="text-light" to="/menu">

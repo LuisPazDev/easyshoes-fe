@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   Col,
   Row,
@@ -7,7 +8,6 @@ import {
   Badge,
   Carousel,
 } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 import bgcontainer from "../assets/bgcontainer.png";
 import firstslide from "../assets/secondslide.png";
@@ -61,18 +61,13 @@ export const HomeHeader = () => {
             <h6
               style={{
                 lineHeight: "1.6em",
-                textAlign: "justify",
               }}
               className="mt-5 ps-5 pe-5"
             >
               <i>
-                We are you <b className="text-danger">best option</b> to buy
-                shoes online. We have the{" "}
-                <b className="text-danger">best prices</b> and the{" "}
-                <b className="text-danger">best quality</b> . Check our wide
-                variety of <b className="text-danger">shoes</b> for all{" "}
-                <b className="text-danger">tastes and styles</b> and have a
-                happy shopping.
+                We are you best option to buy shoes online,
+                <br />
+                We have the best prices and the best quality.
               </i>
             </h6>
 
