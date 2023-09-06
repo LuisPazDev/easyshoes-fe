@@ -1,16 +1,17 @@
 {
   "files": {
     "main.css": "/easyshoes-fe/static/css/main.619ca2aa.css",
-    "main.js": "/easyshoes-fe/static/js/main.81c57562.js",
-    "static/media/bgcasualcard.png": "/easyshoes-fe/static/media/bgcasualcard.d924bbbc76f64afaa606.png",
-    "static/media/bgfashioncard.png": "/easyshoes-fe/static/media/bgfashioncard.f5cfcb42eed5feb8ff85.png",
+    "main.js": "/easyshoes-fe/static/js/main.52f0874c.js",
     "static/media/bgstrength.png": "/easyshoes-fe/static/media/bgstrength.ea937fe0adfdb13e51bb.png",
-    "static/media/bgregistercard.png": "/easyshoes-fe/static/media/bgregistercard.4a96742304c53769395e.png",
-    "static/media/bgsportcard.png": "/easyshoes-fe/static/media/bgsportcard.a986f2a839e903256ab2.png",
+    "static/media/bgsportcard.png": "/easyshoes-fe/static/media/bgsportcard.5cca8fd2e2635a7d915e.png",
+    "static/media/bgfashioncard.png": "/easyshoes-fe/static/media/bgfashioncard.701d36b632e90834d95b.png",
+    "static/media/bgcasualcard.png": "/easyshoes-fe/static/media/bgcasualcard.8d8031fe9948ae18b79f.png",
+    "static/media/bgregistercard.png": "/easyshoes-fe/static/media/bgregistercard.d321b1ffeaa3b1f35535.png",
     "static/media/bgcontainer.png": "/easyshoes-fe/static/media/bgcontainer.a0834f6428c270b5cfc0.png",
     "static/media/firstslide.png": "/easyshoes-fe/static/media/firstslide.441068b5d0dd4aefa23c.png",
     "static/media/thirdslide.png": "/easyshoes-fe/static/media/thirdslide.49faabf93898a3bc5a08.png",
     "static/media/secondslide.png": "/easyshoes-fe/static/media/secondslide.7b4e958d23de668d5acc.png",
+    "static/media/easyshoeslogo.png": "/easyshoes-fe/static/media/easyshoeslogo.1ff1fcdc58eac80e7b47.png",
     "index.html": "/easyshoes-fe/index.html",
     "static/media/price.svg": "/easyshoes-fe/static/media/price.84d15f00942573b072a1ba366a011c62.svg",
     "static/media/money.svg": "/easyshoes-fe/static/media/money.05b9d5171e7c29291fd9b287a9fd0ce2.svg",
@@ -19,10 +20,10 @@
     "static/media/payment.svg": "/easyshoes-fe/static/media/payment.35208a82a3ff52a0224ced3ef3ce26b8.svg",
     "static/media/member.svg": "/easyshoes-fe/static/media/member.523964d572c1561e02dae1b5dc27ee0e.svg",
     "main.619ca2aa.css.map": "/easyshoes-fe/static/css/main.619ca2aa.css.map",
-    "main.81c57562.js.map": "/easyshoes-fe/static/js/main.81c57562.js.map"
+    "main.52f0874c.js.map": "/easyshoes-fe/static/js/main.52f0874c.js.map"
   },
   "entrypoints": [
     "static/css/main.619ca2aa.css",
-    "static/js/main.81c57562.js"
+    "static/js/main.52f0874c.js"
   ]
 }
