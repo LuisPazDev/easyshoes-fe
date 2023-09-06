@@ -13,6 +13,7 @@ import bgcontainer from "../assets/bgcontainer.png";
 import firstslide from "../assets/secondslide.png";
 import secondslide from "../assets/thirdslide.png";
 import thirdslide from "../assets/firstslide.png";
+import logo from "../assets/easyshoeslogo.png";
 
 export const HomeHeader = () => {
   return (
@@ -33,44 +34,8 @@ export const HomeHeader = () => {
           lg={6}
           className="d-flex flex-column justify-content-center align-items-center mt-4 mb-4 p-3"
         >
-          <div className="mb-3">
-            <Badge pill bg="danger">
-              <strong>
-                <i>Online Store</i>
-              </strong>
-            </Badge>
-          </div>
           <div className="text-center">
-            <h1 className="mb-3">
-              <strong>
-                <i>
-                  <b className="text-white">EASY</b>
-                  <b className="text-danger">SHOES</b>
-                </i>
-              </strong>
-            </h1>
-
-            <h5 style={{ lineHeight: "1.6em" }}>
-              <strong>
-                <i>
-                  <b className="text-white">Men Shoes</b>
-                </i>
-              </strong>
-            </h5>
-
-            <h6
-              style={{
-                lineHeight: "1.6em",
-              }}
-              className="mt-5 ps-5 pe-5"
-            >
-              <i>
-                We are you best option to buy online,
-                <br />
-                We have the best prices and brands.
-              </i>
-            </h6>
-
+            <Image fluid src={logo} alt="logo" />
             <Button className="mt-5" variant="outline-light" size="lg">
               <Link className="text-light" to="/menu">
                 <strong>
