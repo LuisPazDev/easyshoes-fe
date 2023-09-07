@@ -1,31 +1,22 @@
 import { Link } from "react-router-dom";
-import { Container, Row, Col, Badge, Button } from "react-bootstrap";
+import { Container, Row, Col, Badge, Button, Image } from "react-bootstrap";
 
-import bgregistercard from "../assets/bgregistercard.png";
+import registercard from "../assets/registerimg.png";
 
 export const HomeRegisterCard = () => {
   return (
-    <Container
-      fluid
-      style={{
-        backgroundImage: `url(${bgregistercard})`,
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-      }}
-      className="p-5"
-    >
+    <Container fluid className="p-5">
       <Row>
         <Col
           xs={12}
           md={12}
-          lg={12}
+          lg={6}
           className="d-flex flex-column justify-content-center align-items-center mt-5"
         >
           <div className="text-start">
             <Badge bg="danger">
               <strong>
-                <i>Join us </i>
+                <i>Be a Member </i>
               </strong>
             </Badge>
             <h2 className="mt-3 mb-4">
@@ -33,19 +24,13 @@ export const HomeRegisterCard = () => {
                 <i>Register Now! </i>
               </strong>
             </h2>
-          </div>
-        </Col>
-      </Row>
 
-      <Row>
-        <Col xs={12} md={12} lg={12} className="mt-4 mb-4 p-3">
-          <div>
-            <h6 className="text-center">
+            <h6 className="text-start">
               <strong>
                 <i>
-                  Create an account now to get
+                  Create an account now and get 20% off
                   <br />
-                  20% off on your first purchase.
+                  on your first purchase.
                   <br />
                   <br />
                   <strong>
@@ -54,23 +39,36 @@ export const HomeRegisterCard = () => {
                 </i>
               </strong>
             </h6>
-          </div>
-          <div className="text-center mt-5">
-            <Button className="mt-4" variant="outline-light" size="lg">
-              <Link className="text-light" to="/menu">
+
+            <div className="mt-5 text-center">
+              <Button className="mt-5" variant="outline-light" size="lg">
+                <Link className="text-light" to="/menu">
+                  <strong>
+                    <i>Register</i>
+                  </strong>
+                </Link>
+              </Button>
+              <p className="mt-4">
                 <strong>
-                  <i>Register</i>
+                  <i>
+                    Already have an account?{" "}
+                    <a href="/login">
+                      <strong>
+                        <i>
+                          <u>Login</u>
+                        </i>
+                      </strong>
+                    </a>
+                  </i>
                 </strong>
-              </Link>
-            </Button>
-            <p className="text-center mt-3">
-              <strong>
-                <i>
-                  Already have an account? <a href="/login">Login</a>
-                </i>
-              </strong>
-            </p>
+              </p>
+            </div>
           </div>
+        </Col>
+
+        {/*  Image Col */}
+        <Col xs={12} md={12} lg={6} className="mt-5">
+          <Image src={registercard} fluid />
         </Col>
       </Row>
     </Container>
