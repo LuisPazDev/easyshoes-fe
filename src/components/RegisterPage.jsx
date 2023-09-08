@@ -1,14 +1,14 @@
-import { useContext, useEffect } from "react";
+import { useEffect, useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/userContext";
-import { Container } from "react-bootstrap";
-import Card from "react-bootstrap/Card";
-import { FormInput } from "./FormInput";
+
+import { Container, Form, Button, Row, Col } from "react-bootstrap";
 
 export const RegisterPage = () => {
   const userCtx = useContext(UserContext);
 
-  const { registerUser, formData, onResetForm, verifyingToken, authStatus } =
+  const { loginUser, authStatus, verifyingToken, formData, setFormData } =
     userCtx;
 
   const navigate = useNavigate();
@@ -23,35 +23,92 @@ export const RegisterPage = () => {
 
   if (authStatus) return null;
 
-  const handleSubmit = (e) => {
+  const sendData = (e) => {
     e.preventDefault();
-    registerUser(formData);
-    onResetForm();
-
-    console.log("Register Form", formData);
+    loginUser(formData);
   };
 
   return (
-    <Container>
-      <Card className='m-auto mt-5 ms-auto me-auto' style={{ width: "22rem" }}>
-        <div className='m-auto mt-3'>
-          <h2> Create Account </h2>
+    <Container
+      fluid
+      style={{
+        backgroundColor: "#F5F5F5",
+      }}
+      className="d-flex flex-column justify-content-center align-items-center p-5"
+    >
+      <div className="m-auto mt-3 text-black">
+        <h1> Login </h1>
+      </div>
+
+      <Form
+        style={{
+          backgroundColor: "white",
+          maxWidth: "500px",
+        }}
+        className="mt-3 border border-dark rounded p-4 text-black"
+        id="form"
+      >
+        <Row>
+          <Col xs={12} className="mb-3">
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>
+                <h6>
+                  <strong>
+                    <i>Email</i>
+                  </strong>
+                </h6>
+              </Form.Label>
+              <Form.Control
+                className="border border-dark"
+                name="email"
+                type="email"
+                placeholder="Enter your email"
+                required
+              />
+            </Form.Group>
+          </Col>
+          <Col xs={12} className="mb-3">
+            <Form.Group controlId="formBasicLastPassword">
+              <Form.Label>
+                <h6>
+                  <strong>
+                    <i>Password</i>
+                  </strong>
+                </h6>
+              </Form.Label>
+              <Form.Control
+                className="border border-dark"
+                name="password"
+                type="password"
+                placeholder="Enter your password"
+                required
+              />
+            </Form.Group>
+          </Col>
+        </Row>
+        <div className="text-center">
+          <Button size="lg" className="mt-4 mb-3" variant="dark" type="submit">
+            <strong>
+              <i>Login</i>
+            </strong>
+          </Button>
         </div>
-        <form className='ms-3 me-3 mt-3'>
-          <FormInput tipo='username' />
+      </Form>
 
-          <FormInput tipo='email' />
-
-          <FormInput tipo='password' />
-
-          <button
-            onClick={(e) => handleSubmit(e)}
-            className='btn btn-primary mt-4 mb-3'
-          >
-            Register
-          </button>
-        </form>
-      </Card>
+      <div className="text-center text-black mt-4">
+        <h6>
+          Don't have an account?
+          <br />
+          <br />
+          <Button variant="outline-dark text-dark">
+            <Link className="text-black" to="/register">
+              <strong>
+                <i>Register Now</i>
+              </strong>
+            </Link>
+          </Button>
+        </h6>
+      </div>
     </Container>
   );
 };

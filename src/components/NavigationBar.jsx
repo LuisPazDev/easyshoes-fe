@@ -61,12 +61,17 @@ export const NavigationBar = () => {
                     <strong>
                       <i>Shoes</i>
                     </strong>
+                    s
                   </Link>
                 </Nav.Link>
                 <Nav.Link>
-                  <Link className="text-white" onClick={handleClose} to="/menu">
+                  <Link
+                    className="text-white"
+                    onClick={handleClose}
+                    to="/login"
+                  >
                     <strong>
-                      <i>About</i>
+                      <i>Sign In</i>
                     </strong>
                   </Link>
                 </Nav.Link>

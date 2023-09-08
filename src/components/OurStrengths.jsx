@@ -19,7 +19,6 @@ export const OurStrengths = () => {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
-      className="p-5"
     >
       <Row>
         <Col
@@ -45,16 +44,17 @@ export const OurStrengths = () => {
           </div>
         </Col>
       </Row>
+
       {/* First Row */}
       <Row>
         <Col
           xs={12}
           md={6}
           lg={4}
-          className="d-flex flex-column justify-content-center align-items-center mt-4 mb-4 p-3"
+          className="d-flex flex-column justify-content-center align-items-center mt-4 p-3"
         >
           <div>
-            <h5>
+            <h6>
               <img
                 style={{ width: "40px", height: "40px" }}
                 className="me-3"
@@ -62,45 +62,55 @@ export const OurStrengths = () => {
                 alt="deliveryicon"
               />
               Free Shipping
-            </h5>
+            </h6>
           </div>
+          <div className="text-center">
+            <p className="ms-5">On all order</p>
+          </div>
+        </Col>
+
+        <Col
+          xs={12}
+          md={6}
+          lg={4}
+          className="d-flex flex-column justify-content-center align-items-center mt-4 p-3"
+        >
           <div>
-            <p className="ms-5">Free shipping on all order</p>
+            <h6>
+              <img
+                style={{ width: "40px", height: "40px" }}
+                className="me-3"
+                src={supporticon}
+                alt="deliveryicon"
+              />
+              Online Support
+            </h6>
+          </div>
+          <div className="text-center">
+            <p className="ms-5">Support 24 hours</p>
           </div>
         </Col>
+
         <Col
           xs={12}
           md={6}
           lg={4}
-          className="text-center d-flex flex-column justify-content-center align-items-center mt-4 mb-4 p-3"
+          className="d-flex flex-column justify-content-center align-items-center mt-4 p-3"
         >
-          <h5>
-            <img
-              style={{ width: "40px", height: "40px" }}
-              className="me-3"
-              src={supporticon}
-              alt="deliveryicon"
-            />
-            Online Support
-          </h5>
-          <p>Online support 24 hours</p>
-        </Col>
-        <Col
-          xs={12}
-          md={6}
-          lg={4}
-          className="text-center d-flex flex-column justify-content-center align-items-center mt-4 mb-4 p-3"
-        >
-          <h5>
-            <img
-              style={{ width: "40px", height: "40px" }}
-              className="me-3"
-              src={returnicon}
-              alt="deliveryicon"
-            />
-            Money Return
-          </h5>
-          <p>Guarantee under 7 days </p>
+          <div>
+            <h6>
+              <img
+                style={{ width: "40px", height: "40px" }}
+                className="me-3"
+                src={returnicon}
+                alt="deliveryicon"
+              />
+              Money Return
+            </h6>
+          </div>
+          <div className="text-center">
+            <p className="ms-5">Under 7 days</p>
+          </div>
         </Col>
       </Row>
 
@@ -110,52 +120,65 @@ export const OurStrengths = () => {
           xs={12}
           md={6}
           lg={4}
-          className="text-center d-flex flex-column justify-content-center align-items-center mt-4 mb-4 p-3"
+          className="d-flex flex-column justify-content-center align-items-center mt-4 p-3"
         >
-          <h5>
-            <img
-              style={{ width: "40px", height: "40px" }}
-              className="me-3"
-              src={bestpriceicon}
-              alt="deliveryicon"
-            />
-            The Best Prices
-          </h5>
-          <p>We have the best prices </p>
+          <div>
+            <h6>
+              <img
+                style={{ width: "40px", height: "40px" }}
+                className="me-3"
+                src={bestpriceicon}
+                alt="deliveryicon"
+              />
+              The Best Prices
+            </h6>
+          </div>
+          <div className="text-center">
+            <p className="ms-5">Updated daily</p>
+          </div>
         </Col>
         <Col
           xs={12}
           md={6}
           lg={4}
-          className="text-center d-flex flex-column justify-content-center align-items-center mt-4 mb-4 p-3"
+          className="d-flex flex-column justify-content-center align-items-center mt-4 p-3"
         >
-          <h5>
-            <img
-              style={{ width: "40px", height: "40px" }}
-              className="me-3"
-              src={membericon}
-              alt="deliveryicon"
-            />
-            Member Discount
-          </h5>
-          <p>Orders over 120</p>
+          <div>
+            <h6>
+              <img
+                style={{ width: "40px", height: "40px" }}
+                className="me-3"
+                src={membericon}
+                alt="deliveryicon"
+              />
+              Member Discount
+            </h6>
+          </div>
+          <div className="text-center">
+            <p className="ms-5">Orders over 120</p>
+          </div>
         </Col>
+
         <Col
           xs={12}
           md={6}
           lg={4}
-          className="text-center d-flex flex-column justify-content-center align-items-center mt-4 mb-4 p-3"
+          className="d-flex flex-column justify-content-center align-items-center mt-4 p-3"
         >
-          <h5>
-            <img
-              style={{ width: "40px", height: "40px" }}
-              className="me-3"
-              src={secureicon}
-              alt="deliveryicon"
-            />
-            Secure Payment
-          </h5>
-          <p>All cards accepted</p>
+          <div>
+            <h6>
+              <img
+                style={{ width: "40px", height: "40px" }}
+                className="me-3"
+                src={secureicon}
+                alt="deliveryicon"
+              />
+              Secure Payment
+            </h6>
+          </div>
+          <div className="text-center">
+            <p className="ms-5">100% secure payment</p>
+          </div>
         </Col>
       </Row>
     </Container>
