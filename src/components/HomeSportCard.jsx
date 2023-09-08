@@ -50,17 +50,19 @@ export const HomeSportCard = () => {
           className="d-flex flex-column justify-content-center align-items-center mt-4 mb-4 p-3"
         >
           <div className="text-start">
-            <Badge pill bg="danger">
-              <strong>
-                <i>Be Sport</i>
-              </strong>
-            </Badge>
+            <h3>
+              <Badge pill bg="danger">
+                <strong>
+                  <i>Be Sport</i>
+                </strong>
+              </Badge>
+            </h3>
 
-            <h2 className="mt-3 mb-4">
+            <h1 className="mt-3 mb-4">
               <strong>
                 <i>Sport Shoes</i>
               </strong>
-            </h2>
+            </h1>
 
             <p style={{ lineHeight: "1.6em" }}>
               <i>

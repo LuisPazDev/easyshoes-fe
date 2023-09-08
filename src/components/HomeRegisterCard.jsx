@@ -14,16 +14,19 @@ export const HomeRegisterCard = () => {
           className="d-flex flex-column justify-content-center align-items-center mt-5"
         >
           <div className="text-start">
-            <Badge bg="danger">
-              <strong>
-                <i>Be a Member </i>
-              </strong>
-            </Badge>
-            <h2 className="mt-3 mb-4">
+            <h3>
+              <Badge bg="danger">
+                <strong>
+                  <i>Be a Member </i>
+                </strong>
+              </Badge>
+            </h3>
+
+            <h1 className="mt-3 mb-4">
               <strong>
                 <i>Register Now! </i>
               </strong>
-            </h2>
+            </h1>
 
             <h6 className="text-start">
               <strong>
@@ -31,20 +34,24 @@ export const HomeRegisterCard = () => {
                   Create an account now and get 20% off
                   <br />
                   on your first purchase.
-                  <br />
-                  <br />
+                </i>
+              </strong>
+              <br />
+              <br />
+              <div className="text-center mt-4">
+                <h5>
                   <strong>
                     <i>JOIN US TODAY!</i>
                   </strong>
-                </i>
-              </strong>
+                </h5>
+              </div>
             </h6>
 
-            <div className="mt-5 text-center">
+            <div className="mt-3 text-center">
               <Button className="mt-5" variant="outline-light" size="lg">
                 <Link className="text-light" to="/menu">
                   <strong>
-                    <i>Register</i>
+                    <i>Register Here</i>
                   </strong>
                 </Link>
               </Button>
@@ -55,7 +62,7 @@ export const HomeRegisterCard = () => {
                     <a href="/login">
                       <strong>
                         <i>
-                          <u>Login</u>
+                          <u>LOGIN</u>
                         </i>
                       </strong>
                     </a>

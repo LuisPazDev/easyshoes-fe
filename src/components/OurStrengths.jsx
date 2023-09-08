@@ -29,16 +29,19 @@ export const OurStrengths = () => {
           className="d-flex flex-column justify-content-center align-items-center mt-4 p-3"
         >
           <div className="text-start">
-            <Badge bg="danger">
-              <strong>
-                <i>Our Strengths</i>
-              </strong>
-            </Badge>
-            <h2 className="mt-3 mb-5">
+            <h3>
+              <Badge bg="danger">
+                <strong>
+                  <i>Our Strengths</i>
+                </strong>
+              </Badge>
+            </h3>
+
+            <h1 className="mt-3 mb-5">
               <strong>
                 <i>Why Choose Us</i>
               </strong>
-            </h2>
+            </h1>
           </div>
         </Col>
       </Row>
