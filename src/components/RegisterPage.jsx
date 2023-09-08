@@ -37,7 +37,7 @@ export const RegisterPage = () => {
       className="d-flex flex-column justify-content-center align-items-center p-5"
     >
       <div className="m-auto mt-3 text-black">
-        <h1> Login </h1>
+        <h1> Register </h1>
       </div>
 
       <Form
@@ -89,7 +89,7 @@ export const RegisterPage = () => {
         <div className="text-center">
           <Button size="lg" className="mt-4 mb-3" variant="dark" type="submit">
             <strong>
-              <i>Login</i>
+              <i>Register</i>
             </strong>
           </Button>
         </div>
@@ -97,13 +97,13 @@ export const RegisterPage = () => {
 
       <div className="text-center text-black mt-4">
         <h6>
-          Don't have an account?
+          Already have an account?
           <br />
           <br />
           <Button variant="outline-dark text-dark">
-            <Link className="text-black" to="/register">
+            <Link className="text-black" to="/login">
               <strong>
-                <i>Register Now</i>
+                <i>Login Now</i>
               </strong>
             </Link>
           </Button>
