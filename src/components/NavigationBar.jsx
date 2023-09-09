@@ -56,7 +56,7 @@ export const NavigationBar = () => {
                   <Link
                     className="text-danger"
                     onClick={handleClose}
-                    to="/menu"
+                    to="/shoes"
                   >
                     <strong>
                       <i>Shoes</i>

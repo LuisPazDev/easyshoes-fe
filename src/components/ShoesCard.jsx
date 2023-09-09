@@ -9,6 +9,8 @@ import Spinner from "react-bootstrap/Spinner";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
+import stars from "../assets/stars.png";
+
 export const ShoesCard = () => {
   const { data, isLoading } = useFetch(
     `https://easyshoes.onrender.com/shoes/get`
@@ -61,102 +63,81 @@ export const ShoesCard = () => {
   console.log("shoesData", shoesData);
 
   return (
-    <Container fluid>
-      <Modal show={show} onHide={handleClose} animation={false}>
-        <Card
-          border='light'
-          className='ms-auto mt-4 me-auto mb-4'
-          style={{ width: "24rem" }}
-        >
-          <Card.Img variant='top' src={shoesModal.img} />
-          <Card.Body>
-            <Card.Title>{shoesModal.brand}</Card.Title>
-            <Card.Text>
-              <p>
-                <strong>Model:</strong> {shoesModal.model}
-              </p>
-              <p>
-                <strong>Size:</strong> {shoesModal.size}
-              </p>
-              <p>
-                <strong>Price:</strong> {shoesModal.price}
-              </p>
-            </Card.Text>
-            <Button variant='danger' onClick={modalMsg}>
-              Confirm
-            </Button>
-          </Card.Body>
-        </Card>
-      </Modal>
-
-      <Modal
-        size='sm'
-        show={smShow}
-        onHide={() => setSmShow(false)}
-        aria-labelledby='example-modal-sizes-title-sm'
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id='example-modal-sizes-title-sm'></Modal.Title>
-        </Modal.Header>
-        <Modal.Body className='text-center'>
-          <p>Succesfully Added to Cart</p>
-          <Button className='mt-3 mb-3'>
-            <Link className='link-button' to='/mycart'>
-              Go to Cart
-            </Link>
-          </Button>
-        </Modal.Body>
-      </Modal>
-
-      <Row xl={4} lg={4} md={3} sm={2} xs={1}>
+    <Container
+      fluid
+      style={{
+        backgroundColor: "#212529",
+        height: "100%",
+      }}
+    >
+      <Row>
         {isLoading ? (
-          <Button className='ms-auto me-auto mt-5' variant='primary' disabled>
-            <Spinner
-              as='span'
-              animation='grow'
-              size='sm'
-              role='status'
-              aria-hidden='true'
-            />
-            Loading...
-          </Button>
+          <div className="text-center mt-5">
+            <Spinner animation="border" variant="danger" />
+          </div>
         ) : (
-          shoesData.map((pairShoes) => {
-            return (
-              <Col>
-                <Card
-                  key={pairShoes.id}
-                  className='mb-4 ms-auto me-auto text-center'
-                  style={{ width: "15rem" }}
-                >
-                  <Card.Img variant='top' src={pairShoes.img} />
+          shoesData.map((shoes) => (
+            <Col
+              xs={12}
+              md={6}
+              lg={4}
+              className="d-flex flex-row justify-content-center align-items-center mt-3 p-4"
+            >
+              <Card
+                key={shoes._id}
+                style={{ width: "16rem" }}
+                className="border border-light shadow mb-3 bg-white rounded"
+              >
+                <Card.Img
+                  variant="top"
+                  src={shoes.img}
+                  className="img-fluid"
+                  style={{
+                    height: "250px",
+                    backgroundColor: "#F5F5F5",
+                  }}
+                />
+                <Card.Body>
+                  <div>
+                    <img
+                      style={{
+                        width: "70px",
+                      }}
+                      src={stars}
+                      alt="stars"
+                    />
+                  </div>
 
-                  <Card.Body>
-                    <Card.Title className='mb-4'>
-                      <h3>{pairShoes.brand}</h3>
-                    </Card.Title>
-                    <Card.Text>
-                      <p>
-                        <strong>{pairShoes.model}</strong>
-                      </p>
-                      <p>
-                        <strong>{pairShoes.price}</strong>
-                      </p>
-                      <p>
-                        <strong>Size:</strong> {pairShoes.size}
-                      </p>
-                    </Card.Text>
-                    <Button
-                      variant='primary'
-                      onClick={() => shoesModalInfo(pairShoes)}
-                    >
-                      Order Now
+                  <Card.Title className="text-black text-start">
+                    <h4>
+                      <strong>
+                        <i>{shoes.brand}</i>
+                      </strong>
+                    </h4>
+                  </Card.Title>
+                  <Card.Text className="text-black">
+                    <h6>
+                      <i>{shoes.model}</i>
+                    </h6>
+                  </Card.Text>
+                  <Card.Text className="text-black">
+                    <h6>
+                      <strong>
+                        <i>{shoes.price}</i>
+                      </strong>
+                    </h6>
+                  </Card.Text>
+                  <div className="text-center mt-4">
+                    <Button variant="danger">
+                      <strong>
+                        <i>Add to cart</i>
+                      </strong>
                     </Button>
-                  </Card.Body>
-                </Card>
-              </Col>
-            );
-          })
+                  </div>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))
         )}
       </Row>
     </Container>

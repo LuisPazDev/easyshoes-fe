@@ -29,15 +29,8 @@ export const RegisterPage = () => {
   };
 
   return (
-    <Container
-      fluid
-      style={{
-        backgroundColor: "#F5F5F5",
-        height: "100vh",
-      }}
-      className="d-flex flex-column justify-content-center align-items-center"
-    >
-      <div>
+    <Container fluid>
+      <div className="text-center p-5">
         <h1>
           <Badge pill className="bg-dark">
             <strong>

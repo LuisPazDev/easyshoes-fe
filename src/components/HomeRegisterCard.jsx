@@ -5,7 +5,13 @@ import registercard from "../assets/registerimg.png";
 
 export const HomeRegisterCard = () => {
   return (
-    <Container fluid className="p-5">
+    <Container
+      fluid
+      style={{
+        backgroundColor: "#212529",
+      }}
+      className="p-5"
+    >
       <Row>
         <Col
           xs={12}
@@ -49,7 +55,7 @@ export const HomeRegisterCard = () => {
 
             <div className="mt-3 text-center">
               <Button className="mt-5" variant="outline-light" size="lg">
-                <Link className="text-light" to="/menu">
+                <Link className="text-light" to="/register">
                   <strong>
                     <i>Register Here</i>
                   </strong>
@@ -59,13 +65,13 @@ export const HomeRegisterCard = () => {
                 <strong>
                   <i>
                     Already have an account?{" "}
-                    <a href="/login">
+                    <Link to="/login">
                       <strong>
                         <i>
                           <u>LOGIN</u>
                         </i>
                       </strong>
-                    </a>
+                    </Link>
                   </i>
                 </strong>
               </p>

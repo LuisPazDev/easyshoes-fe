@@ -33,11 +33,9 @@ export const ContactPage = () => {
             </h1>
           </div>
           <div className="mt-3 text-black">
-            <p>
-              <strong>
-                <i>We are here to help you with any questions you may have. </i>
-              </strong>
-            </p>
+            <h6>
+              <i>We are here to help you </i>
+            </h6>
           </div>
         </Col>
       </Row>

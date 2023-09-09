@@ -35,9 +35,8 @@ export const LoginPage = () => {
         backgroundColor: "#F5F5F5",
         height: "100vh",
       }}
-      className="d-flex flex-column justify-content-center align-items-center"
     >
-      <div>
+      <div className="text-center p-5">
         <h1>
           <Badge pill className="bg-dark">
             <strong>

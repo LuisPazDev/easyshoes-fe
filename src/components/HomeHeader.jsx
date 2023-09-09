@@ -37,7 +37,7 @@ export const HomeHeader = () => {
           <div className="text-center">
             <Image fluid src={logo} alt="logo" />
             <Button className="mt-5" variant="outline-light" size="lg">
-              <Link className="text-light" to="/menu">
+              <Link className="text-light" to="/shoes">
                 <strong>
                   <i>Shop Now</i>
                 </strong>
