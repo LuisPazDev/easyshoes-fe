@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/userContext";
 
-import { Container, Form, Button, Row, Col } from "react-bootstrap";
+import { Container, Form, Button, Row, Col, Badge } from "react-bootstrap";
 
 export const RegisterPage = () => {
   const userCtx = useContext(UserContext);
@@ -33,11 +33,18 @@ export const RegisterPage = () => {
       fluid
       style={{
         backgroundColor: "#F5F5F5",
+        height: "100vh",
       }}
-      className="d-flex flex-column justify-content-center align-items-center p-5"
+      className="d-flex flex-column justify-content-center align-items-center"
     >
-      <div className="m-auto mt-3 text-black">
-        <h1> Register </h1>
+      <div>
+        <h1>
+          <Badge pill className="bg-dark">
+            <strong>
+              <i>Register</i>
+            </strong>
+          </Badge>
+        </h1>
       </div>
 
       <Form
@@ -103,7 +110,7 @@ export const RegisterPage = () => {
           <Button variant="outline-dark text-dark">
             <Link className="text-black" to="/login">
               <strong>
-                <i>Login Now</i>
+                <i>Login Here</i>
               </strong>
             </Link>
           </Button>
