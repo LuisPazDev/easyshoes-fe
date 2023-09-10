@@ -47,34 +47,34 @@ export const HomeSportCard = () => {
           xs={12}
           md={12}
           lg={6}
-          className="d-flex flex-column justify-content-center align-items-center mt-4 mb-4 p-3"
+          className="d-flex flex-column justify-content-center align-items-center mt-5 mb-5 p-5"
         >
           <div className="text-start">
-            <h3>
+            <h2>
               <Badge pill bg="danger">
                 <strong>
                   <i>Be Sport</i>
                 </strong>
               </Badge>
-            </h3>
+            </h2>
 
-            <h1 className="mt-3 mb-4">
+            <h1 className="mt-4 mb-4">
               <strong>
                 <i>Sport Shoes</i>
               </strong>
             </h1>
 
-            <p style={{ lineHeight: "1.6em" }}>
+            <h6 style={{ lineHeight: "1.7em" }}>
               <i>
                 Lorem ipsum dolor sit amet
                 <br />
                 consectetur adipisicing elit.
               </i>
-            </p>
+            </h6>
 
             <div className="mt-5 text-center">
               <Button variant="outline-light" size="lg">
-                <Link className="text-light" to="/menu">
+                <Link to="/sportshoes">
                   <strong>
                     <i>Shop Now</i>
                   </strong>
@@ -84,7 +84,7 @@ export const HomeSportCard = () => {
           </div>
         </Col>
         {/* Image Col */}
-        <Col xs={12} md={12} lg={6} className="mt-4 mb-4 p-4">
+        <Col xs={12} md={12} lg={6} className="mt-5 mb-5 p-5">
           <Carousel>
             {shoesData.map((pairShoes) => {
               return (

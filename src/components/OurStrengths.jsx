@@ -28,15 +28,15 @@ export const OurStrengths = () => {
           className="d-flex flex-column justify-content-center align-items-center mt-4 p-3"
         >
           <div className="text-start">
-            <h3>
+            <h2>
               <Badge bg="danger">
                 <strong>
                   <i>Our Strengths</i>
                 </strong>
               </Badge>
-            </h3>
+            </h2>
 
-            <h1 className="mt-3 mb-5">
+            <h1 className="mt-4 mb-5">
               <strong>
                 <i>Why Choose Us</i>
               </strong>
@@ -49,12 +49,12 @@ export const OurStrengths = () => {
       <Row>
         <Col
           xs={12}
-          md={6}
+          md={12}
           lg={4}
           className="d-flex flex-column justify-content-center align-items-center mt-4 p-3"
         >
           <div>
-            <h6>
+            <h5>
               <img
                 style={{ width: "40px", height: "40px" }}
                 className="me-3"
@@ -62,21 +62,21 @@ export const OurStrengths = () => {
                 alt="deliveryicon"
               />
               Free Shipping
-            </h6>
+            </h5>
           </div>
           <div className="text-center">
-            <p className="ms-5">On all order</p>
+            <h6 className="ms-5">On all orders</h6>
           </div>
         </Col>
 
         <Col
           xs={12}
-          md={6}
+          md={12}
           lg={4}
           className="d-flex flex-column justify-content-center align-items-center mt-4 p-3"
         >
           <div>
-            <h6>
+            <h5>
               <img
                 style={{ width: "40px", height: "40px" }}
                 className="me-3"
@@ -84,21 +84,21 @@ export const OurStrengths = () => {
                 alt="deliveryicon"
               />
               Online Support
-            </h6>
+            </h5>
           </div>
           <div className="text-center">
-            <p className="ms-5">Support 24 hours</p>
+            <h6 className="ms-5"> 24 hours</h6>
           </div>
         </Col>
 
         <Col
           xs={12}
-          md={6}
+          md={12}
           lg={4}
           className="d-flex flex-column justify-content-center align-items-center mt-4 p-3"
         >
           <div>
-            <h6>
+            <h5>
               <img
                 style={{ width: "40px", height: "40px" }}
                 className="me-3"
@@ -106,10 +106,10 @@ export const OurStrengths = () => {
                 alt="deliveryicon"
               />
               Money Return
-            </h6>
+            </h5>
           </div>
           <div className="text-center">
-            <p className="ms-5">Under 7 days</p>
+            <h6 className="ms-5">Under 7 days</h6>
           </div>
         </Col>
       </Row>
@@ -118,12 +118,12 @@ export const OurStrengths = () => {
       <Row>
         <Col
           xs={12}
-          md={6}
+          md={12}
           lg={4}
           className="d-flex flex-column justify-content-center align-items-center mt-4 p-3"
         >
           <div>
-            <h6>
+            <h5>
               <img
                 style={{ width: "40px", height: "40px" }}
                 className="me-3"
@@ -131,20 +131,20 @@ export const OurStrengths = () => {
                 alt="deliveryicon"
               />
               The Best Prices
-            </h6>
+            </h5>
           </div>
           <div className="text-center">
-            <p className="ms-5">Updated daily</p>
+            <h6 className="ms-5">Updated daily</h6>
           </div>
         </Col>
         <Col
           xs={12}
-          md={6}
+          md={12}
           lg={4}
           className="d-flex flex-column justify-content-center align-items-center mt-4 p-3"
         >
           <div>
-            <h6>
+            <h5>
               <img
                 style={{ width: "40px", height: "40px" }}
                 className="me-3"
@@ -152,21 +152,21 @@ export const OurStrengths = () => {
                 alt="deliveryicon"
               />
               Member Discount
-            </h6>
+            </h5>
           </div>
           <div className="text-center">
-            <p className="ms-5">Orders over 120</p>
+            <h6 className="ms-5">Orders over 120</h6>
           </div>
         </Col>
 
         <Col
           xs={12}
-          md={6}
+          md={12}
           lg={4}
           className="d-flex flex-column justify-content-center align-items-center mt-4 p-3"
         >
           <div>
-            <h6>
+            <h5>
               <img
                 style={{ width: "40px", height: "40px" }}
                 className="me-3"
@@ -174,10 +174,10 @@ export const OurStrengths = () => {
                 alt="deliveryicon"
               />
               Secure Payment
-            </h6>
+            </h5>
           </div>
           <div className="text-center">
-            <p className="ms-5">100% secure payment</p>
+            <h6 className="ms-5">100% secure</h6>
           </div>
         </Col>
       </Row>

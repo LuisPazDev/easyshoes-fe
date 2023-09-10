@@ -1,28 +1,37 @@
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Badge, Button, Image } from "react-bootstrap";
 
+import bgregistercard from "../assets/bgregistercard.png";
 import supportcard from "../assets/supportcard.png";
 
 export const HomeSupportCard = () => {
   return (
-    <Container fluid>
+    <Container
+      fluid
+      style={{
+        backgroundImage: `url(${bgregistercard})`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <Row>
         <Col
           xs={12}
           md={12}
           lg={6}
-          className="d-flex flex-column justify-content-center align-items-center mt-5"
+          className="d-flex flex-column justify-content-center align-items-center mt-5 ps-4"
         >
           <div className="text-start">
-            <h3>
+            <h2>
               <Badge bg="danger">
                 <strong>
                   <i>Support 24/7 </i>
                 </strong>
               </Badge>
-            </h3>
+            </h2>
 
-            <h1 className="mt-3 mb-4">
+            <h1 className="mt-4 mb-4">
               <strong>
                 <i>Contact Us! </i>
               </strong>
@@ -34,11 +43,10 @@ export const HomeSupportCard = () => {
                 <br />
                 if you need any help or support.
               </i>
-
               <br />
             </h6>
 
-            <div className="mt-2">
+            <div className="mt-2 text-center">
               <Button className="mt-5" variant="outline-light" size="lg">
                 <Link to="/contact">
                   <strong>

@@ -35,16 +35,24 @@ export const HomeHeader = () => {
           className="d-flex flex-column justify-content-center align-items-center mt-4 mb-4 p-3"
         >
           <div className="text-center">
-            <Image fluid src={logo} alt="logo" />
-            <h5 className="mt-3 text-center">
+            <Image fluid src={logo} alt="logo" className="mb-4" />
+          </div>
+
+          <div className="text-center mt-4">
+            <h5 className="text-light">
               <strong>
-                <i>Men Shoes </i>
+                <i>
+                  <Badge bg="danger" variant="light">
+                    New
+                  </Badge>{" "}
+                  Men Shoes Collection
+                </i>
               </strong>
             </h5>
-            <Button className="mt-5" variant="outline-light" size="lg">
+            <Button className="mt-4" variant="outline-light" size="lg">
               <Link className="text-light" to="/shoes">
                 <strong>
-                  <i>Shop Now</i>
+                  <i>Start Shopping Now</i>
                 </strong>
               </Link>
             </Button>

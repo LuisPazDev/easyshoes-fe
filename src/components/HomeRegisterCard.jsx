@@ -1,11 +1,20 @@
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Badge, Button, Image } from "react-bootstrap";
 
+import bgcontainer from "../assets/bgcontainer.png";
 import registercard from "../assets/registerimg.png";
 
 export const HomeRegisterCard = () => {
   return (
-    <Container fluid>
+    <Container
+      fluid
+      style={{
+        backgroundImage: `url(${bgcontainer})`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <Row>
         <Col
           xs={12}
@@ -14,15 +23,15 @@ export const HomeRegisterCard = () => {
           className="d-flex flex-column justify-content-center align-items-center mt-5"
         >
           <div className="text-start">
-            <h3>
+            <h2>
               <Badge bg="danger">
                 <strong>
                   <i>Be a Member </i>
                 </strong>
               </Badge>
-            </h3>
+            </h2>
 
-            <h1 className="mt-3 mb-4">
+            <h1 className="mt-4 mb-4">
               <strong>
                 <i>Register Now! </i>
               </strong>
@@ -37,10 +46,9 @@ export const HomeRegisterCard = () => {
                 </i>
               </strong>
               <br />
-              <br />
             </h6>
 
-            <div className="mt-3 text-center">
+            <div className="mt-2 text-center">
               <Button className="mt-5" variant="outline-light" size="lg">
                 <Link className="text-light" to="/register">
                   <strong>
