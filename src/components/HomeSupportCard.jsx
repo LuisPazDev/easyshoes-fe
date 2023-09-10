@@ -3,7 +3,7 @@ import { Container, Row, Col, Badge, Button, Image } from "react-bootstrap";
 
 import registercard from "../assets/registerimg.png";
 
-export const HomeRegisterCard = () => {
+export const HomeSupportCard = () => {
   return (
     <Container fluid>
       <Row>

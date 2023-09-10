@@ -10,7 +10,7 @@ import Row from "react-bootstrap/Row";
 
 import stars from "../assets/stars.png";
 
-export const ShoesCard = () => {
+export const CasualShoesCard = () => {
   const { data, isLoading } = useFetch(
     `https://easyshoes.onrender.com/shoes/get`
   );
@@ -35,7 +35,7 @@ export const ShoesCard = () => {
         <h1 className="text-center mt-4">
           <Badge pill bg="danger">
             <strong>
-              <i>All Shoes</i>
+              <i>Casual Shoes</i>
             </strong>
           </Badge>
         </h1>

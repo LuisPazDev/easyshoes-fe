@@ -36,6 +36,11 @@ export const HomeHeader = () => {
         >
           <div className="text-center">
             <Image fluid src={logo} alt="logo" />
+            <h5 className="mt-3 text-center">
+              <strong>
+                <i>Men Shoes </i>
+              </strong>
+            </h5>
             <Button className="mt-5" variant="outline-light" size="lg">
               <Link className="text-light" to="/shoes">
                 <strong>

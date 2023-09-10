@@ -29,27 +29,33 @@ export const RegisterPage = () => {
   };
 
   return (
-    <Container fluid>
+    <Container
+      fluid
+      className="d-flex flex-column justify-content-center align-items-center"
+    >
       <div className="text-center p-5">
         <h1>
-          <Badge pill className="bg-dark">
+          <Badge pill className="bg-danger">
             <strong>
               <i>Register</i>
             </strong>
           </Badge>
         </h1>
+        <h6 className="mt-3">
+          <i>Enter your email and password to register</i>
+        </h6>
       </div>
 
       <Form
         style={{
-          backgroundColor: "white",
+          backgroundColor: "#212529",
           maxWidth: "500px",
         }}
-        className="mt-3 border border-dark rounded p-4 text-black"
+        className="mt-3 border border-dark rounded p-4"
         id="form"
       >
         <Row>
-          <Col xs={12} className="mb-3">
+          <Col xs={12} className="mb-4">
             <Form.Group controlId="formBasicEmail">
               <Form.Label>
                 <h6>
@@ -67,7 +73,7 @@ export const RegisterPage = () => {
               />
             </Form.Group>
           </Col>
-          <Col xs={12} className="mb-3">
+          <Col xs={12} className="mb-4">
             <Form.Group controlId="formBasicLastPassword">
               <Form.Label>
                 <h6>
@@ -87,7 +93,12 @@ export const RegisterPage = () => {
           </Col>
         </Row>
         <div className="text-center">
-          <Button size="lg" className="mt-4 mb-3" variant="dark" type="submit">
+          <Button
+            className="mt-4 mb-3"
+            variant="outline-light"
+            size="lg"
+            type="submit"
+          >
             <strong>
               <i>Register</i>
             </strong>
@@ -95,13 +106,13 @@ export const RegisterPage = () => {
         </div>
       </Form>
 
-      <div className="text-center text-black mt-4">
+      <div className="text-center mt-4">
         <h6>
           Already have an account?
           <br />
           <br />
-          <Button variant="outline-dark text-dark">
-            <Link className="text-black" to="/login">
+          <Button variant="outline-light">
+            <Link to="/login">
               <strong>
                 <i>Login Here</i>
               </strong>

@@ -6,13 +6,7 @@ import { FashionShoesPage } from "./FashionShoesPage";
 
 export const ShoesPage = () => {
   return (
-    <Container
-      fluid
-      style={{
-        backgroundColor: "#212529",
-      }}
-      className="p-5"
-    >
+    <Container fluid className="p-4">
       <div className="text-center mt-4">
         <h1>
           <Badge pill className="bg-danger">
@@ -44,8 +38,8 @@ export const ShoesPage = () => {
         </Col>
       </Row>
       <div className="text-center mt-4">
-        <Button variant="danger">
-          <Link to="/allshoes" className="text-white">
+        <Button variant="outline-light">
+          <Link to="/allshoes">
             <strong>
               <i>View All Shoes</i>
             </strong>

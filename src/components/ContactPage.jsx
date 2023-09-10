@@ -18,21 +18,20 @@ export const ContactPage = () => {
   return (
     <Container
       fluid
-      style={{ backgroundColor: "#F5F5F5" }}
       className="d-flex flex-column justify-content-center align-items-center"
     >
       <Row>
         <Col xs={12} md={12} lg={12} className="text-center mt-5 mb-4">
           <div>
             <h1>
-              <Badge pill className="bg-dark text-white">
+              <Badge pill className="bg-danger">
                 <strong>
                   <i>Contact Us</i>
                 </strong>
               </Badge>
             </h1>
           </div>
-          <div className="mt-3 text-black">
+          <div className="mt-3">
             <h6>
               <i>We are here to help you </i>
             </h6>
@@ -41,7 +40,7 @@ export const ContactPage = () => {
       </Row>
 
       <Form
-        style={{ backgroundColor: "white" }}
+        style={{ backgroundColor: "#212529" }}
         className="mt-3 border border-dark rounded p-4"
         id="form"
       >
@@ -108,7 +107,7 @@ export const ContactPage = () => {
 
           <div className="text-center mt-3">
             <Button
-              variant="dark"
+              variant="outline-light"
               className="mt-3 mb-3"
               size="lg"
               type="submit"
