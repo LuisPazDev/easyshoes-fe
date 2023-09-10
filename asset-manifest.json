@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/easyshoes-fe/static/css/main.e0737e43.css",
-    "main.js": "/easyshoes-fe/static/js/main.721b56a1.js",
+    "main.css": "/easyshoes-fe/static/css/main.93773b93.css",
+    "main.js": "/easyshoes-fe/static/js/main.460a8f66.js",
     "static/media/bgstrength.png": "/easyshoes-fe/static/media/bgstrength.ea937fe0adfdb13e51bb.png",
     "static/media/bgsportcard.png": "/easyshoes-fe/static/media/bgsportcard.5cca8fd2e2635a7d915e.png",
     "static/media/bgfashioncard.png": "/easyshoes-fe/static/media/bgfashioncard.701d36b632e90834d95b.png",
@@ -9,7 +9,8 @@
     "static/media/sportshoespage.png": "/easyshoes-fe/static/media/sportshoespage.31a544f269815a5b4228.png",
     "static/media/fashionshoespage.png": "/easyshoes-fe/static/media/fashionshoespage.f84367ac9d716016a92d.png",
     "static/media/casualshoespage.png": "/easyshoes-fe/static/media/casualshoespage.cd62d4695ff3ff29041e.png",
-    "static/media/registerimg.png": "/easyshoes-fe/static/media/registerimg.ff5dde60318de33338a3.png",
+    "static/media/registerimg.png": "/easyshoes-fe/static/media/registerimg.860afc3e26d8a0739dfc.png",
+    "static/media/supportcard.png": "/easyshoes-fe/static/media/supportcard.142d5cdc54510e2539a5.png",
     "static/media/bgcontainer.png": "/easyshoes-fe/static/media/bgcontainer.a0834f6428c270b5cfc0.png",
     "static/media/firstslide.png": "/easyshoes-fe/static/media/firstslide.c76e5d12fc4c8c300591.png",
     "static/media/thirdslide.png": "/easyshoes-fe/static/media/thirdslide.7feadcc39421c8a73b9c.png",
@@ -22,11 +23,11 @@
     "static/media/support.svg": "/easyshoes-fe/static/media/support.688dfc642ebdd708e6e0395e1b4c10b2.svg",
     "static/media/payment.svg": "/easyshoes-fe/static/media/payment.35208a82a3ff52a0224ced3ef3ce26b8.svg",
     "static/media/member.svg": "/easyshoes-fe/static/media/member.523964d572c1561e02dae1b5dc27ee0e.svg",
-    "main.e0737e43.css.map": "/easyshoes-fe/static/css/main.e0737e43.css.map",
-    "main.721b56a1.js.map": "/easyshoes-fe/static/js/main.721b56a1.js.map"
+    "main.93773b93.css.map": "/easyshoes-fe/static/css/main.93773b93.css.map",
+    "main.460a8f66.js.map": "/easyshoes-fe/static/js/main.460a8f66.js.map"
   },
   "entrypoints": [
-    "static/css/main.e0737e43.css",
-    "static/js/main.721b56a1.js"
+    "static/css/main.93773b93.css",
+    "static/js/main.460a8f66.js"
   ]
 }
