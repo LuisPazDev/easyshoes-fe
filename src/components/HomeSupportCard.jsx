@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Badge, Button, Image } from "react-bootstrap";
 
-import registercard from "../assets/registerimg.png";
+import supportcard from "../assets/supportcard.png";
 
 export const HomeSupportCard = () => {
   return (
@@ -17,41 +17,50 @@ export const HomeSupportCard = () => {
             <h3>
               <Badge bg="danger">
                 <strong>
-                  <i>Be a Member </i>
+                  <i>Support 24/7 </i>
                 </strong>
               </Badge>
             </h3>
 
             <h1 className="mt-3 mb-4">
               <strong>
-                <i>Register Now! </i>
+                <i>Contact Us! </i>
               </strong>
             </h1>
 
             <h6 className="text-start">
-              <strong>
-                <i>
-                  Create an account now and get 20% off
-                  <br />
-                  on your first purchase.
-                </i>
-              </strong>
-              <br />
+              <i>
+                We are here to help you 24/7. Please contact us
+                <br />
+                if you need any help or support.
+              </i>
+
               <br />
             </h6>
 
-            <div className="mt-3 text-center">
+            <div className="mt-2">
               <Button className="mt-5" variant="outline-light" size="lg">
-                <Link className="text-light" to="/register">
+                <Link to="/contact">
                   <strong>
-                    <i>Register Here</i>
+                    <i>Contact</i>
                   </strong>
                 </Link>
               </Button>
               <h6 className="mt-4">
                 <strong>
-                  <i>Join Us Today and be a VIP Member</i>
+                  <i>
+                    <u>Call Us:</u>
+                  </i>
+                  <i> 800-123-4567</i>
                 </strong>
+                <h6 className="mt-2">
+                  <strong>
+                    <i>
+                      <u>Email:</u>
+                    </i>
+                    <i> support@easyshoes.com</i>
+                  </strong>
+                </h6>
               </h6>
             </div>
           </div>
@@ -59,7 +68,7 @@ export const HomeSupportCard = () => {
 
         {/*  Image Col */}
         <Col xs={12} md={12} lg={6} className="mt-5">
-          <Image src={registercard} fluid />
+          <Image src={supportcard} fluid />
         </Col>
       </Row>
     </Container>
