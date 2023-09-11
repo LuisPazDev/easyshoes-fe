@@ -35,10 +35,15 @@ export const HomeHeader = () => {
           className="d-flex flex-column justify-content-center align-items-center mt-4 mb-4 p-3"
         >
           <div className="text-center">
-            <Image fluid src={logo} alt="logo" className="mb-4" />
+            <Image
+              fluid
+              src={logo}
+              alt="logo"
+              className="mb-4 animate__animated animate__bounceInDown"
+            />
           </div>
 
-          <div className="text-center mt-4">
+          <div className="text-center mt-4 animate__animated animate__backInLeft animate__delay-1s">
             <h5 className="text-light">
               <strong>
                 <i>

@@ -4,6 +4,7 @@ import { UserProvider } from "./context/userContext";
 import { HashRouter } from "react-router-dom";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "animate.css";
 import App from "./App";
 
 import "./styles/App.css";

@@ -51,7 +51,7 @@ export const OurStrengths = () => {
           xs={12}
           md={12}
           lg={4}
-          className="d-flex flex-column justify-content-center align-items-center mt-4 p-3"
+          className="d-flex flex-column justify-content-center align-items-center mt-4 p-3 animate__animated animate__backInRight"
         >
           <div>
             <h5>
@@ -73,7 +73,7 @@ export const OurStrengths = () => {
           xs={12}
           md={12}
           lg={4}
-          className="d-flex flex-column justify-content-center align-items-center mt-4 p-3"
+          className="d-flex flex-column justify-content-center align-items-center mt-4 p-3 animate__animated animate__backInRight animate__delay-1s"
         >
           <div>
             <h5>
@@ -95,7 +95,7 @@ export const OurStrengths = () => {
           xs={12}
           md={12}
           lg={4}
-          className="d-flex flex-column justify-content-center align-items-center mt-4 p-3"
+          className="d-flex flex-column justify-content-center align-items-center mt-4 p-3 animate__animated animate__backInRight animate__delay-2s"
         >
           <div>
             <h5>
@@ -120,7 +120,7 @@ export const OurStrengths = () => {
           xs={12}
           md={12}
           lg={4}
-          className="d-flex flex-column justify-content-center align-items-center mt-4 p-3"
+          className="d-flex flex-column justify-content-center align-items-center mt-4 p-3 animate__animated animate__backInRight animate__delay-3s"
         >
           <div>
             <h5>
@@ -141,7 +141,7 @@ export const OurStrengths = () => {
           xs={12}
           md={12}
           lg={4}
-          className="d-flex flex-column justify-content-center align-items-center mt-4 p-3"
+          className="d-flex flex-column justify-content-center align-items-center mt-4 p-3 animate__animated animate__backInRight animate__delay-4s"
         >
           <div>
             <h5>
@@ -163,7 +163,7 @@ export const OurStrengths = () => {
           xs={12}
           md={12}
           lg={4}
-          className="d-flex flex-column justify-content-center align-items-center mt-4 p-3"
+          className="d-flex flex-column justify-content-center align-items-center mt-4 p-3 animate__animated animate__backInRight animate__delay-5s"
         >
           <div>
             <h5>

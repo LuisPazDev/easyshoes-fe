@@ -67,7 +67,11 @@ export const HomeRegisterCard = () => {
 
         {/*  Image Col */}
         <Col xs={12} md={12} lg={6} className="mt-5">
-          <Image src={registercard} fluid />
+          <Image
+            fluid
+            src={registercard}
+            className="animate__animated animate__backInRight"
+          />
         </Col>
       </Row>
     </Container>
