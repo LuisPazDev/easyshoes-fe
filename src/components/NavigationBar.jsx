@@ -2,9 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Nav, Navbar, Offcanvas } from "react-bootstrap";
 
-// Assets & Styles
-import logo from "../assets/easyshoeslogo.png";
-
 export const NavigationBar = () => {
   // offcanvas navbar
   const [show, setShow] = useState(false);
@@ -46,7 +43,14 @@ export const NavigationBar = () => {
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
                 <Link to="/" onClick={handleClose}>
-                  <img src={logo} alt="logo" width={100} height={25} />
+                  <h6>
+                    <strong>
+                      <i>
+                        <b className="text-white">EASY</b>
+                        <b className="text-danger">SHOES</b>
+                      </i>
+                    </strong>
+                  </h6>
                 </Link>
               </Offcanvas.Title>
             </Offcanvas.Header>
@@ -61,15 +65,10 @@ export const NavigationBar = () => {
                     <strong>
                       <i>Shoes</i>
                     </strong>
-                    s
                   </Link>
                 </Nav.Link>
                 <Nav.Link>
-                  <Link
-                    className="text-white"
-                    onClick={handleClose}
-                    to="/login"
-                  >
+                  <Link onClick={handleClose} to="/myaccount">
                     <strong>
                       <i>Sign In</i>
                     </strong>
@@ -83,6 +82,13 @@ export const NavigationBar = () => {
                   >
                     <strong>
                       <i>Contact</i>
+                    </strong>
+                  </Link>
+                </Nav.Link>
+                <Nav.Link>
+                  <Link onClick={handleClose} to="/cart">
+                    <strong>
+                      <i>Cart</i>
                     </strong>
                   </Link>
                 </Nav.Link>

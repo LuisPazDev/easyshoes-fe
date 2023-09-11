@@ -12,5 +12,5 @@ export const PrivateRoute = () => {
     verifyingToken();
   }, []);
 
-  return authStatus ? <Outlet /> : <Navigate to='/login' replace />;
+  return authStatus ? <Outlet /> : <Navigate to="/login" replace />;
 };

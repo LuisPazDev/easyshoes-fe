@@ -35,7 +35,7 @@ export const ShoesCard = () => {
         <h1 className="text-center mt-4">
           <Badge pill bg="danger">
             <strong>
-              <i>All Shoes</i>
+              <i>Shoes Stock</i>
             </strong>
           </Badge>
         </h1>

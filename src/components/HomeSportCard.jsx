@@ -53,28 +53,28 @@ export const HomeSportCard = () => {
             <h2>
               <Badge pill bg="danger">
                 <strong>
-                  <i>Be Sport</i>
+                  <i>Be You</i>
                 </strong>
               </Badge>
             </h2>
 
             <h1 className="mt-4 mb-4">
               <strong>
-                <i>Sport Shoes</i>
+                <i>Our Shoes</i>
               </strong>
             </h1>
 
             <h6 style={{ lineHeight: "1.7em" }}>
               <i>
-                Lorem ipsum dolor sit amet
+                We have a wide range of shoes for you
                 <br />
-                consectetur adipisicing elit.
+                choose from casual, sport and fashion shoes.
               </i>
             </h6>
 
             <div className="mt-5 text-center">
               <Button variant="outline-light" size="lg">
-                <Link to="/sportshoes">
+                <Link to="/shoes">
                   <strong>
                     <i>Shop Now</i>
                   </strong>
