@@ -1,3 +1,4 @@
+import { useInView } from "react-intersection-observer";
 import { Badge, Col, Container, Row } from "react-bootstrap";
 
 import deliveryicon from "../assets/fast.svg";
@@ -10,6 +11,12 @@ import bestpriceicon from "../assets/price.svg";
 import bgstrength from "../assets/bgstrength.png";
 
 export const OurStrengths = () => {
+  const { ref, inView } = useInView({
+    freezeOnceVisible: true,
+    threshold: 1,
+    triggerOnce: true,
+  });
+
   return (
     <Container
       fluid
@@ -48,6 +55,7 @@ export const OurStrengths = () => {
       {/* First Row */}
       <Row>
         <Col
+          ref={ref}
           xs={12}
           md={12}
           lg={4}
@@ -70,6 +78,7 @@ export const OurStrengths = () => {
         </Col>
 
         <Col
+          ref={ref}
           xs={12}
           md={12}
           lg={4}
@@ -92,6 +101,7 @@ export const OurStrengths = () => {
         </Col>
 
         <Col
+          ref={ref}
           xs={12}
           md={12}
           lg={4}
@@ -117,6 +127,7 @@ export const OurStrengths = () => {
       {/* Second Row */}
       <Row>
         <Col
+          ref={ref}
           xs={12}
           md={12}
           lg={4}
@@ -138,6 +149,7 @@ export const OurStrengths = () => {
           </div>
         </Col>
         <Col
+          ref={ref}
           xs={12}
           md={12}
           lg={4}
@@ -160,6 +172,7 @@ export const OurStrengths = () => {
         </Col>
 
         <Col
+          ref={ref}
           xs={12}
           md={12}
           lg={4}

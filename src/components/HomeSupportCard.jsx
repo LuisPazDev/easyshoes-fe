@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
+import { useInView } from "react-intersection-observer";
 import { Container, Row, Col, Badge, Button, Image } from "react-bootstrap";
 
 import bgregistercard from "../assets/bgregistercard.png";
 import supportcard from "../assets/supportcard.png";
 
 export const HomeSupportCard = () => {
+  const { ref, inView } = useInView({
+    freezeOnceVisible: true,
+    threshold: 1,
+    triggerOnce: true,
+  });
   return (
     <Container
       fluid
@@ -77,9 +83,14 @@ export const HomeSupportCard = () => {
         {/*  Image Col */}
         <Col xs={12} md={12} lg={6} className="mt-5">
           <Image
+            ref={ref}
             fluid
             src={supportcard}
-            className="animate__animated animate__backInRight"
+            className={`${
+              inView
+                ? "animate__animated animate__backInRight animate__delay-1s"
+                : ""
+            }`}
           />
         </Col>
       </Row>
