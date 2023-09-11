@@ -4,13 +4,7 @@ import logoluispazdev from "../assets/logoluispazdev.png";
 
 export const HomeFooter = () => {
   return (
-    <Container
-      fluid
-      style={{
-        backgroundColor: "#212529",
-      }}
-      className="text-center p-3"
-    >
+    <Container fluid className="text-center p-3">
       <Row>
         <Col>
           <div className="mt-4">

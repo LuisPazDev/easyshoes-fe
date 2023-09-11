@@ -73,9 +73,8 @@ export const HomeRegisterCard = () => {
         </Col>
 
         {/*  Image Col */}
-        <Col xs={12} md={12} lg={6} className="mt-5">
+        <Col ref={ref} xs={12} md={12} lg={6} className="mt-5">
           <Image
-            ref={ref}
             fluid
             src={registercard}
             className={`${

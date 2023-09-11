@@ -70,7 +70,11 @@ export const HomeHeader = () => {
           lg={6}
           className="d-flex justify-content-center align-items-center mt-4 mb-4"
         >
-          <Carousel indicators={false} controls={false}>
+          <Carousel
+            className="animate__animated animate__backInLeft animate__delay-2s"
+            indicators={false}
+            controls={false}
+          >
             <Carousel.Item>
               <Image
                 className="d-block w-100"

@@ -62,7 +62,7 @@ export const ShoesCard = () => {
               <Card
                 key={shoes._id}
                 style={{ width: "16rem" }}
-                className="border border-dark rounded"
+                className="border border-dark rounded animate__animated animate__backInLeft animate__delay-1s"
               >
                 <Card.Img
                   variant="top"
