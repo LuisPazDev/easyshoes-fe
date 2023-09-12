@@ -11,7 +11,37 @@ import bestpriceicon from "../assets/price.svg";
 import bgstrength from "../assets/bgstrength.png";
 
 export const OurStrengths = () => {
-  const { ref, inView } = useInView({
+  const { ref: ref1, inView: inView1 } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+    freezeOnceVisible: true,
+  });
+
+  const { ref: ref2, inView: inView2 } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+    freezeOnceVisible: true,
+  });
+
+  const { ref: ref3, inView: inView3 } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+    freezeOnceVisible: true,
+  });
+
+  const { ref: ref4, inView: inView4 } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+    freezeOnceVisible: true,
+  });
+
+  const { ref: ref5, inView: inView5 } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+    freezeOnceVisible: true,
+  });
+
+  const { ref: ref6, inView: inView6 } = useInView({
     triggerOnce: true,
     threshold: 0.5,
     freezeOnceVisible: true,
@@ -20,6 +50,7 @@ export const OurStrengths = () => {
   return (
     <Container
       fluid
+      className="p-4"
       style={{
         backgroundImage: `url(${bgstrength})`,
         backgroundPosition: "center",
@@ -55,81 +86,89 @@ export const OurStrengths = () => {
       {/* First Row */}
       <Row>
         <Col
-          ref={ref}
           xs={12}
           md={12}
           lg={4}
-          className={`d-flex flex-column justify-content-center align-items-center mt-4 p-3 ${
-            inView ? "animate__animated animate__backInRight" : ""
-          }`}
+          className="d-flex flex-column justify-content-center align-items-center mt-4 p-3"
         >
-          <div>
-            <h5>
-              <img
-                style={{ width: "40px", height: "40px" }}
-                className="me-3"
-                src={deliveryicon}
-                alt="deliveryicon"
-              />
-              Free Shipping
-            </h5>
-          </div>
-          <div className="text-center">
-            <h6 className="ms-5">On all orders</h6>
+          <div ref={ref1}>
+            {inView1 && (
+              <div className="animate__animated animate__backInRight animate__delay-0s">
+                <h5>
+                  <img
+                    style={{ width: "40px", height: "40px" }}
+                    className="me-3"
+                    src={deliveryicon}
+                    alt="deliveryicon"
+                  />
+                  Free Shipping
+                </h5>
+
+                <div className="text-center">
+                  <h6 className="ms-5">On all orders</h6>
+                </div>
+              </div>
+            )}
           </div>
         </Col>
 
         <Col
-          ref={ref}
           xs={12}
           md={12}
           lg={4}
           className={`d-flex flex-column justify-content-center align-items-center mt-4 p-3 ${
-            inView
+            inView2
               ? "animate__animated animate__backInRight animate__delay-1s"
               : ""
           }`}
         >
-          <div>
-            <h5>
-              <img
-                style={{ width: "40px", height: "40px" }}
-                className="me-3"
-                src={supporticon}
-                alt="deliveryicon"
-              />
-              Online Support
-            </h5>
-          </div>
-          <div className="text-center">
-            <h6 className="ms-5"> 24 hours</h6>
+          <div ref={ref2}>
+            {inView2 && (
+              <div>
+                <h5>
+                  <img
+                    style={{ width: "40px", height: "40px" }}
+                    className="me-3"
+                    src={supporticon}
+                    alt="deliveryicon"
+                  />
+                  Online Support
+                </h5>
+              </div>
+            )}
+            <div className="text-center">
+              <h6 className="ms-5"> 24 hours</h6>
+            </div>
           </div>
         </Col>
 
         <Col
-          ref={ref}
           xs={12}
           md={12}
           lg={4}
           className={`d-flex flex-column justify-content-center align-items-center mt-4 p-3 ${
-            inView
+            inView3
               ? "animate__animated animate__backInRight animate__delay-2s"
               : ""
           }`}
         >
-          <div>
-            <h5>
-              <img
-                style={{ width: "40px", height: "40px" }}
-                className="me-3"
-                src={returnicon}
-                alt="deliveryicon"
-              />
-              Money Return
-            </h5>
-          </div>
-          <div className="text-center">
-            <h6 className="ms-5">Under 7 days</h6>
+          <div ref={ref3}>
+            {inView3 && (
+              <div>
+                <h5>
+                  <img
+                    style={{ width: "40px", height: "40px" }}
+                    className="me-3"
+                    src={returnicon}
+                    alt="deliveryicon"
+                  />
+                  Money Return
+                </h5>
+              </div>
+            )}
+            <div className="text-center">
+              <h6 className="ms-5">Under 7 days</h6>
+            </div>
           </div>
         </Col>
       </Row>
@@ -137,82 +176,91 @@ export const OurStrengths = () => {
       {/* Second Row */}
       <Row>
         <Col
-          ref={ref}
           xs={12}
           md={12}
           lg={4}
           className={`d-flex flex-column justify-content-center align-items-center mt-4 p-3 ${
-            inView
+            inView4
               ? "animate__animated animate__backInRight animate__delay-3s"
               : ""
           }`}
         >
-          <div>
-            <h5>
-              <img
-                style={{ width: "40px", height: "40px" }}
-                className="me-3"
-                src={bestpriceicon}
-                alt="deliveryicon"
-              />
-              The Best Prices
-            </h5>
-          </div>
-          <div className="text-center">
-            <h6 className="ms-5">Updated daily</h6>
+          <div ref={ref4}>
+            {inView4 && (
+              <div>
+                <h5>
+                  <img
+                    style={{ width: "40px", height: "40px" }}
+                    className="me-3"
+                    src={bestpriceicon}
+                    alt="deliveryicon"
+                  />
+                  The Best Prices
+                </h5>
+              </div>
+            )}
+            <div className="text-center">
+              <h6 className="ms-5">Updated daily</h6>
+            </div>
           </div>
         </Col>
         <Col
-          ref={ref}
           xs={12}
           md={12}
           lg={4}
           className={`d-flex flex-column justify-content-center align-items-center mt-4 p-3 ${
-            inView
+            inView5
               ? "animate__animated animate__backInRight animate__delay-4s"
               : ""
           }`}
         >
-          <div>
-            <h5>
-              <img
-                style={{ width: "40px", height: "40px" }}
-                className="me-3"
-                src={membericon}
-                alt="deliveryicon"
-              />
-              Member Discount
-            </h5>
-          </div>
-          <div className="text-center">
-            <h6 className="ms-5">Orders over 120</h6>
+          <div ref={ref5}>
+            {inView5 && (
+              <div>
+                <h5>
+                  <img
+                    style={{ width: "40px", height: "40px" }}
+                    className="me-3"
+                    src={membericon}
+                    alt="deliveryicon"
+                  />
+                  Member Discount
+                </h5>
+              </div>
+            )}
+            <div className="text-center">
+              <h6 className="ms-5">Orders over 120</h6>
+            </div>
           </div>
         </Col>
 
         <Col
-          ref={ref}
           xs={12}
           md={12}
           lg={4}
           className={`d-flex flex-column justify-content-center align-items-center mt-4 p-3 ${
-            inView
+            inView6
               ? "animate__animated animate__backInRight animate__delay-5s"
               : ""
           }`}
         >
-          <div>
-            <h5>
-              <img
-                style={{ width: "40px", height: "40px" }}
-                className="me-3"
-                src={secureicon}
-                alt="deliveryicon"
-              />
-              Secure Payment
-            </h5>
-          </div>
-          <div className="text-center">
-            <h6 className="ms-5">100% secure</h6>
+          <div ref={ref6}>
+            {inView6 && (
+              <div>
+                <h5>
+                  <img
+                    style={{ width: "40px", height: "40px" }}
+                    className="me-3"
+                    src={secureicon}
+                    alt="deliveryicon"
+                  />
+                  Secure Payment
+                </h5>
+              </div>
+            )}
+            <div className="text-center">
+              <h6 className="ms-5">100% secure</h6>
+            </div>
           </div>
         </Col>
       </Row>

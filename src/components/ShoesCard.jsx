@@ -1,12 +1,18 @@
 import { useFetch } from "../hooks/useFetch";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Badge, Container } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
-import Spinner from "react-bootstrap/Spinner";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
+import {
+  Badge,
+  Container,
+  DropdownButton,
+  Dropdown,
+  ButtonGroup,
+  Button,
+  Card,
+  Spinner,
+  Col,
+  Row,
+} from "react-bootstrap";
 
 import stars from "../assets/stars.png";
 
@@ -16,6 +22,7 @@ export const ShoesCard = () => {
   );
 
   const [shoesData, setShoesData] = useState([]);
+  const [selectedModel, setSelectedModel] = useState("");
 
   const getShoesData = async () => {
     const res = await data;
@@ -27,7 +34,13 @@ export const ShoesCard = () => {
     getShoesData();
   }, [data]);
 
-  console.log("shoesData", shoesData);
+  const filteredShoesData = shoesData.filter(
+    (shoes) => shoes.model === selectedModel
+  );
+
+  const handleModelSelect = (model) => {
+    setSelectedModel(model);
+  };
 
   return (
     <Container fluid className="p-4">
@@ -46,13 +59,58 @@ export const ShoesCard = () => {
         </h6>
       </div>
 
+      <div className="text-center mt-5">
+        <h5>
+          Filter by
+          <ButtonGroup className="ms-3">
+            <DropdownButton
+              as={ButtonGroup}
+              variant="outline-danger"
+              title="Model"
+              id="bg-nested-dropdown"
+            >
+              <Dropdown.Item
+                onClick={() => handleModelSelect("Sport")}
+                eventKey="1"
+              >
+                <h6>
+                  <strong>
+                    <i>Sport</i>
+                  </strong>
+                </h6>
+              </Dropdown.Item>
+              <Dropdown.Item
+                onClick={() => handleModelSelect("Casual")}
+                eventKey="2"
+              >
+                <h6>
+                  <strong>
+                    <i>Casual</i>
+                  </strong>
+                </h6>
+              </Dropdown.Item>
+              <Dropdown.Item
+                onClick={() => handleModelSelect("Fashion")}
+                eventKey="3"
+              >
+                <h6>
+                  <strong>
+                    <i>Fashion</i>
+                  </strong>
+                </h6>
+              </Dropdown.Item>
+            </DropdownButton>
+          </ButtonGroup>
+        </h5>
+      </div>
+
       <Row>
         {isLoading ? (
           <div className="text-center mt-5">
             <Spinner animation="border" variant="danger" />
           </div>
         ) : (
-          shoesData.map((shoes) => (
+          filteredShoesData.map((shoes) => (
             <Col
               xs={12}
               md={6}

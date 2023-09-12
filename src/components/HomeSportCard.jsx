@@ -72,7 +72,7 @@ export const HomeSportCard = () => {
               </i>
             </h6>
 
-            <div className="mt-5 text-center animate__animated animate__flash animate__delay-2s">
+            <div className="mt-5 text-center animate__animated animate__flash ">
               <Button variant="outline-light" size="lg">
                 <Link to="/shoes">
                   <strong>
