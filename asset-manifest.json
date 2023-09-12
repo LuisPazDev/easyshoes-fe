@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/easyshoes-fe/static/css/main.ea5ee8cc.css",
-    "main.js": "/easyshoes-fe/static/js/main.d6924515.js",
+    "main.js": "/easyshoes-fe/static/js/main.0379a890.js",
     "static/media/bgstrength.png": "/easyshoes-fe/static/media/bgstrength.ea937fe0adfdb13e51bb.png",
     "static/media/bgregistercard.png": "/easyshoes-fe/static/media/bgregistercard.9b2e1e9f368d4bcafebf.png",
     "static/media/bgsportcard.png": "/easyshoes-fe/static/media/bgsportcard.e913bfaeb8649c149f5c.png",
@@ -20,10 +20,10 @@
     "static/media/payment.svg": "/easyshoes-fe/static/media/payment.35208a82a3ff52a0224ced3ef3ce26b8.svg",
     "static/media/member.svg": "/easyshoes-fe/static/media/member.523964d572c1561e02dae1b5dc27ee0e.svg",
     "main.ea5ee8cc.css.map": "/easyshoes-fe/static/css/main.ea5ee8cc.css.map",
-    "main.d6924515.js.map": "/easyshoes-fe/static/js/main.d6924515.js.map"
+    "main.0379a890.js.map": "/easyshoes-fe/static/js/main.0379a890.js.map"
   },
   "entrypoints": [
     "static/css/main.ea5ee8cc.css",
-    "static/js/main.d6924515.js"
+    "static/js/main.0379a890.js"
   ]
 }
