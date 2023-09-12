@@ -12,9 +12,9 @@ import bgstrength from "../assets/bgstrength.png";
 
 export const OurStrengths = () => {
   const { ref, inView } = useInView({
-    freezeOnceVisible: true,
-    threshold: 1,
     triggerOnce: true,
+    threshold: 0.5,
+    freezeOnceVisible: true,
   });
 
   return (
@@ -59,10 +59,8 @@ export const OurStrengths = () => {
           xs={12}
           md={12}
           lg={4}
-          className={`${
-            inView
-              ? "d-flex flex-column justify-content-center align-items-center mt-4 p-3 animate__animated animate__backInRight"
-              : ""
+          className={`d-flex flex-column justify-content-center align-items-center mt-4 p-3 ${
+            inView ? "animate__animated animate__backInRight" : ""
           }`}
         >
           <div>
@@ -86,9 +84,9 @@ export const OurStrengths = () => {
           xs={12}
           md={12}
           lg={4}
-          className={`${
+          className={`d-flex flex-column justify-content-center align-items-center mt-4 p-3 ${
             inView
-              ? "d-flex flex-column justify-content-center align-items-center mt-4 p-3 animate__animated animate__backInRight animate__delay-1s"
+              ? "animate__animated animate__backInRight animate__delay-1s"
               : ""
           }`}
         >
@@ -113,9 +111,9 @@ export const OurStrengths = () => {
           xs={12}
           md={12}
           lg={4}
-          className={`${
+          className={`d-flex flex-column justify-content-center align-items-center mt-4 p-3 ${
             inView
-              ? "d-flex flex-column justify-content-center align-items-center mt-4 p-3 animate__animated animate__backInRight animate__delay-2s"
+              ? "animate__animated animate__backInRight animate__delay-2s"
               : ""
           }`}
         >
@@ -143,9 +141,9 @@ export const OurStrengths = () => {
           xs={12}
           md={12}
           lg={4}
-          className={`${
+          className={`d-flex flex-column justify-content-center align-items-center mt-4 p-3 ${
             inView
-              ? "d-flex flex-column justify-content-center align-items-center mt-4 p-3 animate__animated animate__backInRight animate__delay-3s"
+              ? "animate__animated animate__backInRight animate__delay-3s"
               : ""
           }`}
         >
@@ -169,9 +167,9 @@ export const OurStrengths = () => {
           xs={12}
           md={12}
           lg={4}
-          className={`${
+          className={`d-flex flex-column justify-content-center align-items-center mt-4 p-3 ${
             inView
-              ? "d-flex flex-column justify-content-center align-items-center mt-4 p-3 animate__animated animate__backInRight animate__delay-4s"
+              ? "animate__animated animate__backInRight animate__delay-4s"
               : ""
           }`}
         >
@@ -196,9 +194,9 @@ export const OurStrengths = () => {
           xs={12}
           md={12}
           lg={4}
-          className={`${
+          className={`d-flex flex-column justify-content-center align-items-center mt-4 p-3 ${
             inView
-              ? "d-flex flex-column justify-content-center align-items-center mt-4 p-3 animate__animated animate__backInRight animate__delay-5s"
+              ? "animate__animated animate__backInRight animate__delay-5s"
               : ""
           }`}
         >

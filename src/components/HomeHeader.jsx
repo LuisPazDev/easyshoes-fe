@@ -71,7 +71,8 @@ export const HomeHeader = () => {
           className="d-flex justify-content-center align-items-center mt-4 mb-4"
         >
           <Carousel
-            className="animate__animated animate__backInLeft animate__delay-2s"
+            className="animate__animated animate__backInRight animate__delay-2s"
+            interval={1800}
             indicators={false}
             controls={false}
           >

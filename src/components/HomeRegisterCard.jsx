@@ -73,16 +73,16 @@ export const HomeRegisterCard = () => {
         </Col>
 
         {/*  Image Col */}
-        <Col ref={ref} xs={12} md={12} lg={6} className="mt-5">
-          <Image
-            fluid
-            src={registercard}
-            className={`${
-              inView
-                ? "animate__animated animate__backInRight animate__delay-1s"
-                : ""
-            }`}
-          />
+        <Col xs={12} md={12} lg={6} className="mt-5">
+          <div ref={ref}>
+            {inView && (
+              <Image
+                fluid
+                src={registercard}
+                className="animate__animated animate__backInRight animate__delay-1s"
+              />
+            )}
+          </div>
         </Col>
       </Row>
     </Container>

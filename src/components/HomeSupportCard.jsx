@@ -81,16 +81,16 @@ export const HomeSupportCard = () => {
         </Col>
 
         {/*  Image Col */}
-        <Col ref={ref} xs={12} md={12} lg={6} className="mt-5">
-          <Image
-            fluid
-            src={supportcard}
-            className={`${
-              inView
-                ? "animate__animated animate__backInRight animate__delay-1s"
-                : ""
-            }`}
-          />
+        <Col xs={12} md={12} lg={6} className="mt-5">
+          <div ref={ref}>
+            {inView && (
+              <Image
+                fluid
+                src={supportcard}
+                className="animate__animated animate__backInRight animate__delay-2s"
+              />
+            )}
+          </div>
         </Col>
       </Row>
     </Container>
