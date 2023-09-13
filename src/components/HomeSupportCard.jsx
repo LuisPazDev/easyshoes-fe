@@ -87,7 +87,7 @@ export const HomeSupportCard = () => {
               <Image
                 fluid
                 src={supportcard}
-                className="animate__animated animate__backInRight animate__delay-2s"
+                className="animate__animated animate__backInRight animate__delay-1s"
               />
             )}
           </div>

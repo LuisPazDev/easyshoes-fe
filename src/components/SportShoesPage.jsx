@@ -16,7 +16,7 @@ import {
 
 import stars from "../assets/stars.png";
 
-export const ShoesCard = () => {
+export const SportShoesPage = () => {
   const { data, isLoading } = useFetch(
     `https://easyshoes.onrender.com/shoes/get`
   );
@@ -33,13 +33,17 @@ export const ShoesCard = () => {
     getShoesData();
   }, [data]);
 
+  const filteredShoesData = shoesData.filter(
+    (shoes) => shoes.model === "Sport"
+  );
+
   return (
     <Container fluid className="p-4">
       <div>
         <h1 className="text-center mt-4">
           <Badge pill bg="danger">
             <strong>
-              <i>Shoes Stock</i>
+              <i>Sport Shoes</i>
             </strong>
           </Badge>
         </h1>
@@ -60,15 +64,6 @@ export const ShoesCard = () => {
               title="Model"
               id="bg-nested-dropdown"
             >
-              <Dropdown.Item eventKey="1">
-                <Link className="text-black" to="/sportshoes">
-                  <h6>
-                    <strong>
-                      <i>Sport</i>
-                    </strong>
-                  </h6>
-                </Link>
-              </Dropdown.Item>
               <Dropdown.Item eventKey="2">
                 <Link className="text-black" to="/casualshoes">
                   <h6>
@@ -98,7 +93,7 @@ export const ShoesCard = () => {
             <Spinner animation="border" variant="danger" />
           </div>
         ) : (
-          shoesData.map((shoes) => (
+          filteredShoesData.map((shoes) => (
             <Col
               xs={12}
               md={6}
@@ -173,6 +168,17 @@ export const ShoesCard = () => {
             </Col>
           ))
         )}
+        <div className={isLoading ? "d-none" : "text-center"}>
+          <Button variant="outline-light" className="mt-5 mb-4" size="lg">
+            <Link to="/shoes">
+              <h6>
+                <strong>
+                  <i>See All Models</i>
+                </strong>
+              </h6>
+            </Link>
+          </Button>
+        </div>
       </Row>
     </Container>
   );
