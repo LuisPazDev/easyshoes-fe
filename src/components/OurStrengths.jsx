@@ -93,7 +93,7 @@ export const OurStrengths = () => {
         >
           <div ref={ref1}>
             {inView1 && (
-              <div className="animate__animated animate__backInRight animate__delay-0s">
+              <div className="animate__animated animate__backInRight">
                 <h5>
                   <img
                     style={{ width: "40px", height: "40px" }}

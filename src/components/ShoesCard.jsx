@@ -33,6 +33,15 @@ export const ShoesCard = () => {
     getShoesData();
   }, [data]);
 
+  // add to cart button function usisng local storage
+  const addToCart = (shoes) => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const newCart = [...cart, shoes];
+
+    localStorage.setItem("cart", JSON.stringify(newCart));
+  };
+
   return (
     <Container fluid className="p-4">
       <div>
@@ -162,7 +171,10 @@ export const ShoesCard = () => {
                     </h5>
                   </Card.Text>
                   <div className="text-center mt-4">
-                    <Button variant="outline-light">
+                    <Button
+                      onClick={() => addToCart(shoes)}
+                      variant="outline-light"
+                    >
                       <strong>
                         <i>Add to cart</i>
                       </strong>

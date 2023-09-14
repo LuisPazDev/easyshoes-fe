@@ -8,7 +8,7 @@ import registercard from "../assets/registerimg.png";
 export const HomeRegisterCard = () => {
   const { ref, inView } = useInView({
     freezeOnceVisible: true,
-    threshold: 1,
+    threshold: 0.5,
     triggerOnce: true,
   });
 
