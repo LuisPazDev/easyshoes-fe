@@ -166,7 +166,7 @@ export const ShoesCard = () => {
                   <Card.Text>
                     <h5 className="mt-4">
                       <strong>
-                        <i>{shoes.price}</i>
+                        <i className="text-danger">$ {shoes.price}</i>
                       </strong>
                     </h5>
                   </Card.Text>
