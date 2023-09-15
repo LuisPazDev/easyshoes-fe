@@ -78,7 +78,7 @@ export const MyCart = () => {
           // if cart is not empty
           cart.length > 0 ? (
             <>
-              <div className="text-center mt-3">
+              <div className="text-center mt-5">
                 <p>
                   <b className="text-danger">Sub-Total:</b>
                   <strong>

@@ -28,7 +28,6 @@ export const HomeSportCard = () => {
 
   useEffect(() => {
     getShoesData();
-    console.log(shoesData);
   }, [data]);
 
   return (
@@ -47,28 +46,32 @@ export const HomeSportCard = () => {
           xs={12}
           md={12}
           lg={6}
-          className="d-flex flex-column justify-content-center align-items-center mt-5 mb-5 p-5"
+          className="d-flex flex-column justify-content-center align-items-center mt-5 mb-2 p-5"
         >
           <div className="text-start">
             <h2>
               <Badge pill bg="danger">
                 <strong>
-                  <i>Be You</i>
+                  <i>Our Shoes</i>
                 </strong>
               </Badge>
             </h2>
 
             <h1 className="mt-4 mb-4">
               <strong>
-                <i>Our Shoes</i>
+                <i>We Have the Best </i>
               </strong>
             </h1>
 
-            <h6 style={{ lineHeight: "1.7em" }}>
+            <h6 style={{ lineHeight: "1.5em" }}>
               <i>
-                We have a wide range of shoes for you
+                Check out our amaizing range of shoes
                 <br />
-                choose from casual, sport and fashion shoes.
+                we have it all, casual, sport fashion,
+                <br />
+                Easy<b className="text-danger">Shoes </b>
+                has only the best for you.
+                <br />
               </i>
             </h6>
 
@@ -84,7 +87,7 @@ export const HomeSportCard = () => {
           </div>
         </Col>
         {/* Image Col */}
-        <Col xs={12} md={12} lg={6} className="mt-5 mb-5 p-5">
+        <Col xs={12} md={12} lg={6} className="mt-3 mb-5 p-4">
           <Carousel>
             {shoesData.map((pairShoes) => {
               return (

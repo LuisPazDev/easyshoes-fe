@@ -48,14 +48,14 @@ export const ShoesCard = () => {
         <h1 className="text-center mt-4">
           <Badge pill bg="danger">
             <strong>
-              <i>Shoes Stock</i>
+              <i>Shoes</i>
             </strong>
           </Badge>
         </h1>
       </div>
       <div className="text-center mt-3">
         <h6>
-          <i>Check out our latest shoes and find the perfect pair for you.</i>
+          <i>Find the perfect pair for you.</i>
         </h6>
       </div>
 
