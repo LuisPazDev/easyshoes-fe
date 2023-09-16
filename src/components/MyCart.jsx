@@ -1,15 +1,18 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Container, Badge, Row, Col, Button, Card } from "react-bootstrap";
 
 export const MyCart = () => {
   // getting cart data from local storage
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")));
 
   // removing item from cart
   const removeCartItem = (shoes) => {
     const newCart = cart.filter((item) => item._id !== shoes._id);
 
     localStorage.setItem("cart", JSON.stringify(newCart));
+
+    setCart(newCart);
   };
 
   // Calculating the total price of the cart items
