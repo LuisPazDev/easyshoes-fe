@@ -36,6 +36,21 @@ export const MyCart = () => {
             </strong>
           </Badge>
         </h1>
+        <di className="mt-3">
+          {
+            // if cart is not empty
+            cart.length > 0 ? (
+              <h6>
+                <i>Review your items</i>
+              </h6>
+            ) : (
+              // if cart is empty
+              <h6>
+                <i>Your cart is empty</i>
+              </h6>
+            )
+          }
+        </di>
       </div>
 
       <Row>
@@ -112,10 +127,7 @@ export const MyCart = () => {
             </>
           ) : (
             // if cart is empty
-            <div className="text-center mt-4 mb-3">
-              <h5>
-                <i>Your cart is empty</i>
-              </h5>
+            <div className="text-center mt-5 mb-5">
               <Link to="/shoes">
                 <Button className="mt-4" variant="outline-light">
                   <strong>
