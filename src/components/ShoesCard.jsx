@@ -1,6 +1,7 @@
 import { useFetch } from "../hooks/useFetch";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../context/CartContext";
 import {
   Badge,
   Container,
@@ -33,13 +34,15 @@ export const ShoesCard = () => {
     getShoesData();
   }, [data]);
 
-  // add to cart button function usisng local storage
-  const addToCart = (shoes) => {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  // add to cart button function using cart from context
+  const { cart, setCart } = useContext(CartContext);
 
+  const addToCart = (shoes) => {
     const newCart = [...cart, shoes];
 
     localStorage.setItem("cart", JSON.stringify(newCart));
+
+    setCart(newCart);
   };
 
   return (
