@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/easyshoes-fe/static/css/main.ea5ee8cc.css",
-    "main.js": "/easyshoes-fe/static/js/main.694be393.js",
+    "main.js": "/easyshoes-fe/static/js/main.a8e6dafe.js",
     "static/media/bgstrength.png": "/easyshoes-fe/static/media/bgstrength.ea937fe0adfdb13e51bb.png",
     "static/media/bgregistercard.png": "/easyshoes-fe/static/media/bgregistercard.9b2e1e9f368d4bcafebf.png",
     "static/media/bgsportcard.png": "/easyshoes-fe/static/media/bgsportcard.e913bfaeb8649c149f5c.png",
@@ -16,14 +16,15 @@
     "static/media/price.svg": "/easyshoes-fe/static/media/price.84d15f00942573b072a1ba366a011c62.svg",
     "static/media/money.svg": "/easyshoes-fe/static/media/money.05b9d5171e7c29291fd9b287a9fd0ce2.svg",
     "static/media/fast.svg": "/easyshoes-fe/static/media/fast.2a767fa9196b2e8a5d9c58eda67f6fdc.svg",
+    "static/media/cart.svg": "/easyshoes-fe/static/media/cart.7f91bb15c08e7b2a0a63d6215d0ea78c.svg",
     "static/media/support.svg": "/easyshoes-fe/static/media/support.688dfc642ebdd708e6e0395e1b4c10b2.svg",
     "static/media/payment.svg": "/easyshoes-fe/static/media/payment.35208a82a3ff52a0224ced3ef3ce26b8.svg",
     "static/media/member.svg": "/easyshoes-fe/static/media/member.523964d572c1561e02dae1b5dc27ee0e.svg",
     "main.ea5ee8cc.css.map": "/easyshoes-fe/static/css/main.ea5ee8cc.css.map",
-    "main.694be393.js.map": "/easyshoes-fe/static/js/main.694be393.js.map"
+    "main.a8e6dafe.js.map": "/easyshoes-fe/static/js/main.a8e6dafe.js.map"
   },
   "entrypoints": [
     "static/css/main.ea5ee8cc.css",
-    "static/js/main.694be393.js"
+    "static/js/main.a8e6dafe.js"
   ]
 }
