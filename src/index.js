@@ -13,12 +13,12 @@ import "./styles/App.css";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <CartProvider>
-      <UserProvider>
-        <HashRouter>
+    <HashRouter>
+      <CartProvider>
+        <UserProvider>
           <App />
-        </HashRouter>
-      </UserProvider>
-    </CartProvider>
+        </UserProvider>
+      </CartProvider>
+    </HashRouter>
   </React.StrictMode>
 );

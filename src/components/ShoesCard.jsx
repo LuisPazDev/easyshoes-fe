@@ -35,7 +35,7 @@ export const ShoesCard = () => {
   }, [data]);
 
   // add to cart button function using cart from context
-  const { cart, setCart, addToCart } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
 
   return (
     <Container fluid className="p-4">

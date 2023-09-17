@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Nav, Navbar, Offcanvas } from "react-bootstrap";
+import { CartContext } from "../context/CartContext";
 
-import cart from "../assets/cart.svg";
+import cartimg from "../assets/cart.svg";
 
 export const NavigationBar = () => {
   // offcanvas navbar
@@ -10,6 +11,9 @@ export const NavigationBar = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  // use context to add quantity to cartimg
+  const { cart } = useContext(CartContext);
 
   return (
     <>
@@ -91,14 +95,18 @@ export const NavigationBar = () => {
                   <Link onClick={handleClose} to="/cart">
                     <strong>
                       <i>Cart </i>
-                      <img
-                        src={cart}
-                        style={{
-                          width: "25px",
-                          height: "25px",
-                        }}
-                        alt="cart.svg"
-                      />
+                      <span className="badge bg-black">
+                        <img
+                          style={{ width: "20px", height: "20px" }}
+                          src={cartimg}
+                          alt="cart.svg"
+                        />
+                        {cart.length === 0 ? (
+                          <span></span>
+                        ) : (
+                          <span>{cart.length}</span>
+                        )}
+                      </span>
                     </strong>
                   </Link>
                 </Nav.Link>

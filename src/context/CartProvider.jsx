@@ -4,19 +4,19 @@ import { Link, useLocation } from "react-router-dom";
 import Swal from "sweetalert2";
 import { Button } from "react-bootstrap";
 
-export const CartProvider = ({ children }) => {
-  // show button if cart is not empty
-  const [showButton, setShowButton] = useState(false);
+import cartimg from "../assets/cart.svg";
 
+export const CartProvider = ({ children }) => {
   // get data from local storage and show it in cart
   const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")));
 
   // set data to local storage
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
-
-    console.log(cart);
   }, [cart]);
+
+  // show button if cart is not empty
+  const [showButton, setShowButton] = useState(false);
 
   // adding item to cart
   const addToCart = (shoes) => {
@@ -50,7 +50,33 @@ export const CartProvider = ({ children }) => {
 
   return (
     <CartContext.Provider value={{ cart, setCart, removeCartItem, addToCart }}>
-      <>{children}</>
+      <>
+        {children}
+        {cart.length > 0 && (
+          <Link to="/cart">
+            <Button
+              size="sm"
+              variant="outline-danger"
+              className="position-fixed bottom-0 end-0 m-3"
+              style={{ zIndex: 5 }}
+            >
+              <strong>
+                <i className="bi bi-cart3">
+                  Go Cart{"   "}
+                  <span className="badge bg-black">
+                    <img
+                      style={{ width: "20px", height: "20px" }}
+                      src={cartimg}
+                      alt="cart.svg"
+                    />
+                    {cart.length}
+                  </span>
+                </i>
+              </strong>
+            </Button>
+          </Link>
+        )}
+      </>
     </CartContext.Provider>
   );
 };
