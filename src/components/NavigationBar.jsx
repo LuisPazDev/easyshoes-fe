@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Nav, Navbar, Offcanvas } from "react-bootstrap";
 
+import cart from "../assets/cart.svg";
+
 export const NavigationBar = () => {
   // offcanvas navbar
   const [show, setShow] = useState(false);
@@ -88,7 +90,15 @@ export const NavigationBar = () => {
                 <Nav.Link>
                   <Link onClick={handleClose} to="/cart">
                     <strong>
-                      <i>Cart</i>
+                      <i>Cart </i>
+                      <img
+                        src={cart}
+                        style={{
+                          width: "25px",
+                          height: "25px",
+                        }}
+                        alt="cart.svg"
+                      />
                     </strong>
                   </Link>
                 </Nav.Link>

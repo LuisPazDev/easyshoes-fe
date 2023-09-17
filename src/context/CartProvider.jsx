@@ -44,6 +44,8 @@ export const CartProvider = ({ children }) => {
     const newCart = cart.filter((item) => item._id !== shoes._id);
 
     localStorage.setItem("cart", JSON.stringify(newCart));
+
+    setCart(newCart);
   };
 
   return (
