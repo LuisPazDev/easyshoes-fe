@@ -95,6 +95,8 @@ export const ContactPage = () => {
                 </h6>
               </Form.Label>
               <Form.Control
+                as="textarea"
+                rows={5}
                 className="border border-dark input-comment"
                 onChange={handleChange}
                 name="comment"

@@ -43,47 +43,63 @@ export const ShoesCard = () => {
         </h6>
       </div>
 
-      <div className="text-center mt-5">
-        <h5>
-          Filter by
-          <ButtonGroup className="ms-3">
-            <DropdownButton
-              as={ButtonGroup}
-              variant="outline-danger"
-              title="Model"
-              id="bg-nested-dropdown"
-            >
-              <Dropdown.Item eventKey="1">
-                <Link className="text-black" to="/sportshoes">
-                  <h6>
-                    <strong>
-                      <i>Sport</i>
-                    </strong>
-                  </h6>
-                </Link>
-              </Dropdown.Item>
-              <Dropdown.Item eventKey="2">
-                <Link className="text-black" to="/casualshoes">
-                  <h6>
-                    <strong>
-                      <i>Casual</i>
-                    </strong>
-                  </h6>
-                </Link>
-              </Dropdown.Item>
-              <Dropdown.Item eventKey="3">
-                <Link className="text-black" to="/fashionshoes">
-                  <h6>
-                    <strong>
-                      <i>Fashion</i>
-                    </strong>
-                  </h6>
-                </Link>
-              </Dropdown.Item>
-            </DropdownButton>
-          </ButtonGroup>
-        </h5>
+      <div>
+        <h5 className="text-center mt-5">Filter by</h5>
       </div>
+
+      {/*  filter buttons */}
+      <Row
+        xs={3}
+        className="text-center mt-4 mb-4 ms-auto me-auto"
+        style={{
+          maxWidth: "300px",
+        }}
+      >
+        <Col>
+          <DropdownButton
+            as={ButtonGroup}
+            title="Brand"
+            id="bg-nested-dropdown"
+            variant="outline-danger"
+            className="mt-2 mb-2"
+          >
+            <Dropdown.Item eventKey="2">Nike</Dropdown.Item>
+            <Dropdown.Item eventKey="3">Adidas</Dropdown.Item>
+            <Dropdown.Item eventKey="2">Timberland</Dropdown.Item>
+            <Dropdown.Item eventKey="3">Levis</Dropdown.Item>
+            <Dropdown.Item eventKey="3">Converse</Dropdown.Item>
+          </DropdownButton>
+        </Col>
+
+        <Col>
+          <DropdownButton
+            as={ButtonGroup}
+            title="Model"
+            id="bg-nested-dropdown"
+            variant="outline-danger"
+            className="mt-2 mb-2"
+          >
+            <Dropdown.Item eventKey="2">Casual</Dropdown.Item>
+            <Dropdown.Item eventKey="3">Fashion</Dropdown.Item>
+            <Dropdown.Item eventKey="4">Sport</Dropdown.Item>
+          </DropdownButton>
+        </Col>
+
+        <Col>
+          <DropdownButton
+            as={ButtonGroup}
+            title="Size"
+            id="bg-nested-dropdown"
+            variant="outline-danger"
+            className="mt-2 mb-2"
+          >
+            <Dropdown.Item eventKey="2">8</Dropdown.Item>
+            <Dropdown.Item eventKey="3">9</Dropdown.Item>
+            <Dropdown.Item eventKey="4">10</Dropdown.Item>
+            <Dropdown.Item eventKey="3">11</Dropdown.Item>
+          </DropdownButton>
+        </Col>
+      </Row>
 
       <Row>
         {isLoading ? (

@@ -55,7 +55,7 @@ export const HomeRegisterCard = () => {
               <br />
             </h6>
 
-            <div className="mt-2 text-center">
+            <div className="mt-5 text-center">
               <Button className="mt-5" variant="outline-light" size="lg">
                 <Link className="text-light" to="/register">
                   <strong>

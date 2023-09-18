@@ -65,13 +65,18 @@ export const HomeSportCard = () => {
             </h6>
 
             <div className="mt-5 text-center animate__animated animate__flash ">
-              <Button variant="outline-light" size="lg">
+              <Button className="mt-5" variant="outline-light" size="lg">
                 <Link to="/shoes">
                   <strong>
                     <i>Shop Now</i>
                   </strong>
                 </Link>
               </Button>
+              <h6 className="mt-4">
+                <strong>
+                  <i>Free Shipping on all orders</i>
+                </strong>
+              </h6>
             </div>
           </div>
         </Col>
