@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
 import {
@@ -17,18 +16,6 @@ export const HomeSportCard = () => {
   const { data, isLoading } = useFetch(
     `https://easyshoes.onrender.com/shoes/get`
   );
-
-  const [shoesData, setShoesData] = useState([]);
-
-  const getShoesData = async () => {
-    const res = await data;
-
-    setShoesData(res.data);
-  };
-
-  useEffect(() => {
-    getShoesData();
-  }, [data]);
 
   return (
     <Container
@@ -63,16 +50,18 @@ export const HomeSportCard = () => {
               </strong>
             </h1>
 
-            <h6 style={{ lineHeight: "1.5em" }}>
-              <i>
-                Check out our amaizing range of shoes
-                <br />
-                we have it all, casual, sport fashion,
-                <br />
-                Easy<b className="text-danger">Shoes </b>
-                has only the best for you.
-                <br />
-              </i>
+            <h6 style={{ lineHeight: "1.7em" }}>
+              <strong>
+                <i>
+                  Check out our amaizing range of shoes
+                  <br />
+                  we have it all, casual, sport fashion,
+                  <br />
+                  Easy<b className="text-danger">Shoes </b>
+                  has only the best for you.
+                  <br />
+                </i>
+              </strong>
             </h6>
 
             <div className="mt-5 text-center animate__animated animate__flash ">
@@ -87,23 +76,24 @@ export const HomeSportCard = () => {
           </div>
         </Col>
         {/* Image Col */}
-        <Col xs={12} md={12} lg={6} className="mt-3 mb-5 p-4">
+        <Col xs={12} md={12} lg={6} className="mb-5 p-5">
           <Carousel>
-            {shoesData.map((pairShoes) => {
-              return (
-                <Carousel.Item key={pairShoes.id}>
-                  <Image
-                    className="d-block w-100"
-                    style={{
-                      objectFit: "cover",
-                      maxHeight: "350px",
-                    }}
-                    src={pairShoes.img}
-                    alt={pairShoes.model}
-                  />
-                </Carousel.Item>
-              );
-            })}
+            {Array.isArray(data) &&
+              data.map((shoes) => {
+                return (
+                  <Carousel.Item key={shoes.id}>
+                    <Image
+                      className="d-block w-100 p-5"
+                      style={{
+                        objectFit: "cover",
+                        height: "350px",
+                      }}
+                      src={shoes.img}
+                      alt={shoes.model}
+                    />
+                  </Carousel.Item>
+                );
+              })}
           </Carousel>
         </Col>
       </Row>

@@ -17,7 +17,7 @@ export const useFetch = (url) => {
     const data = await resp.json();
 
     setState({
-      data: data,
+      data: data.data,
       isLoading: false,
       hasError: null,
     });

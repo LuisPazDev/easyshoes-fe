@@ -1,5 +1,5 @@
+import { useContext } from "react";
 import { useFetch } from "../hooks/useFetch";
-import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import {
@@ -18,21 +18,10 @@ import {
 import stars from "../assets/stars.png";
 
 export const ShoesCard = () => {
+  // get data from api using useFetch hook
   const { data, isLoading } = useFetch(
     `https://easyshoes.onrender.com/shoes/get`
   );
-
-  const [shoesData, setShoesData] = useState([]);
-
-  const getShoesData = async () => {
-    const res = await data;
-
-    setShoesData(res.data);
-  };
-
-  useEffect(() => {
-    getShoesData();
-  }, [data]);
 
   // add to cart button function using cart from context
   const { addToCart } = useContext(CartContext);
@@ -102,7 +91,8 @@ export const ShoesCard = () => {
             <Spinner animation="border" variant="danger" />
           </div>
         ) : (
-          shoesData.map((shoes) => (
+          Array.isArray(data) &&
+          data.map((shoes) => (
             <Col
               xs={12}
               md={6}

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { CartContext } from "./CartContext";
 import { Link, useLocation } from "react-router-dom";
 import Swal from "sweetalert2";
-import { Button } from "react-bootstrap";
+import { Button, Toast } from "react-bootstrap";
 
 import cartimg from "../assets/cart.svg";
 
@@ -17,6 +17,18 @@ export const CartProvider = ({ children }) => {
 
   // show button if cart is not empty
   const [showButton, setShowButton] = useState(false);
+
+  // get current location to show button in specific page
+  const location = useLocation();
+  const { pathname } = location;
+
+  useEffect(() => {
+    if (pathname === "/cart") {
+      setShowButton(false);
+    } else {
+      setShowButton(true);
+    }
+  }, [pathname]);
 
   // adding item to cart
   const addToCart = (shoes) => {
@@ -37,6 +49,8 @@ export const CartProvider = ({ children }) => {
       imageHeight: 150,
       imageAlt: "Custom image",
     });
+
+    setShowButton(true);
   };
 
   // removing item from cart
@@ -53,28 +67,30 @@ export const CartProvider = ({ children }) => {
       <>
         {children}
         {cart.length > 0 && (
-          <Link to="/cart">
+          <Toast show={showButton}>
             <Button
               size="sm"
               variant="outline-danger"
               className="position-fixed bottom-0 end-0 m-3"
               style={{ zIndex: 5 }}
             >
-              <strong>
-                <i className="bi bi-cart3">
-                  Go Cart{"   "}
-                  <span className="badge bg-black">
-                    <img
-                      style={{ width: "20px", height: "20px" }}
-                      src={cartimg}
-                      alt="cart.svg"
-                    />
-                    {cart.length}
-                  </span>
-                </i>
-              </strong>
+              <Link to="/cart">
+                <strong>
+                  <i className="bi bi-cart3">
+                    Go Cart{"   "}
+                    <span className="badge bg-black">
+                      <img
+                        style={{ width: "20px", height: "20px" }}
+                        src={cartimg}
+                        alt="cart.svg"
+                      />
+                      {cart.length}
+                    </span>
+                  </i>
+                </strong>
+              </Link>
             </Button>
-          </Link>
+          </Toast>
         )}
       </>
     </CartContext.Provider>
