@@ -16,6 +16,7 @@ import {
 } from "react-bootstrap";
 
 import stars from "../assets/stars.png";
+import { FiltertButton } from "./FiltertButton";
 
 export const ShoesCard = () => {
   // get data from api using useFetch hook
@@ -43,63 +44,7 @@ export const ShoesCard = () => {
         </h6>
       </div>
 
-      <div>
-        <h5 className="text-center mt-5">Filter by</h5>
-      </div>
-
-      {/*  filter buttons */}
-      <Row
-        xs={3}
-        className="text-center mt-4 mb-4 ms-auto me-auto"
-        style={{
-          maxWidth: "300px",
-        }}
-      >
-        <Col>
-          <DropdownButton
-            as={ButtonGroup}
-            title="Brand"
-            id="bg-nested-dropdown"
-            variant="outline-danger"
-            className="mt-2 mb-2"
-          >
-            <Dropdown.Item eventKey="2">Nike</Dropdown.Item>
-            <Dropdown.Item eventKey="3">Adidas</Dropdown.Item>
-            <Dropdown.Item eventKey="2">Timberland</Dropdown.Item>
-            <Dropdown.Item eventKey="3">Levis</Dropdown.Item>
-            <Dropdown.Item eventKey="3">Converse</Dropdown.Item>
-          </DropdownButton>
-        </Col>
-
-        <Col>
-          <DropdownButton
-            as={ButtonGroup}
-            title="Model"
-            id="bg-nested-dropdown"
-            variant="outline-danger"
-            className="mt-2 mb-2"
-          >
-            <Dropdown.Item eventKey="2">Casual</Dropdown.Item>
-            <Dropdown.Item eventKey="3">Fashion</Dropdown.Item>
-            <Dropdown.Item eventKey="4">Sport</Dropdown.Item>
-          </DropdownButton>
-        </Col>
-
-        <Col>
-          <DropdownButton
-            as={ButtonGroup}
-            title="Size"
-            id="bg-nested-dropdown"
-            variant="outline-danger"
-            className="mt-2 mb-2"
-          >
-            <Dropdown.Item eventKey="2">8</Dropdown.Item>
-            <Dropdown.Item eventKey="3">9</Dropdown.Item>
-            <Dropdown.Item eventKey="4">10</Dropdown.Item>
-            <Dropdown.Item eventKey="3">11</Dropdown.Item>
-          </DropdownButton>
-        </Col>
-      </Row>
+      <FiltertButton />
 
       <Row>
         {isLoading ? (

@@ -64,7 +64,7 @@ export const HomeSportCard = () => {
               </strong>
             </h6>
 
-            <div className="mt-5 text-center animate__animated animate__flash ">
+            <div className="mt-3 text-center animate__animated animate__flash ">
               <Button className="mt-5" variant="outline-light" size="lg">
                 <Link to="/shoes">
                   <strong>

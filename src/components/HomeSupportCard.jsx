@@ -52,7 +52,7 @@ export const HomeSupportCard = () => {
               <br />
             </h6>
 
-            <div className="mt-5 text-center">
+            <div className="mt-3 text-center">
               <Button className="mt-5" variant="outline-light" size="lg">
                 <Link to="/contact">
                   <strong>
