@@ -8,7 +8,7 @@ import supportcard from "../assets/supportcard.png";
 export const HomeSupportCard = () => {
   const { ref, inView } = useInView({
     freezeOnceVisible: true,
-    threshold: 0.5,
+    threshold: 1,
     triggerOnce: true,
   });
   return (
@@ -87,7 +87,7 @@ export const HomeSupportCard = () => {
               <Image
                 fluid
                 src={supportcard}
-                className="animate__animated animate__backInRight animate__delay-1s"
+                className="animate__animated animate__backInRight "
               />
             )}
           </div>

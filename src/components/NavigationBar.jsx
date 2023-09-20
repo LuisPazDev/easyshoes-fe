@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { Nav, Navbar, Offcanvas } from "react-bootstrap";
+import { Button, Col, Nav, Navbar, Offcanvas, Row } from "react-bootstrap";
 import { CartContext } from "../context/CartContext";
 
 import cartimg from "../assets/cart.svg";
@@ -37,7 +37,7 @@ export const NavigationBar = () => {
           <Navbar.Toggle
             onClick={handleShow}
             aria-controls={`offcanvasNavbar-expand-${expand}`}
-            className="bg-danger border-rounded"
+            className="bg-black border-rounded"
           >
             <img
               style={{ width: "20px", height: "20px" }}
@@ -55,16 +55,14 @@ export const NavigationBar = () => {
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                <Link to="/" onClick={handleClose}>
-                  <h6>
-                    <strong>
-                      <i>
-                        <b className="text-white">EASY</b>
-                        <b className="text-danger">SHOES</b>
-                      </i>
-                    </strong>
-                  </h6>
-                </Link>
+                <h6 onClick={handleClose}>
+                  <strong>
+                    <i>
+                      <b className="text-white">EASY</b>
+                      <b className="text-danger">SHOES</b>
+                    </i>
+                  </strong>
+                </h6>
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
