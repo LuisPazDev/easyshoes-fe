@@ -4,6 +4,7 @@ import { Nav, Navbar, Offcanvas } from "react-bootstrap";
 import { CartContext } from "../context/CartContext";
 
 import cartimg from "../assets/cart.svg";
+import menuicon from "../assets/menu.svg";
 
 export const NavigationBar = () => {
   // offcanvas navbar
@@ -36,8 +37,14 @@ export const NavigationBar = () => {
           <Navbar.Toggle
             onClick={handleShow}
             aria-controls={`offcanvasNavbar-expand-${expand}`}
-            className="bg-danger border-rounded border-2 border-dark"
-          />
+            className="bg-danger border-rounded"
+          >
+            <img
+              style={{ width: "20px", height: "20px" }}
+              src={menuicon}
+              alt="menu.svg"
+            />
+          </Navbar.Toggle>
           <Navbar.Offcanvas
             show={show}
             onHide={handleClose}

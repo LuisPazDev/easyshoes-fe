@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { ShoesProvider } from "./context/ShoesProvider";
 import { CartProvider } from "./context/CartProvider";
 import { UserProvider } from "./context/userContext";
 import { HashRouter } from "react-router-dom";
@@ -14,11 +15,13 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <HashRouter>
-      <CartProvider>
-        <UserProvider>
-          <App />
-        </UserProvider>
-      </CartProvider>
+      <ShoesProvider>
+        <CartProvider>
+          <UserProvider>
+            <App />
+          </UserProvider>
+        </CartProvider>
+      </ShoesProvider>
     </HashRouter>
   </React.StrictMode>
 );
