@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { ShoesContext } from "../context/ShoesContext";
 import {
   ButtonGroup,
   Col,
@@ -7,6 +9,15 @@ import {
 } from "react-bootstrap";
 
 export const FiltertButton = () => {
+  // get data from shoes context
+  const { shoes, isLoading, setShoes } = useContext(ShoesContext);
+
+  // filtering shoes by brand function using shoes from context
+  const filterByBrand = (brand) => {
+    const filteredShoes = shoes.filter((item) => item.brand === brand);
+    setShoes(filteredShoes);
+  };
+
   return (
     <>
       <div>
@@ -35,19 +46,39 @@ export const FiltertButton = () => {
             variant="outline-danger"
             className="mt-2 mb-2"
           >
-            <Dropdown.Item className="text-danger bg-dark p-3" eventKey="1">
+            <Dropdown.Item
+              onClick={() => filterByBrand("Nike")}
+              className="text-danger bg-dark p-3"
+              eventKey="1"
+            >
               Nike
             </Dropdown.Item>
-            <Dropdown.Item className="text-danger bg-dark p-3" eventKey="2">
+            <Dropdown.Item
+              onClick={() => filterByBrand("Adidas")}
+              className="text-danger bg-dark p-3"
+              eventKey="2"
+            >
               Adidas
             </Dropdown.Item>
-            <Dropdown.Item className="text-danger bg-dark p-3" eventKey="3">
+            <Dropdown.Item
+              onClick={() => filterByBrand("Timberland")}
+              className="text-danger bg-dark p-3"
+              eventKey="3"
+            >
               Timberland
             </Dropdown.Item>
-            <Dropdown.Item className="text-danger bg-dark p-3" eventKey="4">
+            <Dropdown.Item
+              onClick={() => filterByBrand("Levis")}
+              className="text-danger bg-dark p-3"
+              eventKey="4"
+            >
               Levis
             </Dropdown.Item>
-            <Dropdown.Item className="text-danger bg-dark p-3" eventKey="5">
+            <Dropdown.Item
+              onClick={() => filterByBrand("Converse")}
+              className="text-danger bg-dark p-3"
+              eventKey="5"
+            >
               Converse
             </Dropdown.Item>
           </DropdownButton>

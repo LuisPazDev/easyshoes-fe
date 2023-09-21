@@ -15,7 +15,13 @@ export const ShoesProvider = ({ children }) => {
   }, [data]);
 
   return (
-    <ShoesContext.Provider value={{ shoes, isLoading }}>
+    <ShoesContext.Provider
+      value={{
+        shoes,
+        setShoes,
+        isLoading,
+      }}
+    >
       {children}
     </ShoesContext.Provider>
   );

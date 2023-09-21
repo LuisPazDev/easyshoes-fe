@@ -1,13 +1,10 @@
 import { useContext } from "react";
 import { ShoesContext } from "../context/ShoesContext";
-import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
+import { FiltertButton } from "./FiltertButton";
 import {
   Badge,
   Container,
-  DropdownButton,
-  Dropdown,
-  ButtonGroup,
   Button,
   Card,
   Spinner,
@@ -16,7 +13,6 @@ import {
 } from "react-bootstrap";
 
 import stars from "../assets/stars.png";
-import { FiltertButton } from "./FiltertButton";
 
 export const ShoesCard = () => {
   // get data from shoes context
@@ -53,13 +49,13 @@ export const ShoesCard = () => {
           Array.isArray(shoes) &&
           shoes.map((item) => (
             <Col
+              key={item._id}
               xs={12}
               md={6}
               lg={4}
               className="d-flex flex-row justify-content-center align-items-center mt-3 p-4"
             >
               <Card
-                key={item._id}
                 style={{ width: "16rem" }}
                 className="border border-dark rounded animate__animated animate__backInLeft animate__delay-1s"
               >
