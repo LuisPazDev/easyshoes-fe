@@ -6,10 +6,8 @@ import { UserContext } from "../context/userContext";
 import { Container, Form, Button, Row, Col, Badge } from "react-bootstrap";
 
 export const RegisterPage = () => {
-  const userCtx = useContext(UserContext);
-
-  const { loginUser, authStatus, verifyingToken, formData, setFormData } =
-    userCtx;
+  const { registerUser, authStatus, verifyingToken, formData, setFormData } =
+    useContext(UserContext);
 
   const navigate = useNavigate();
 
@@ -25,7 +23,7 @@ export const RegisterPage = () => {
 
   const sendData = (e) => {
     e.preventDefault();
-    loginUser(formData);
+    registerUser(formData);
   };
 
   return (
@@ -42,7 +40,7 @@ export const RegisterPage = () => {
           </Badge>
         </h1>
         <h6 className="mt-3">
-          <i>Enter your email and password to register</i>
+          <i>Create your account</i>
         </h6>
       </div>
 
@@ -56,6 +54,30 @@ export const RegisterPage = () => {
       >
         <Row>
           <Col xs={12} className="mb-4">
+            <Form.Group controlId="formBasicUsername">
+              <Form.Label>
+                <h6>
+                  <strong>
+                    <i>Username</i>
+                  </strong>
+                </h6>
+              </Form.Label>
+              <Form.Control
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    [e.target.name]: e.target.value,
+                  })
+                }
+                className="border border-dark"
+                name="username"
+                type="text"
+                placeholder="Enter your Username"
+                required
+              />
+            </Form.Group>
+          </Col>
+          <Col xs={12} className="mb-4">
             <Form.Group controlId="formBasicEmail">
               <Form.Label>
                 <h6>
@@ -65,6 +87,12 @@ export const RegisterPage = () => {
                 </h6>
               </Form.Label>
               <Form.Control
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    [e.target.name]: e.target.value,
+                  })
+                }
                 className="border border-dark"
                 name="email"
                 type="email"
@@ -83,6 +111,12 @@ export const RegisterPage = () => {
                 </h6>
               </Form.Label>
               <Form.Control
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    [e.target.name]: e.target.value,
+                  })
+                }
                 className="border border-dark"
                 name="password"
                 type="password"
@@ -94,6 +128,7 @@ export const RegisterPage = () => {
         </Row>
         <div className="text-center">
           <Button
+            onClick={sendData}
             className="mt-4 mb-3"
             variant="outline-light"
             size="lg"

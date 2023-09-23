@@ -46,7 +46,7 @@ export const UserProvider = ({ children }) => {
     try {
       const res =
         token && (await axios.get("https://easyshoes.onrender.com/user/get"));
-      setUser(res.data);
+      setUser(res.data.data);
       setAuthStatus(true);
     } catch (error) {
       console.log("token error", error);

@@ -8,7 +8,9 @@ import cartimg from "../assets/cart.svg";
 
 export const CartProvider = ({ children }) => {
   // get data from local storage and show it in cart
-  const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")));
+  const [cart, setCart] = useState(
+    JSON.parse(localStorage.getItem("cart")) || []
+  );
 
   // set data to local storage
   useEffect(() => {

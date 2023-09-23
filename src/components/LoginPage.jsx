@@ -1,4 +1,4 @@
-import { useEffect, useContext, useState } from "react";
+import { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/userContext";
@@ -6,10 +6,8 @@ import { UserContext } from "../context/userContext";
 import { Container, Form, Button, Row, Col, Badge } from "react-bootstrap";
 
 export const LoginPage = () => {
-  const userCtx = useContext(UserContext);
-
   const { loginUser, authStatus, verifyingToken, formData, setFormData } =
-    userCtx;
+    useContext(UserContext);
 
   const navigate = useNavigate();
 
@@ -66,6 +64,12 @@ export const LoginPage = () => {
                   </h6>
                 </Form.Label>
                 <Form.Control
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      [e.target.name]: e.target.value,
+                    })
+                  }
                   className="border border-dark"
                   name="email"
                   type="email"
@@ -84,6 +88,12 @@ export const LoginPage = () => {
                   </h6>
                 </Form.Label>
                 <Form.Control
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      [e.target.name]: e.target.value,
+                    })
+                  }
                   className="border border-dark"
                   name="password"
                   type="password"
@@ -95,6 +105,7 @@ export const LoginPage = () => {
           </Row>
           <div className="text-center">
             <Button
+              onClick={sendData}
               variant="outline-light"
               size="lg"
               className="mt-4 mb-3"
