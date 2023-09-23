@@ -43,9 +43,11 @@ export const HomeSupportCard = () => {
               </strong>
             </h1>
 
-            <h6 className="text-start">
+            <h6 style={{ lineHeight: "1.7em" }} className="text-start">
               <i>
-                We are here to help you 24/7. Please contact us
+                We are here to help you 24/7
+                <br />
+                Please do not hesitate in contact us
                 <br />
                 if you need any help or support.
               </i>
@@ -53,7 +55,7 @@ export const HomeSupportCard = () => {
             </h6>
 
             <div className="mt-3 text-center">
-              <Button className="mt-5" variant="outline-light" size="lg">
+              <Button className="mt-4" variant="outline-light" size="lg">
                 <Link to="/contact">
                   <strong>
                     <i>Contact</i>
@@ -81,7 +83,12 @@ export const HomeSupportCard = () => {
         </Col>
 
         {/*  Image Col */}
-        <Col xs={12} md={12} lg={6} className="mt-5">
+        <Col
+          xs={12}
+          md={12}
+          lg={6}
+          className="d-flex flex-column justify-content-center align-items-center mt-5"
+        >
           <div ref={ref}>
             {inView && (
               <Image

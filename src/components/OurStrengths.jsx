@@ -11,13 +11,7 @@ import bestpriceicon from "../assets/price.svg";
 import bgstrength from "../assets/bgstrength.png";
 
 export const OurStrengths = () => {
-  const { ref: ref1, inView: inView1 } = useInView({
-    triggerOnce: true,
-    threshold: 0.5,
-    freezeOnceVisible: true,
-  });
-
-  const { ref: ref2, inView: inView2 } = useInView({
+  const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.5,
     freezeOnceVisible: true,
@@ -37,8 +31,6 @@ export const OurStrengths = () => {
       <Row>
         <Col
           xs={12}
-          md={12}
-          lg={12}
           className="d-flex flex-column justify-content-center align-items-center mt-4 p-3"
         >
           <div className="text-start">
@@ -60,13 +52,14 @@ export const OurStrengths = () => {
       </Row>
 
       {/* First Row */}
-      <Row ref={ref1} className="animate__animated animate__backInRight">
-        <Col
-          xs={12}
-          md={12}
-          lg={4}
-          className="d-flex flex-column justify-content-center align-items-center mt-4 p-3"
-        >
+      <Row
+        xs={1}
+        md={2}
+        lg={3}
+        ref={ref}
+        className="animate__animated animate__backInRight mt-2 mb-4"
+      >
+        <Col className="d-flex flex-column justify-content-center align-items-center mt-4 p-3">
           <div>
             <h5>
               <img
@@ -84,12 +77,7 @@ export const OurStrengths = () => {
           </div>
         </Col>
 
-        <Col
-          xs={12}
-          md={12}
-          lg={4}
-          className="d-flex flex-column justify-content-center align-items-center mt-4 p-3"
-        >
+        <Col className="d-flex flex-column justify-content-center align-items-center mt-4 p-3">
           <div>
             <h5>
               <img
@@ -107,12 +95,7 @@ export const OurStrengths = () => {
           </div>
         </Col>
 
-        <Col
-          xs={12}
-          md={12}
-          lg={4}
-          className="d-flex flex-column justify-content-center align-items-center mt-4 p-3"
-        >
+        <Col className="d-flex flex-column justify-content-center align-items-center mt-4 p-3">
           <div>
             <h5>
               <img
@@ -129,19 +112,7 @@ export const OurStrengths = () => {
             <h6 className="ms-5">Under 7 days</h6>
           </div>
         </Col>
-      </Row>
-
-      {/* Second Row */}
-      <Row
-        ref={ref2}
-        className="animate__animated animate__backInRight animate_delay-1s"
-      >
-        <Col
-          xs={12}
-          md={12}
-          lg={4}
-          className="d-flex flex-column justify-content-center align-items-center mt-4 p-3"
-        >
+        <Col className="d-flex flex-column justify-content-center align-items-center mt-4 p-3">
           <div>
             <h5>
               <img
@@ -158,12 +129,7 @@ export const OurStrengths = () => {
             <h6 className="ms-5">Updated daily</h6>
           </div>
         </Col>
-        <Col
-          xs={12}
-          md={12}
-          lg={4}
-          className="d-flex flex-column justify-content-center align-items-center mt-4 p-3"
-        >
+        <Col className="d-flex flex-column justify-content-center align-items-center mt-4 p-3">
           <div>
             <h5>
               <img
@@ -181,12 +147,7 @@ export const OurStrengths = () => {
           </div>
         </Col>
 
-        <Col
-          xs={12}
-          md={12}
-          lg={4}
-          className="d-flex flex-column justify-content-center align-items-center mt-4 p-3"
-        >
+        <Col className="d-flex flex-column justify-content-center align-items-center mt-4 p-3">
           <div>
             <h5>
               <img

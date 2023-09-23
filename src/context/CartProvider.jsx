@@ -39,6 +39,8 @@ export const CartProvider = ({ children }) => {
     setCart(newCart);
 
     Swal.fire({
+      showConfirmButton: false,
+      timer: 1000,
       width: 300,
       color: "#fff",
       background: "#1f1f1f",

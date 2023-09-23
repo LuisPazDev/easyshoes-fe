@@ -44,19 +44,21 @@ export const HomeRegisterCard = () => {
               </strong>
             </h1>
 
-            <h6 className="text-start">
+            <h6 style={{ lineHeight: "1.7em" }} className="text-start">
               <strong>
                 <i>
                   Create an account now and get 20% off
                   <br />
-                  on your first purchase.
+                  on your first purchase and many more
+                  <br />
+                  enjoy our exclusive offers.
                 </i>
               </strong>
               <br />
             </h6>
 
             <div className="mt-3 text-center">
-              <Button className="mt-5" variant="outline-light" size="lg">
+              <Button className="mt-4" variant="outline-light" size="lg">
                 <Link className="text-light" to="/register">
                   <strong>
                     <i>Register Here</i>
@@ -73,7 +75,12 @@ export const HomeRegisterCard = () => {
         </Col>
 
         {/*  Image Col */}
-        <Col xs={12} md={12} lg={6} className="mt-5">
+        <Col
+          xs={12}
+          md={12}
+          lg={6}
+          className="d-flex flex-column justify-content-center align-items-center mt-5"
+        >
           <div ref={ref}>
             {inView && (
               <Image

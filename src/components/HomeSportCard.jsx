@@ -65,7 +65,7 @@ export const HomeSportCard = () => {
             </h6>
 
             <div className="mt-3 text-center animate__animated animate__flash ">
-              <Button className="mt-5" variant="outline-light" size="lg">
+              <Button className="mt-4" variant="outline-light" size="lg">
                 <Link to="/shoes">
                   <strong>
                     <i>Shop Now</i>
@@ -90,8 +90,8 @@ export const HomeSportCard = () => {
                     <Image
                       className="d-block w-100 p-5"
                       style={{
-                        objectFit: "cover",
-                        height: "350px",
+                        objectFit: "center",
+                        height: "450px",
                       }}
                       src={shoes.img}
                       alt={shoes.model}
