@@ -10,13 +10,7 @@ import {
 
 export const FiltertButton = () => {
   // get data from shoes context
-  const { shoes, isLoading, setShoes } = useContext(ShoesContext);
-
-  // filtering shoes by brand function using shoes from context
-  const filterByBrand = (brand) => {
-    const filteredShoes = shoes.filter((item) => item.brand === brand);
-    setShoes(filteredShoes);
-  };
+  const { filterBySelection } = useContext(ShoesContext);
 
   return (
     <>
@@ -47,39 +41,39 @@ export const FiltertButton = () => {
             className="mt-2 mb-2"
           >
             <Dropdown.Item
-              onClick={() => filterByBrand("Nike")}
+              onClick={() => filterBySelection("Nike")}
               className="text-danger bg-dark p-3"
               eventKey="1"
             >
               Nike
             </Dropdown.Item>
             <Dropdown.Item
-              onClick={() => filterByBrand("Adidas")}
+              onClick={() => filterBySelection("Adidas")}
               className="text-danger bg-dark p-3"
               eventKey="2"
             >
               Adidas
             </Dropdown.Item>
             <Dropdown.Item
-              onClick={() => filterByBrand("Timberland")}
+              onClick={() => filterBySelection("Timberland")}
               className="text-danger bg-dark p-3"
               eventKey="3"
             >
               Timberland
             </Dropdown.Item>
             <Dropdown.Item
-              onClick={() => filterByBrand("Levis")}
+              onClick={() => filterBySelection("Levis")}
               className="text-danger bg-dark p-3"
               eventKey="4"
             >
               Levis
             </Dropdown.Item>
             <Dropdown.Item
-              onClick={() => filterByBrand("Converse")}
+              onClick={() => filterBySelection("Converse")}
               className="text-danger bg-dark p-3"
               eventKey="5"
             >
-              Converse
+              Converses
             </Dropdown.Item>
           </DropdownButton>
         </Col>
@@ -92,13 +86,25 @@ export const FiltertButton = () => {
             variant="outline-danger"
             className="mt-2 mb-2"
           >
-            <Dropdown.Item className="text-danger bg-dark p-3" eventKey="1">
+            <Dropdown.Item
+              onClick={() => filterBySelection("", "Casual")}
+              className="text-danger bg-dark p-3"
+              eventKey="1"
+            >
               Casual
             </Dropdown.Item>
-            <Dropdown.Item className="text-danger bg-dark p-3" eventKey="2">
+            <Dropdown.Item
+              onClick={() => filterBySelection("", "Fashion")}
+              className="text-danger bg-dark p-3"
+              eventKey="2"
+            >
               Fashion
             </Dropdown.Item>
-            <Dropdown.Item className="text-danger bg-dark p-3" eventKey="3">
+            <Dropdown.Item
+              onClick={() => filterBySelection("", "Sport")}
+              className="text-danger bg-dark p-3"
+              eventKey="3"
+            >
               Sport
             </Dropdown.Item>
           </DropdownButton>
@@ -112,16 +118,32 @@ export const FiltertButton = () => {
             variant="outline-danger"
             className="mt-2 mb-2"
           >
-            <Dropdown.Item className="text-danger bg-dark p-3" eventKey="1">
+            <Dropdown.Item
+              onClick={() => filterBySelection("", "", "8")}
+              className="text-danger bg-dark p-3"
+              eventKey="1"
+            >
               8
             </Dropdown.Item>
-            <Dropdown.Item className="text-danger bg-dark p-3" eventKey="2">
+            <Dropdown.Item
+              onClick={() => filterBySelection("", "", "9")}
+              className="text-danger bg-dark p-3"
+              eventKey="2"
+            >
               9
             </Dropdown.Item>
-            <Dropdown.Item className="text-danger bg-dark p-3" eventKey="3">
+            <Dropdown.Item
+              onClick={() => filterBySelection("", "", "10")}
+              className="text-danger bg-dark p-3"
+              eventKey="3"
+            >
               10
             </Dropdown.Item>
-            <Dropdown.Item className="text-danger bg-dark p-3" eventKey="4">
+            <Dropdown.Item
+              onClick={() => filterBySelection("", "", "11")}
+              className="text-danger bg-dark p-3"
+              eventKey="4"
+            >
               11
             </Dropdown.Item>
           </DropdownButton>

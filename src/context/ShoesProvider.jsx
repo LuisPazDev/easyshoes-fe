@@ -9,10 +9,28 @@ export const ShoesProvider = ({ children }) => {
   );
 
   const [shoes, setShoes] = useState([]);
+  // original shoes data to be used for filtering shoes by brand, model or size
+  const [originalShoes, setOriginalShoes] = useState([]);
 
   useEffect(() => {
     setShoes(data);
+    setOriginalShoes(data);
   }, [data]);
+
+  // filtering shoes by brand, model or size
+  const filterBySelection = (brand, model, size) => {
+    // if brand, model and size are not selected, set shoes to original shoes data
+    if (!brand && !model && !size) {
+      setShoes(originalShoes);
+    } else {
+      // if brand, model and size are selected, filter shoes by brand, model and size
+      const filteredShoes = originalShoes.filter(
+        (item) =>
+          item.brand === brand || item.model === model || item.size === size
+      );
+      setShoes(filteredShoes);
+    }
+  };
 
   return (
     <ShoesContext.Provider
@@ -20,6 +38,7 @@ export const ShoesProvider = ({ children }) => {
         shoes,
         setShoes,
         isLoading,
+        filterBySelection,
       }}
     >
       {children}
