@@ -30,13 +30,7 @@ export const MyAccount = () => {
         </h6>
       </div>
 
-      <h4>
-        Welcome
-        <br />
-        <br />
-        <strong>Name:</strong>
-        <strong>Username:</strong>
-      </h4>
+      <h4>This section is under construction</h4>
 
       <Button
         className="mt-5"
@@ -45,7 +39,9 @@ export const MyAccount = () => {
           logout();
         }}
       >
-        Logout
+        <strong>
+          <i>Logout</i>
+        </strong>
       </Button>
     </Container>
   );
