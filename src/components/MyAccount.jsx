@@ -1,12 +1,10 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { UserContext } from "../context/userContext";
 
 import { Container, Button, Badge, Card } from "react-bootstrap";
 
 export const MyAccount = () => {
   const { logout, user } = useContext(UserContext);
-
-  console.log(user);
 
   return (
     <Container
@@ -27,47 +25,24 @@ export const MyAccount = () => {
           </i>
         </h6>
       </div>
-      <Card
-        style={{
-          backgroundColor: "#212529",
-          maxWidth: "500px",
+
+      <h4>
+        Welcome
+        <br />
+        <br />
+        <strong>Name:</strong> {user.name}
+        <strong>Username:</strong> {user.username}
+      </h4>
+
+      <Button
+        className="mt-5"
+        variant="danger"
+        onClick={() => {
+          logout();
         }}
-        className="mt-3 border border-dark rounded p-4"
       >
-        <Card.Body>
-          <Card.Title className="mb-4">
-            <h6>
-              <strong>
-                <i>
-                  <u>Account Details</u>
-                </i>
-              </strong>
-            </h6>
-          </Card.Title>
-          <Card.Text>
-            <strong>
-              <i className="text-danger ">Username:</i>
-            </strong>{" "}
-            <br />
-            <i>
-              {" "}
-              <i>{user && user[0].username}</i>
-            </i>
-          </Card.Text>
-          <Card.Text>
-            <strong>
-              <i className="text-danger">Email:</i>
-            </strong>{" "}
-            <br />
-            <i>{user && user[0].email}</i>
-          </Card.Text>
-          <Button onClick={logout} variant="danger" className="mt-4">
-            <strong>
-              <i>Logout</i>
-            </strong>
-          </Button>
-        </Card.Body>
-      </Card>
+        Logout
+      </Button>
     </Container>
   );
 };

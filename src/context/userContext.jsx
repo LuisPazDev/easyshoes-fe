@@ -1,10 +1,10 @@
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 import axios from "axios";
 
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState({ username: null, email: null });
+  const [user, setUser] = useState(null);
   const [authStatus, setAuthStatus] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -19,19 +19,6 @@ export const UserProvider = ({ children }) => {
       ...formData,
       [event.target.name]: event.target.value,
     });
-  };
-
-  const registerUser = async (dataForm) => {
-    try {
-      const res = await axios.post(
-        "https://easyshoes.onrender.com/user/register",
-        dataForm
-      );
-      localStorage.setItem("token", res.data.token);
-      setAuthStatus(true);
-    } catch (error) {
-      console.log(error);
-    }
   };
 
   const verifyingToken = async () => {
@@ -61,6 +48,21 @@ export const UserProvider = ({ children }) => {
     });
   };
 
+  const registerUser = async (dataForm) => {
+    try {
+      const res = await axios.post(
+        "https://easyshoes.onrender.com/user/register",
+        dataForm
+      );
+      localStorage.setItem("token", res.data.token);
+      setUser(res.data.data.user);
+      setAuthStatus(true);
+      onResetForm();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const loginUser = async (dataForm) => {
     try {
       const res = await axios.post(
@@ -69,6 +71,7 @@ export const UserProvider = ({ children }) => {
       );
       localStorage.setItem("token", res.data.token);
       setAuthStatus(true);
+      setUser(res.data.data.user);
       onResetForm();
     } catch (error) {
       alert("Incorrect email or password!! Please try again or register");
@@ -93,6 +96,10 @@ export const UserProvider = ({ children }) => {
     user,
     authStatus,
   };
-  console.log("userContext", data);
+
+  useEffect(() => {
+    console.log(data.user);
+  }, []);
+
   return <UserContext.Provider value={data}>{children}</UserContext.Provider>;
 };
