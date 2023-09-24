@@ -4,7 +4,11 @@ import { UserContext } from "../context/userContext";
 import { Container, Button, Badge, Card } from "react-bootstrap";
 
 export const MyAccount = () => {
-  const { logout, user } = useContext(UserContext);
+  const { logout, users } = useContext(UserContext);
+
+  useEffect(() => {
+    console.log("users", users);
+  }, []);
 
   return (
     <Container
@@ -30,8 +34,8 @@ export const MyAccount = () => {
         Welcome
         <br />
         <br />
-        <strong>Name:</strong> {user.name}
-        <strong>Username:</strong> {user.username}
+        <strong>Name:</strong>
+        <strong>Username:</strong>
       </h4>
 
       <Button

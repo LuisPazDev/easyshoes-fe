@@ -1,10 +1,12 @@
 import { useState, createContext, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+  const [users, setUsers] = useState([]);
   const [authStatus, setAuthStatus] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -21,6 +23,28 @@ export const UserProvider = ({ children }) => {
     });
   };
 
+  const onResetForm = () => {
+    setFormData({
+      username: "",
+      email: "",
+      password: "",
+    });
+  };
+
+  const registerUser = async (dataForm) => {
+    try {
+      await axios.post(
+        "https://easyshoes.onrender.com/user/register",
+        dataForm
+      );
+      onResetForm();
+      // Navigate to login page
+      navigate("/login");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const verifyingToken = async () => {
     const token = localStorage.getItem("token");
 
@@ -33,33 +57,10 @@ export const UserProvider = ({ children }) => {
     try {
       const res =
         token && (await axios.get("https://easyshoes.onrender.com/user/get"));
-      setUser(res.data.data);
+      setUsers(res.data.data);
       setAuthStatus(true);
     } catch (error) {
       console.log("token error", error);
-    }
-  };
-
-  const onResetForm = () => {
-    setFormData({
-      username: "",
-      email: "",
-      password: "",
-    });
-  };
-
-  const registerUser = async (dataForm) => {
-    try {
-      const res = await axios.post(
-        "https://easyshoes.onrender.com/user/register",
-        dataForm
-      );
-      localStorage.setItem("token", res.data.token);
-      setUser(res.data.data.user);
-      setAuthStatus(true);
-      onResetForm();
-    } catch (error) {
-      console.log(error);
     }
   };
 
@@ -70,8 +71,7 @@ export const UserProvider = ({ children }) => {
         dataForm
       );
       localStorage.setItem("token", res.data.token);
-      setAuthStatus(true);
-      setUser(res.data.data.user);
+      verifyingToken();
       onResetForm();
     } catch (error) {
       alert("Incorrect email or password!! Please try again or register");
@@ -81,7 +81,7 @@ export const UserProvider = ({ children }) => {
 
   const logout = () => {
     localStorage.removeItem("token");
-    setUser(null);
+    setUsers(null);
     setAuthStatus(false);
   };
 
@@ -93,13 +93,9 @@ export const UserProvider = ({ children }) => {
     logout,
     formData,
     setFormData,
-    user,
+    users,
     authStatus,
   };
-
-  useEffect(() => {
-    console.log(data.user);
-  }, []);
 
   return <UserContext.Provider value={data}>{children}</UserContext.Provider>;
 };
