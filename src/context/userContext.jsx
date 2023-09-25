@@ -6,7 +6,11 @@ export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
   const navigate = useNavigate();
-  const [users, setUsers] = useState([]);
+  const [user, setUser] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
   const [authStatus, setAuthStatus] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -57,7 +61,7 @@ export const UserProvider = ({ children }) => {
     try {
       const res =
         token && (await axios.get("https://easyshoes.onrender.com/user/get"));
-      setUsers(res.data.data);
+      setUser(res.data.data);
       setAuthStatus(true);
     } catch (error) {
       console.log("token error", error);
@@ -81,7 +85,7 @@ export const UserProvider = ({ children }) => {
 
   const logout = () => {
     localStorage.removeItem("token");
-    setUsers(null);
+    setUser(null);
     setAuthStatus(false);
   };
 
@@ -93,7 +97,7 @@ export const UserProvider = ({ children }) => {
     logout,
     formData,
     setFormData,
-    users,
+    user,
     authStatus,
   };
 
