@@ -1,7 +1,17 @@
-import { useContext } from "react"
+import { useState, useContext } from "react"
 import { Link } from "react-router-dom"
-import { Container, Badge, Row, Col, Button, Card } from "react-bootstrap"
+import {
+    Container,
+    Badge,
+    Row,
+    Col,
+    Button,
+    Card,
+    Modal,
+    Form,
+} from "react-bootstrap"
 import { CartContext } from "../context/CartContext"
+import Swal from "sweetalert2"
 
 export const MyCart = () => {
     // getting cart data from cart context
@@ -17,6 +27,38 @@ export const MyCart = () => {
 
     // calculating the total price of the cart items with tax
     const totalPrice = (parseFloat(subTotalPrice) + parseFloat(tax)).toFixed(2)
+
+    // state for modal
+    const [showModal, setShowModal] = useState(false)
+
+    // state for customer info
+    const [customerInfo, setCustomerInfo] = useState({
+        name: "",
+        email: "",
+        address: "",
+    })
+
+    // handle input change
+    const handleInputChange = (event) => {
+        const { name, value } = event.target
+        setCustomerInfo({ ...customerInfo, [name]: value })
+    }
+
+    // handle form submit
+    const handleFormSubmit = (event) => {
+        event.preventDefault()
+        // TODO: handle payment logic
+        setShowModal(false)
+        setCart([])
+        localStorage.removeItem("cart")
+        Swal.fire({
+            icon: "success",
+            title: "Payment Successful",
+            text: "Thank you for shopping with us!",
+            background: "#1f1f1f",
+            color: "#fff",
+        })
+    }
 
     return (
         <Container fluid>
@@ -93,12 +135,13 @@ export const MyCart = () => {
                     cart.length > 0 ? (
                         <>
                             <div className='text-center'>
-                                <Button className='mt-5' variant='danger'>
-                                    <Link to='/shoes'>
-                                        <strong>
-                                            <i>Keep Shopping</i>
-                                        </strong>
-                                    </Link>
+                                <Button
+                                    className='mt-5'
+                                    variant='danger'
+                                    onClick={() => setShowModal(true)}>
+                                    <strong>
+                                        <i>Checkout</i>
+                                    </strong>
                                 </Button>
                             </div>
 
@@ -110,8 +153,7 @@ export const MyCart = () => {
                                     </strong>
                                 </p>
                                 <p>
-                                    <b className='text-danger'>Tax </b>
-                                    (4%):
+                                    <b className='text-danger'>Tax </b>(4%):
                                     <strong>
                                         <i> $ {tax} </i>
                                     </strong>
@@ -122,13 +164,6 @@ export const MyCart = () => {
                                         <i> $ {totalPrice}</i>
                                     </strong>
                                 </p>
-                            </div>
-                            <div className='text-center mt-3 mb-3'>
-                                <Button variant='outline-light'>
-                                    <strong>
-                                        <i>Checkout</i>
-                                    </strong>
-                                </Button>
                             </div>
                         </>
                     ) : (
@@ -147,6 +182,73 @@ export const MyCart = () => {
                     )
                 }
             </Row>
+
+            {/* Checkout Modal */}
+            <Modal centered show={showModal} onHide={() => setShowModal(false)}>
+                <Modal.Header
+                    className='text-center'
+                    style={{ backgroundColor: "#1f1f1f" }}
+                    closeButton>
+                    <Modal.Title>
+                        <i>
+                            <strong>Checkout</strong>
+                        </i>
+                    </Modal.Title>
+                </Modal.Header>
+                <Modal.Body style={{ backgroundColor: "#1f1f1f" }}>
+                    <p>
+                        <b className='text-danger'>Total: </b>
+                        <strong>
+                            <i> $ {totalPrice}</i>
+                        </strong>
+                    </p>
+                    <Form onSubmit={handleFormSubmit}>
+                        <Form.Group controlId='formName'>
+                            <Form.Label>Name</Form.Label>
+                            <Form.Control
+                                type='text'
+                                placeholder='Enter name'
+                                name='name'
+                                value={customerInfo.name}
+                                onChange={handleInputChange}
+                                required
+                            />
+                        </Form.Group>
+
+                        <Form.Group controlId='formEmail'>
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control
+                                type='email'
+                                placeholder='Enter email'
+                                name='email'
+                                value={customerInfo.email}
+                                onChange={handleInputChange}
+                                required
+                            />
+                        </Form.Group>
+
+                        <Form.Group controlId='formAddress'>
+                            <Form.Label>Address</Form.Label>
+                            <Form.Control
+                                type='text'
+                                placeholder='Enter address'
+                                name='address'
+                                value={customerInfo.address}
+                                onChange={handleInputChange}
+                                required
+                            />
+                        </Form.Group>
+
+                        <div className='text-center mt-4'>
+                            <Button variant='danger' type='submit'>
+                                <strong>
+                                    <i> Pay </i>
+                                </strong>
+                            </Button>
+                        </div>
+                    </Form>
+                </Modal.Body>
+            </Modal>
         </Container>
     )
 }
