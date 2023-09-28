@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import { Badge, Button, Form, Row, Col, Container } from "react-bootstrap"
 import axios from "axios"
+import Swal from "sweetalert2"
 
 export const ContactPage = () => {
     const [input, setInput] = useState({})
@@ -19,7 +20,7 @@ export const ContactPage = () => {
     const postMessage = async () => {
         try {
             const response = await axios.post(
-                "https://easyshoes.onrender.com/user/contact",
+                "https://easyshoes.onrender.com/contact/addcontact",
                 input
             )
             console.log(response)
@@ -34,6 +35,13 @@ export const ContactPage = () => {
         console.log("message sent", input)
         postMessage()
         clearForm()
+        Swal.fire({
+            icon: "success",
+            title: "Message Sent",
+            text: "We will contact you soon",
+            showConfirmButton: false,
+            timer: 1800,
+        })
     }
 
     return (
@@ -144,7 +152,7 @@ export const ContactPage = () => {
             <Row className='ms-auto me-auto mt-5 mb-5'>
                 <Col xs={12} md={12} lg={12} className='text-center'>
                     <Link to='/'>
-                        <h5 className='text-center text-black'>
+                        <h5 className='text-center text-white'>
                             Go to{" "}
                             <strong>
                                 <i>

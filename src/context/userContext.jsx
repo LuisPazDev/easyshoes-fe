@@ -73,7 +73,7 @@ export const UserProvider = ({ children }) => {
     const loginUser = async (dataForm) => {
         try {
             const res = await axios.post(
-                "https://easyshoes.onrender.com/login",
+                "https://easyshoes.onrender.com/user/login",
                 dataForm
             )
             localStorage.setItem("token", res.data.token)
