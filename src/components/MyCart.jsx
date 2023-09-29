@@ -59,7 +59,7 @@ export const MyCart = () => {
     const postMessage = async () => {
         try {
             const response = await axios.post(
-                "https://easyshoes.onrender.com/contact/addorder",
+                "https://easyshoes.onrender.com/orders/addorder",
                 input
             )
             console.log(response)
@@ -73,6 +73,7 @@ export const MyCart = () => {
         event.preventDefault()
         // TODO: handle payment logic
         console.log("payment sent", input)
+        postMessage()
         setShowModal(false)
         setCart([])
         localStorage.removeItem("cart")
