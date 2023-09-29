@@ -1,5 +1,6 @@
 import { useState, useContext } from "react"
 import { Link } from "react-router-dom"
+import axios from "axios"
 import {
     Container,
     Badge,
@@ -10,6 +11,7 @@ import {
     Modal,
     Form,
 } from "react-bootstrap"
+
 import { CartContext } from "../context/CartContext"
 import Swal from "sweetalert2"
 
@@ -33,24 +35,48 @@ export const MyCart = () => {
 
     // state for customer info
     const [customerInfo, setCustomerInfo] = useState({
+        shoes: cart,
         name: "",
         email: "",
         address: "",
+        payment: "",
     })
+
+    // state for input data modal form
+    const [input, setInput] = useState({})
 
     // handle input change
     const handleInputChange = (event) => {
-        const { name, value } = event.target
-        setCustomerInfo({ ...customerInfo, [name]: value })
+        const name = event.target.name
+        const value = event.target.value
+        setInput((values) => ({ ...values, [name]: value, shoes: cart }))
+    }
+
+    const clearForm = () => {
+        document.getElementById("form").reset()
+    }
+
+    const postMessage = async () => {
+        try {
+            const response = await axios.post(
+                "https://easyshoes.onrender.com/contact/addorder",
+                input
+            )
+            console.log(response)
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     // handle form submit
     const handleFormSubmit = (event) => {
         event.preventDefault()
         // TODO: handle payment logic
+        console.log("payment sent", input)
         setShowModal(false)
         setCart([])
         localStorage.removeItem("cart")
+        clearForm()
         Swal.fire({
             icon: "success",
             title: "Payment Successful",
@@ -70,7 +96,7 @@ export const MyCart = () => {
                         </strong>
                     </Badge>
                 </h1>
-                <di className='mt-3'>
+                <div className='mt-3'>
                     {
                         // if cart is not empty
                         cart.length > 0 ? (
@@ -84,7 +110,7 @@ export const MyCart = () => {
                             </h6>
                         )
                     }
-                </di>
+                </div>
             </div>
 
             <Row>
@@ -153,17 +179,17 @@ export const MyCart = () => {
                                     </strong>
                                 </p>
                                 <p>
-                                    <b className='text-danger'>Tax </b>(4%):
+                                    <b className='text-danger'>Tax (4%): </b>
                                     <strong>
                                         <i> $ {tax} </i>
                                     </strong>
                                 </p>
-                                <p>
+                                <h5>
                                     <b className='text-danger'>Total: </b>
                                     <strong>
                                         <i> $ {totalPrice}</i>
                                     </strong>
-                                </p>
+                                </h5>
                             </div>
                         </>
                     ) : (
@@ -191,58 +217,100 @@ export const MyCart = () => {
                     closeButton>
                     <Modal.Title>
                         <i>
-                            <strong>Checkout</strong>
+                            <strong>
+                                Check
+                                <b className='text-danger'>Out</b>
+                            </strong>
                         </i>
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body style={{ backgroundColor: "#1f1f1f" }}>
-                    <p>
-                        <b className='text-danger'>Total: </b>
-                        <strong>
-                            <i> $ {totalPrice}</i>
-                        </strong>
-                    </p>
                     <Form onSubmit={handleFormSubmit}>
-                        <Form.Group controlId='formName'>
-                            <Form.Label>Name</Form.Label>
+                        <Form.Group className='mb-4' controlId='formName'>
+                            <Form.Label>
+                                <strong>
+                                    <i>Name</i>
+                                </strong>
+                            </Form.Label>
                             <Form.Control
                                 type='text'
                                 placeholder='Enter name'
                                 name='name'
-                                value={customerInfo.name}
                                 onChange={handleInputChange}
                                 required
                             />
                         </Form.Group>
 
-                        <Form.Group controlId='formEmail'>
-                            <Form.Label>Email</Form.Label>
+                        <Form.Group className='mb-4' controlId='formEmail'>
+                            <Form.Label>
+                                <strong>
+                                    <i>Email</i>
+                                </strong>
+                            </Form.Label>
                             <Form.Control
                                 type='email'
                                 placeholder='Enter email'
                                 name='email'
-                                value={customerInfo.email}
                                 onChange={handleInputChange}
                                 required
                             />
                         </Form.Group>
 
-                        <Form.Group controlId='formAddress'>
-                            <Form.Label>Address</Form.Label>
+                        <Form.Group className='mb-4' controlId='formAddress'>
+                            <Form.Label>
+                                <strong>
+                                    <i>Shipping Address</i>
+                                </strong>
+                            </Form.Label>
                             <Form.Control
                                 type='text'
                                 placeholder='Enter address'
                                 name='address'
-                                value={customerInfo.address}
                                 onChange={handleInputChange}
                                 required
                             />
                         </Form.Group>
+                        <Form.Group className='mb-4' controlId='formPayment'>
+                            <Form.Label>
+                                <strong>
+                                    <i>Payment</i>
+                                </strong>
+                            </Form.Label>
+                            <Form.Select
+                                name='payment'
+                                onChange={handleInputChange}
+                                required>
+                                <option>Select a Payment Method</option>
+                                <option value='debit card'>Debit Card</option>
+                                <option value='credit card'>Credit Card</option>
+                                <option value='paypal'>Paypal</option>
+                            </Form.Select>
+                        </Form.Group>
+                        <div className='mt-4 text-center'>
+                            <p>
+                                <b className='text-danger'>Sub-Total:</b>
+                                <strong>
+                                    <i> $ {subTotalPrice}</i>
+                                </strong>
+                            </p>
+                            <p>
+                                <b className='text-danger'>Tax (4%): </b>
+                                <strong>
+                                    <i> $ {tax} </i>
+                                </strong>
+                            </p>
+                            <h5>
+                                <b className='text-danger'>Total: </b>
+                                <strong>
+                                    <i> $ {totalPrice}</i>
+                                </strong>
+                            </h5>
+                        </div>
 
                         <div className='text-center mt-4'>
                             <Button variant='danger' type='submit'>
                                 <strong>
-                                    <i> Pay </i>
+                                    <i> Send Payment </i>
                                 </strong>
                             </Button>
                         </div>
