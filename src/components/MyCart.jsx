@@ -1,4 +1,4 @@
-import { useState, useContext } from "react"
+import { useState, useContext, useRef } from "react"
 import { Link } from "react-router-dom"
 import axios from "axios"
 import {
@@ -40,10 +40,14 @@ export const MyCart = () => {
         email: "",
         address: "",
         payment: "",
+        promocode: "",
     })
 
     // state for input data modal form
     const [input, setInput] = useState({})
+
+    // state for new total price with promo code
+    const [newTotalPrice, setNewTotalPrice] = useState(totalPrice)
 
     // handle input change
     const handleInputChange = (event) => {
@@ -52,11 +56,44 @@ export const MyCart = () => {
         setInput((values) => ({ ...values, [name]: value, shoes: cart }))
     }
 
-    const clearForm = () => {
-        document.getElementById("form").reset()
+    // handle promo input change
+    const handlePromoInputChange = (event) => {
+        const name = event.target.name
+        const value = event.target.value
+        setInput((values) => ({ ...values, [name]: value, shoes: cart }))
     }
 
-    const postMessage = async () => {
+    // handle promo code "easyshoes20" submit 20% off
+    const handlePromoSubmit = (event) => {
+        event.preventDefault()
+        if (input.promocode === "easyshoes20") {
+            setNewTotalPrice((totalPrice * 0.8).toFixed(2))
+            Swal.fire({
+                title: "Promo Code Applied!",
+                text: "You got 20% off!",
+                icon: "success",
+                confirmButtonText: "OK",
+            })
+        } else {
+            Swal.fire({
+                title: "Invalid Promo Code!",
+                text: "Please try again!",
+                icon: "error",
+                confirmButtonText: "OK",
+            })
+        }
+    }
+
+    // add a ref to the form element
+    const formRef = useRef(null)
+
+    // clear the form using the ref
+    const clearForm = () => {
+        formRef.current.reset()
+    }
+
+    // post order to database
+    const postOrder = async () => {
         try {
             const response = await axios.post(
                 "https://easyshoes.onrender.com/orders/addorder",
@@ -72,19 +109,17 @@ export const MyCart = () => {
     const handleFormSubmit = (event) => {
         event.preventDefault()
         // TODO: handle payment logic
-        console.log("payment sent", input)
-        postMessage()
+        Swal.fire({
+            title: "Order Placed!",
+            text: "Your order has been placed successfully!",
+            icon: "success",
+            confirmButtonText: "OK",
+        })
+        postOrder()
         setShowModal(false)
         setCart([])
         localStorage.removeItem("cart")
         clearForm()
-        Swal.fire({
-            icon: "success",
-            title: "Payment Successful",
-            text: "Thank you for shopping with us!",
-            background: "#1f1f1f",
-            color: "#fff",
-        })
     }
 
     return (
@@ -161,17 +196,15 @@ export const MyCart = () => {
                     // if cart is not empty
                     cart.length > 0 ? (
                         <>
-                            <div className='text-center'>
-                                <Button
-                                    className='mt-5'
-                                    variant='danger'
-                                    onClick={() => setShowModal(true)}>
-                                    <strong>
-                                        <i>Checkout</i>
-                                    </strong>
+                            <div className='text-center mt-4'>
+                                <Button size='md' variant='outline-light'>
+                                    <Link to='/shoes'>
+                                        <strong>
+                                            <i> Keep Shopping </i>
+                                        </strong>
+                                    </Link>
                                 </Button>
                             </div>
-
                             <div className='text-center mt-5'>
                                 <p>
                                     <b className='text-danger'>Sub-Total:</b>
@@ -188,9 +221,21 @@ export const MyCart = () => {
                                 <h5>
                                     <b className='text-danger'>Total: </b>
                                     <strong>
-                                        <i> $ {totalPrice}</i>
+                                        <i> $ {newTotalPrice}</i>
                                     </strong>
                                 </h5>
+                            </div>
+
+                            <div className='text-center'>
+                                <Button
+                                    size='lg'
+                                    className='mt-5 mb-5'
+                                    variant='danger'
+                                    onClick={() => setShowModal(true)}>
+                                    <strong>
+                                        <i>Checkout</i>
+                                    </strong>
+                                </Button>
                             </div>
                         </>
                     ) : (
@@ -226,7 +271,7 @@ export const MyCart = () => {
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body style={{ backgroundColor: "#1f1f1f" }}>
-                    <Form onSubmit={handleFormSubmit}>
+                    <Form id='form' ref={formRef} onSubmit={handleFormSubmit}>
                         <Form.Group className='mb-4' controlId='formName'>
                             <Form.Label>
                                 <strong>
@@ -287,6 +332,32 @@ export const MyCart = () => {
                                 <option value='paypal'>Paypal</option>
                             </Form.Select>
                         </Form.Group>
+                        {/* // TODO: add promo code  */}
+                        <Form.Group className='mb-4' controlId='formCode'>
+                            <Form.Label>
+                                <strong>
+                                    <i>Promo Code ( members only )</i>
+                                </strong>
+                            </Form.Label>
+                            <div className='input-group'>
+                                <Form.Control
+                                    type='text'
+                                    placeholder='Enter your promo code'
+                                    name='promocode'
+                                    onChange={handlePromoInputChange}
+                                />
+                                <Button
+                                    onClick={handlePromoSubmit}
+                                    className='ms-4'
+                                    size='md'
+                                    variant='danger'
+                                    type='submit'>
+                                    <strong>
+                                        <i>Apply Code </i>
+                                    </strong>
+                                </Button>
+                            </div>
+                        </Form.Group>
                         <div className='mt-4 text-center'>
                             <p>
                                 <b className='text-danger'>Sub-Total:</b>
@@ -303,7 +374,7 @@ export const MyCart = () => {
                             <h5>
                                 <b className='text-danger'>Total: </b>
                                 <strong>
-                                    <i> $ {totalPrice}</i>
+                                    <i> $ {newTotalPrice}</i>
                                 </strong>
                             </h5>
                         </div>
@@ -311,7 +382,7 @@ export const MyCart = () => {
                         <div className='text-center mt-4'>
                             <Button variant='danger' type='submit'>
                                 <strong>
-                                    <i> Send Payment </i>
+                                    <i> Make Payment </i>
                                 </strong>
                             </Button>
                         </div>

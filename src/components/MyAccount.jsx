@@ -74,21 +74,28 @@ export const MyAccount = () => {
                     <Card.Title>
                         <h6 className='text-danger mt-4'>
                             <strong>
-                                <i>Use Code:</i>
+                                <i>Promo Code </i>
                                 <br />
-                                <Badge pill className='bg-danger mt-2 mb-2'>
-                                    <strong>
-                                        <i> easyshoes20 </i>
-                                    </strong>
-                                </Badge>
-                                <p className='text-white'>
-                                    <i>to get 20% off</i>
-                                </p>
+                                <h5>
+                                    <Badge pill className='bg-danger mt-3 mb-2'>
+                                        <strong>
+                                            <i> easyshoes20 </i>
+                                        </strong>
+                                    </Badge>
+                                </h5>
                             </strong>
+                            <h6 className='text-white'>
+                                <i>
+                                    Use it in the Checkout
+                                    <br />
+                                    to get 20% off
+                                </i>
+                            </h6>
                         </h6>
                     </Card.Title>
                     <Button
-                        className='mt-5'
+                        size='lg'
+                        className='mt-4'
                         variant='danger'
                         onClick={() => {
                             logout()
