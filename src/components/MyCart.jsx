@@ -326,7 +326,7 @@ export const MyCart = () => {
                                 name='payment'
                                 onChange={handleInputChange}
                                 required>
-                                <option>Select a Payment Method</option>
+                                <option value=''>Select Payment Method</option>
                                 <option value='debit card'>Debit Card</option>
                                 <option value='credit card'>Credit Card</option>
                                 <option value='paypal'>Paypal</option>
