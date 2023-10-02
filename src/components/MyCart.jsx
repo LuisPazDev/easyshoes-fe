@@ -60,7 +60,11 @@ export const MyCart = () => {
     const handlePromoInputChange = (event) => {
         const name = event.target.name
         const value = event.target.value
-        setInput((values) => ({ ...values, [name]: value, shoes: cart }))
+        setInput((values) => ({
+            ...values,
+            [name]: value,
+            shoes: cart,
+        }))
     }
 
     // handle promo code "easyshoes20" submit 20% off
