@@ -153,7 +153,7 @@ export const ContactPage = () => {
                 <Col xs={12} md={12} lg={12} className='text-center'>
                     <Link to='/'>
                         <h5 className='text-center text-white'>
-                            Go to{" "}
+                            Back to{" "}
                             <strong>
                                 <i>
                                     <u> HOME </u>

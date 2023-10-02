@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { useInView } from "react-intersection-observer"
 import { useFetch } from "../hooks/useFetch"
@@ -24,15 +23,6 @@ export const HomeSportCard = () => {
         threshold: 0.5,
         triggerOnce: true,
     })
-
-    const [showCarousel, setShowCarousel] = useState(false)
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setShowCarousel(true)
-        }, 1500)
-        return () => clearTimeout(timer)
-    }, [])
 
     return (
         <Container
@@ -101,7 +91,17 @@ export const HomeSportCard = () => {
                 </Col>
                 {/* Image Col */}
                 <Col xs={12} md={12} lg={6} className='mb-5 p-5'>
-                    {showCarousel && (
+                    {isLoading ? (
+                        <div className='d-flex justify-content-center align-items-center'>
+                            <div
+                                className='spinner-border text-danger'
+                                role='status'>
+                                <span className='visually-hidden'>
+                                    Loading...
+                                </span>
+                            </div>
+                        </div>
+                    ) : (
                         <Carousel>
                             {Array.isArray(data) &&
                                 data.map((shoes) => {
@@ -111,6 +111,7 @@ export const HomeSportCard = () => {
                                                 className='d-block w-100 p-5'
                                                 style={{
                                                     objectFit: "center",
+                                                    objectPosition: "center",
                                                     height: "450px",
                                                 }}
                                                 src={shoes.img}

@@ -1,4 +1,3 @@
-import { useInView } from "react-intersection-observer"
 import { Badge, Col, Container, Row } from "react-bootstrap"
 
 import deliveryicon from "../assets/fast.svg"
@@ -11,12 +10,6 @@ import bestpriceicon from "../assets/price.svg"
 import bgstrength from "../assets/bgstrength.png"
 
 export const OurStrengths = () => {
-    const { ref, inView } = useInView({
-        triggerOnce: true,
-        threshold: 1,
-        freezeOnceVisible: true,
-    })
-
     return (
         <Container
             fluid
@@ -51,9 +44,7 @@ export const OurStrengths = () => {
 
             {/* First Row */}
             <Row xs={1} md={2} lg={3} className='mt-2 mb-4'>
-                <Col
-                    ref={ref}
-                    className='d-flex flex-column justify-content-center align-items-center mt-4 p-3 animate__animated animate__backInRight animate__delay-1s'>
+                <Col className='d-flex flex-column justify-content-center align-items-center mt-4 p-3'>
                     <div>
                         <h5>
                             <img
@@ -71,9 +62,7 @@ export const OurStrengths = () => {
                     </div>
                 </Col>
 
-                <Col
-                    ref={ref}
-                    className='d-flex flex-column justify-content-center align-items-center mt-4 p-3 animate__animated animate__backInRight animate__delay-1s'>
+                <Col className='d-flex flex-column justify-content-center align-items-center mt-4 p-3 '>
                     <div>
                         <h5>
                             <img
@@ -91,9 +80,7 @@ export const OurStrengths = () => {
                     </div>
                 </Col>
 
-                <Col
-                    ref={ref}
-                    className='d-flex flex-column justify-content-center align-items-center mt-4 p-3 animate__animated animate__backInRight animate__delay-1s'>
+                <Col className='d-flex flex-column justify-content-center align-items-center mt-4 p-3 '>
                     <div>
                         <h5>
                             <img
@@ -110,9 +97,7 @@ export const OurStrengths = () => {
                         <h6 className='ms-5'>Under 7 days</h6>
                     </div>
                 </Col>
-                <Col
-                    ref={ref}
-                    className='d-flex flex-column justify-content-center align-items-center mt-4 p-3 animate__animated animate__backInRight animate__delay-2s'>
+                <Col className='d-flex flex-column justify-content-center align-items-center mt-4 p-3 '>
                     <div>
                         <h5>
                             <img
@@ -128,9 +113,7 @@ export const OurStrengths = () => {
                         <h6 className='ms-5'>Updated daily</h6>
                     </div>
                 </Col>
-                <Col
-                    ref={ref}
-                    className='d-flex flex-column justify-content-center align-items-center mt-4 p-3 animate__animated animate__backInRight animate__delay-2s'>
+                <Col className='d-flex flex-column justify-content-center align-items-center mt-4 p-3 '>
                     <div>
                         <h5>
                             <img
@@ -148,9 +131,7 @@ export const OurStrengths = () => {
                     </div>
                 </Col>
 
-                <Col
-                    ref={ref}
-                    className='d-flex flex-column justify-content-center align-items-center mt-4 p-3 animate__animated animate__backInRight animate__delay-2s'>
+                <Col className='d-flex flex-column justify-content-center align-items-center mt-4 p-3'>
                     <div>
                         <h5>
                             <img
