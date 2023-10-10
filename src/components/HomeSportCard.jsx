@@ -41,7 +41,7 @@ export const HomeSportCard = () => {
                     md={12}
                     lg={6}
                     className='d-flex flex-column justify-content-center align-items-center mt-5 mb-2 p-5 animate__animated animate__backInRight animate__delay-1s'>
-                    <div className='text-start'>
+                    <div className='text-center'>
                         <h2>
                             <Badge pill bg='danger'>
                                 <strong>
@@ -70,7 +70,7 @@ export const HomeSportCard = () => {
                             </strong>
                         </h6>
 
-                        <div className='mt-3 text-center animate__animated animate__flash '>
+                        <div className='mt-3'>
                             <Button
                                 className='mt-4'
                                 variant='outline-light'

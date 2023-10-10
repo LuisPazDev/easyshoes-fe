@@ -26,8 +26,8 @@ export const HomeRegisterCard = () => {
                     xs={12}
                     md={12}
                     lg={6}
-                    className='d-flex flex-column justify-content-center align-items-center mt-5'>
-                    <div className='text-start'>
+                    className='d-flex flex-column justify-content-center align-items-center mt-5 mb-5'>
+                    <div className='text-center'>
                         <h2>
                             <Badge bg='danger'>
                                 <strong>
@@ -42,9 +42,7 @@ export const HomeRegisterCard = () => {
                             </strong>
                         </h1>
 
-                        <h6
-                            style={{ lineHeight: "1.7em" }}
-                            className='text-start'>
+                        <h6 style={{ lineHeight: "1.7em" }}>
                             <strong>
                                 <i>
                                     Create an account now and get 20% off
@@ -57,7 +55,7 @@ export const HomeRegisterCard = () => {
                             <br />
                         </h6>
 
-                        <div className='mt-3 text-center'>
+                        <div className='mt-3'>
                             <Button
                                 className='mt-4'
                                 variant='outline-light'
@@ -88,7 +86,10 @@ export const HomeRegisterCard = () => {
                             <Image
                                 fluid
                                 src={registercard}
-                                className='animate__animated animate__backInRight animate__delay-1s'
+                                style={{
+                                    maxWidth: "450px",
+                                }}
+                                className='animate__animated animate__backInRight animate__delay-1s ps-4 pe-4'
                             />
                         )}
                     </div>

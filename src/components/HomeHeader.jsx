@@ -73,13 +73,13 @@ export const HomeHeader = () => {
                     className='d-flex justify-content-center align-items-center mt-4 mb-4'>
                     <Carousel
                         className='animate__animated animate__backInRight animate__delay-2s'
-                        interval={1800}
+                        interval={2000}
                         indicators={false}
                         controls={false}>
                         <Carousel.Item>
                             <Image
                                 className='d-block w-100'
-                                style={{ maxHeight: "600px" }}
+                                style={{ maxHeight: "400px" }}
                                 src={firstslide}
                                 alt='First slide'
                                 fluid
@@ -89,7 +89,7 @@ export const HomeHeader = () => {
                             <Image
                                 className='d-block w-100'
                                 src={secondslide}
-                                style={{ maxHeight: "600px" }}
+                                style={{ maxHeight: "400px" }}
                                 alt='First slide'
                                 fluid
                             />
@@ -98,7 +98,7 @@ export const HomeHeader = () => {
                             <Image
                                 className='d-block w-100'
                                 src={thirdslide}
-                                style={{ maxHeight: "600px" }}
+                                style={{ maxHeight: "400px" }}
                                 alt='First slide'
                                 fluid
                             />
