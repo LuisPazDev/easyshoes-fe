@@ -13,6 +13,10 @@ import {
 
 import bgsportcard from "../assets/bgsportcard.png"
 
+import casual from "../assets/casualhome.png"
+import fashion from "../assets/fashionhome.png"
+import sport from "../assets/sporthome.png"
+
 export const HomeSportCard = () => {
     const { data, isLoading } = useFetch(
         `https://easyshoes.onrender.com/shoes/get`
@@ -20,7 +24,7 @@ export const HomeSportCard = () => {
 
     const { ref, inView } = useInView({
         freezeOnceVisible: true,
-        threshold: 0.5,
+        threshold: 1,
         triggerOnce: true,
     })
 
@@ -40,7 +44,7 @@ export const HomeSportCard = () => {
                     xs={12}
                     md={12}
                     lg={6}
-                    className='d-flex flex-column justify-content-center align-items-center mt-5 mb-2 p-5 animate__animated animate__backInRight animate__delay-1s'>
+                    className='d-flex flex-column justify-content-center align-items-center mt-5 mb-2 p-5 animate__animated animate__backInRight animate__delay-2s'>
                     <div className='text-center'>
                         <h2>
                             <Badge pill bg='danger'>
@@ -90,38 +94,37 @@ export const HomeSportCard = () => {
                     </div>
                 </Col>
                 {/* Image Col */}
-                <Col xs={12} md={12} lg={6} className='mb-5 p-5'>
-                    {isLoading ? (
-                        <div className='d-flex justify-content-center align-items-center'>
-                            <div
-                                className='spinner-border text-danger'
-                                role='status'>
-                                <span className='visually-hidden'>
-                                    Loading...
-                                </span>
-                            </div>
-                        </div>
-                    ) : (
-                        <Carousel>
-                            {Array.isArray(data) &&
-                                data.map((shoes) => {
-                                    return (
-                                        <Carousel.Item key={shoes.id}>
-                                            <Image
-                                                className='d-block w-100 p-5'
-                                                style={{
-                                                    objectFit: "center",
-                                                    objectPosition: "center",
-                                                    height: "450px",
-                                                }}
-                                                src={shoes.img}
-                                                alt={shoes.model}
-                                            />
-                                        </Carousel.Item>
-                                    )
-                                })}
+                <Col
+                    ref={ref}
+                    xs={12}
+                    md={12}
+                    lg={6}
+                    className='d-flex flex-column justify-content-center align-items-center mt-3 mb-2 p-5 animate__animated animate__backInRight animate__delay-2s'>
+                    <Link to='/shoes'>
+                        <Carousel controls={false} indicators={false}>
+                            <Carousel.Item>
+                                <Image
+                                    src={casual}
+                                    style={{ maxHeight: "400px" }}
+                                    className='d-block w-100'
+                                />
+                            </Carousel.Item>
+                            <Carousel.Item>
+                                <Image
+                                    src={fashion}
+                                    style={{ maxHeight: "400px" }}
+                                    className='d-block w-100'
+                                />
+                            </Carousel.Item>
+                            <Carousel.Item>
+                                <Image
+                                    src={sport}
+                                    style={{ maxHeight: "400px" }}
+                                    className='d-block w-100'
+                                />
+                            </Carousel.Item>
                         </Carousel>
-                    )}
+                    </Link>
                 </Col>
             </Row>
         </Container>
