@@ -55,8 +55,10 @@ export const ShoesCard = () => {
                             lg={4}
                             className='d-flex flex-row justify-content-center align-items-center mt-3 p-4'>
                             <Card
-                                style={{ width: "16rem" }}
-                                className='border border-dark rounded animate__animated animate__backInLeft animate__delay-1s'>
+                                style={{
+                                    width: "16rem",
+                                }}
+                                className='border-dark rounded animate__animated animate__backInLeft animate__delay-1s'>
                                 <Card.Img
                                     variant='top'
                                     src={item.img}
@@ -68,7 +70,7 @@ export const ShoesCard = () => {
                                 />
                                 <Card.Body
                                     style={{
-                                        backgroundColor: "#212529",
+                                        backgroundColor: "#0E0E0E",
                                     }}>
                                     <div>
                                         <img
@@ -109,7 +111,7 @@ export const ShoesCard = () => {
                                             </strong>
                                         </h5>
                                     </Card.Text>
-                                    <div className='text-center mt-4'>
+                                    <div className='text-center mt-4 mb-4'>
                                         <Button
                                             onClick={() => addToCart(item)}
                                             variant='outline-light'>

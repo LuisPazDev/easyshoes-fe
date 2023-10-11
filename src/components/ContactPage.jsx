@@ -71,6 +71,15 @@ export const ContactPage = () => {
                 style={{ backgroundColor: "#212529" }}
                 className='mt-3 border border-dark rounded p-4'
                 id='form'>
+                <div className='mt-3 mb-5'>
+                    <h5 className='text-center text-white'>
+                        <strong>
+                            <u>
+                                <i>Leave us a message</i>
+                            </u>
+                        </strong>
+                    </h5>
+                </div>
                 <Row>
                     <Col xs={12} md={6} lg={6} className='mb-3'>
                         <Form.Group controlId='formBasicName'>

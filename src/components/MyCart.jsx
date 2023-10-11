@@ -127,7 +127,12 @@ export const MyCart = () => {
     }
 
     return (
-        <Container fluid>
+        <Container
+            fluid
+            style={{
+                height: "100vh",
+            }}
+            className='mb-5'>
             <div className='text-center p-5'>
                 <h1>
                     <Badge pill className='bg-danger'>
@@ -199,8 +204,8 @@ export const MyCart = () => {
                 {
                     // if cart is not empty
                     cart.length > 0 ? (
-                        <>
-                            <div className='text-center mt-4'>
+                        <div>
+                            <div className='text-center mt-5'>
                                 <Button size='md' variant='outline-light'>
                                     <Link to='/shoes'>
                                         <strong>
@@ -230,10 +235,10 @@ export const MyCart = () => {
                                 </h5>
                             </div>
 
-                            <div className='text-center'>
+                            <div className='text-center mb-5'>
                                 <Button
                                     size='lg'
-                                    className='mt-5 mb-5'
+                                    className='mt-4 mb-4'
                                     variant='danger'
                                     onClick={() => setShowModal(true)}>
                                     <strong>
@@ -241,7 +246,7 @@ export const MyCart = () => {
                                     </strong>
                                 </Button>
                             </div>
-                        </>
+                        </div>
                     ) : (
                         // if cart is empty
                         <div className='text-center mt-5 mb-5'>
