@@ -32,7 +32,16 @@ export const ContactPage = () => {
     // send data to backend
     const handleSubmit = (event) => {
         event.preventDefault()
-        console.log("message sent", input)
+
+        if (!input.name || !input.email || !input.comment) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Please fill in all the fields",
+            })
+            return
+        }
+
         postMessage()
         clearForm()
         Swal.fire({

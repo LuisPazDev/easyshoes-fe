@@ -87,25 +87,14 @@ export const CartProvider = ({ children }) => {
                 {cart.length > 0 && (
                     <Toast show={showButton}>
                         <Button
-                            size='sm'
+                            size='md'
                             variant='outline-danger'
                             className='position-fixed bottom-0 end-0 m-3'
                             style={{ zIndex: 5 }}>
                             <Link to='/cart'>
                                 <strong>
                                     <i className='bi bi-cart3'>
-                                        Go Cart{"   "}
-                                        <span className='badge bg-black'>
-                                            <img
-                                                style={{
-                                                    width: "20px",
-                                                    height: "20px",
-                                                }}
-                                                src={cartimg}
-                                                alt='cart.svg'
-                                            />
-                                            {cart.length}
-                                        </span>
+                                        Go to Cart{"   "}
                                     </i>
                                 </strong>
                             </Link>
